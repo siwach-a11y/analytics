@@ -1,0 +1,31 @@
+{
+  "name": "agenthub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "dev:clean": "lsof -ti :3000 | xargs kill -9 2>/dev/null || true; lsof -ti :3001 | xargs kill -9 2>/dev/null || true; rm -rf .next && next dev -p 3000",
+    "build": "next build",
+    "build:html": "node scripts/build-html.mjs",
+    "build:pages": "GITHUB_PAGES=1 node scripts/build-html.mjs",
+    "start": "next start",
+    "lint": "next lint",
+    "dev:sniper-backend": "npm run dev:backend --prefix ../ticket-sniper-bot"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
