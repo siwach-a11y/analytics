@@ -38,3 +38,6 @@ next-env.d.ts
 # local static demo bundles
 /agenthub-demo/
 agenthub-demo.zip
+/analytics-dashboard-demo/
+analytics-dashboard-demo.zip
+/analytics-dashboard/out/

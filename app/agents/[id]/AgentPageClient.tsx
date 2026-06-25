@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { getAgentById } from "@/lib/data/agents";
+import TrendingVideoAgent from "@/components/agents/TrendingVideoAgent";
 import ConcertAgent from "@/components/agents/ConcertAgent";
 import FlightHotelAgent from "@/components/agents/FlightHotelAgent";
 import CurrencyAgent from "@/components/agents/CurrencyAgent";
@@ -12,6 +13,7 @@ import PersonalLoanAgent from "@/components/agents/PersonalLoanAgent";
 import { type ComponentType } from "react";
 
 const agentComponents: Record<string, ComponentType> = {
+  "trending-video-finder": TrendingVideoAgent,
   "concert-ticket-finder": ConcertAgent,
   "flight-hotel-finder": FlightHotelAgent,
   "currency-exchange": CurrencyAgent,

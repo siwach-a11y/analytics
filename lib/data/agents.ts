@@ -2,6 +2,22 @@ import { Agent } from "@/lib/types";
 
 export const agents: Agent[] = [
   {
+    id: "trending-video-finder",
+    name: "Trending Video Finder",
+    author: "ClipPulse AI",
+    description:
+      "Fando-inspired pipeline: discover short-form clips (YouTube, TikTok, Instagram), queue for review, approve, generate captions, and publish. Official sources + URL dedupe.",
+    icon: "📺",
+    category: "Entertainment",
+    tags: ["videos", "trending", "viral", "youtube", "tiktok", "social"],
+    rating: 4.6,
+    reviewCount: 892,
+    userCount: 22100,
+    price: "Free",
+    badges: ["New", "Hot", "Free"],
+    featured: true,
+  },
+  {
     id: "concert-ticket-finder",
     name: "Concert Ticket Finder",
     author: "SoundWave Labs",

@@ -1,0 +1,8 @@
+[
+  { "date": "Jan", "events": 8200000, "engagementScore": 62, "campaignConversions": 142000 },
+  { "date": "Feb", "events": 9100000, "engagementScore": 64, "campaignConversions": 156000 },
+  { "date": "Mar", "events": 9800000, "engagementScore": 66, "campaignConversions": 168000 },
+  { "date": "Apr", "events": 10400000, "engagementScore": 68, "campaignConversions": 174000 },
+  { "date": "May", "events": 11200000, "engagementScore": 71, "campaignConversions": 182000 },
+  { "date": "Jun", "events": 12100000, "engagementScore": 74, "campaignConversions": 198000 }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "customerId": "cust-001",
+    "engagementScore": 88,
+    "sessionFrequency": "daily",
+    "avgSessionMinutes": 12,
+    "preferredChannel": "in_app",
+    "behavioralSegment": "power_user",
+    "eventsLast30Days": 142,
+    "lastCampaignInteraction": "2026-06-20T10:00:00Z",
+    "topActions": ["payment", "transfer", "dapp_browse"]
+  },
+  {
+    "customerId": "cust-002",
+    "engagementScore": 92,
+    "sessionFrequency": "daily",
+    "avgSessionMinutes": 18,
+    "preferredChannel": "push",
+    "behavioralSegment": "power_user",
+    "eventsLast30Days": 198,
+    "lastCampaignInteraction": "2026-06-22T14:30:00Z",
+    "topActions": ["payment", "promo_click", "transfer"]
+  },
+  {
+    "customerId": "cust-003",
+    "engagementScore": 41,
+    "sessionFrequency": "monthly",
+    "avgSessionMinutes": 3,
+    "preferredChannel": "sms",
+    "behavioralSegment": "dormant_risk",
+    "eventsLast30Days": 8,
+    "lastCampaignInteraction": "2026-05-28T09:00:00Z",
+    "topActions": ["app_open", "promo_view"]
+  },
+  {
+    "customerId": "cust-004",
+    "engagementScore": 85,
+    "sessionFrequency": "daily",
+    "avgSessionMinutes": 14,
+    "preferredChannel": "in_app",
+    "behavioralSegment": "power_user",
+    "eventsLast30Days": 156,
+    "lastCampaignInteraction": "2026-06-23T08:15:00Z",
+    "topActions": ["payment", "transfer", "campaign_convert"]
+  },
+  {
+    "customerId": "cust-005",
+    "engagementScore": 72,
+    "sessionFrequency": "weekly",
+    "avgSessionMinutes": 8,
+    "preferredChannel": "push",
+    "behavioralSegment": "casual",
+    "eventsLast30Days": 34,
+    "lastCampaignInteraction": "2026-06-18T16:00:00Z",
+    "topActions": ["app_open", "payment", "promo_view"]
+  },
+  {
+    "customerId": "cust-006",
+    "engagementScore": 38,
+    "sessionFrequency": "rare",
+    "avgSessionMinutes": 2,
+    "preferredChannel": "email",
+    "behavioralSegment": "reactivation_target",
+    "eventsLast30Days": 5,
+    "lastCampaignInteraction": "2026-04-10T11:00:00Z",
+    "topActions": ["promo_view", "app_open"]
+  },
+  {
+    "customerId": "cust-007",
+    "engagementScore": 79,
+    "sessionFrequency": "weekly",
+    "avgSessionMinutes": 10,
+    "preferredChannel": "in_app",
+    "behavioralSegment": "casual",
+    "eventsLast30Days": 48,
+    "lastCampaignInteraction": "2026-06-21T12:00:00Z",
+    "topActions": ["payment", "dapp_browse", "transfer"]
+  },
+  {
+    "customerId": "cust-008",
+    "engagementScore": 95,
+    "sessionFrequency": "daily",
+    "avgSessionMinutes": 22,
+    "preferredChannel": "in_app",
+    "behavioralSegment": "power_user",
+    "eventsLast30Days": 210,
+    "lastCampaignInteraction": "2026-06-24T07:00:00Z",
+    "topActions": ["dapp_browse", "payment", "transfer"]
+  },
+  {
+    "customerId": "cust-009",
+    "engagementScore": 15,
+    "sessionFrequency": "rare",
+    "avgSessionMinutes": 1,
+    "preferredChannel": "sms",
+    "behavioralSegment": "reactivation_target",
+    "eventsLast30Days": 2,
+    "lastCampaignInteraction": null,
+    "topActions": ["app_open"]
+  },
+  {
+    "customerId": "cust-010",
+    "engagementScore": 68,
+    "sessionFrequency": "weekly",
+    "avgSessionMinutes": 7,
+    "preferredChannel": "push",
+    "behavioralSegment": "browser",
+    "eventsLast30Days": 28,
+    "lastCampaignInteraction": "2026-06-15T09:30:00Z",
+    "topActions": ["dapp_browse", "promo_view", "app_open"]
+  },
+  {
+    "customerId": "cust-011",
+    "engagementScore": 91,
+    "sessionFrequency": "daily",
+    "avgSessionMinutes": 16,
+    "preferredChannel": "email",
+    "behavioralSegment": "power_user",
+    "eventsLast30Days": 175,
+    "lastCampaignInteraction": "2026-06-23T10:00:00Z",
+    "topActions": ["payment", "transfer", "campaign_convert"]
+  },
+  {
+    "customerId": "cust-012",
+    "engagementScore": 65,
+    "sessionFrequency": "weekly",
+    "avgSessionMinutes": 6,
+    "preferredChannel": "push",
+    "behavioralSegment": "casual",
+    "eventsLast30Days": 22,
+    "lastCampaignInteraction": "2026-06-19T08:00:00Z",
+    "topActions": ["app_open", "wallet_link", "payment"]
+  },
+  {
+    "customerId": "cust-013",
+    "engagementScore": 84,
+    "sessionFrequency": "daily",
+    "avgSessionMinutes": 11,
+    "preferredChannel": "in_app",
+    "behavioralSegment": "power_user",
+    "eventsLast30Days": 132,
+    "lastCampaignInteraction": "2026-06-22T18:00:00Z",
+    "topActions": ["payment", "transfer", "promo_click"]
+  },
+  {
+    "customerId": "cust-014",
+    "engagementScore": 82,
+    "sessionFrequency": "daily",
+    "avgSessionMinutes": 15,
+    "preferredChannel": "in_app",
+    "behavioralSegment": "power_user",
+    "eventsLast30Days": 168,
+    "lastCampaignInteraction": "2026-06-24T06:00:00Z",
+    "topActions": ["dapp_browse", "payment", "transfer"]
+  },
+  {
+    "customerId": "cust-015",
+    "engagementScore": 12,
+    "sessionFrequency": "rare",
+    "avgSessionMinutes": 1,
+    "preferredChannel": "sms",
+    "behavioralSegment": "reactivation_target",
+    "eventsLast30Days": 1,
+    "lastCampaignInteraction": null,
+    "topActions": ["app_open"]
+  },
+  {
+    "customerId": "cust-016",
+    "engagementScore": 44,
+    "sessionFrequency": "monthly",
+    "avgSessionMinutes": 4,
+    "preferredChannel": "push",
+    "behavioralSegment": "dormant_risk",
+    "eventsLast30Days": 9,
+    "lastCampaignInteraction": "2026-06-01T14:00:00Z",
+    "topActions": ["promo_view", "app_open"]
+  },
+  {
+    "customerId": "cust-017",
+    "engagementScore": 76,
+    "sessionFrequency": "weekly",
+    "avgSessionMinutes": 9,
+    "preferredChannel": "push",
+    "behavioralSegment": "casual",
+    "eventsLast30Days": 52,
+    "lastCampaignInteraction": "2026-06-20T11:00:00Z",
+    "topActions": ["payment", "promo_click", "transfer"]
+  },
+  {
+    "customerId": "cust-018",
+    "engagementScore": 35,
+    "sessionFrequency": "rare",
+    "avgSessionMinutes": 3,
+    "preferredChannel": "email",
+    "behavioralSegment": "reactivation_target",
+    "eventsLast30Days": 6,
+    "lastCampaignInteraction": "2026-05-15T10:00:00Z",
+    "topActions": ["dapp_browse", "promo_view"]
+  }
+]

@@ -11,7 +11,18 @@ const nextConfig = {
         trailingSlash: true,
         images: { unoptimized: true },
       }
-    : {}),
+    : {
+        async redirects() {
+          return [
+            { source: "/index.html", destination: "/", permanent: false },
+            {
+              source: "/agents/:id/index.html",
+              destination: "/agents/:id",
+              permanent: false,
+            },
+          ];
+        },
+      }),
 };
 
 export default nextConfig;

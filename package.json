@@ -11,7 +11,22 @@
     "deploy:pages": "node scripts/deploy-gh-pages.mjs",
     "start": "next start",
     "lint": "next lint",
-    "dev:sniper-backend": "npm run dev:backend --prefix ../ticket-sniper-bot"
+    "dev:sniper-backend": "npm run dev:backend --prefix ../ticket-sniper-bot",
+    "telecom:dev": "npm run dev --prefix telecom-dapp-dashboard",
+    "telecom:build": "npm run build --prefix telecom-dapp-dashboard",
+    "telecom:start": "npm run start --prefix telecom-dapp-dashboard",
+    "analytics:dev": "npm run dev --prefix analytics-dashboard",
+    "analytics:build": "npm run build --prefix analytics-dashboard",
+    "analytics:exports": "node scripts/build-export-zips.mjs",
+    "analytics:start": "npm run start --prefix analytics-dashboard",
+    "exports:copy:customer": "node scripts/copy-export.mjs customer-analytics your-project/src",
+    "exports:copy:marketing": "node scripts/copy-export.mjs marketing-intelligence your-project/src",
+    "exports:copy:analytics": "node scripts/copy-export.mjs analytics-feature your-project/src",
+    "exports:copy:all": "node scripts/copy-export.mjs customer-analytics your-project/src && node scripts/copy-export.mjs marketing-intelligence your-project/src && node scripts/copy-export.mjs analytics-feature your-project/src",
+    "analytics:demo": "node scripts/build-analytics-demo.mjs",
+    "analytics:demo:refresh": "npm run analytics:demo && lsof -ti :3457 | xargs kill -9 2>/dev/null || true; npm run analytics:demo:serve",
+    "analytics:demo:pages": "GITHUB_PAGES=1 node scripts/build-analytics-demo.mjs",
+    "analytics:demo:serve": "npx --yes serve analytics-dashboard-demo -p 3457"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.1",

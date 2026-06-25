@@ -7,10 +7,19 @@ import { fileURLToPath } from "node:url";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-console.log("Building for GitHub Pages...\n");
-execSync("npm run build:pages", { cwd: root, stdio: "inherit" });
+console.log("Building Analytics Dashboard for GitHub Pages...\n");
+execSync("npm run analytics:demo:pages", {
+  cwd: root,
+  stdio: "inherit",
+  env: { ...process.env, GITHUB_PAGES: "1", NEXT_PUBLIC_STATIC_DEMO: "true" },
+});
 
-const outDir = path.join(root, "out");
+const outDir = path.join(root, "analytics-dashboard", "out");
+if (!existsSync(outDir)) {
+  console.error("✗ Build output not found at analytics-dashboard/out");
+  process.exit(1);
+}
+
 const workDir = mkdtempSync(path.join(tmpdir(), "agenthub-pages-"));
 
 try {
@@ -24,7 +33,10 @@ try {
   });
   execSync('git config user.name "github-actions[bot]"', { cwd: workDir, stdio: "inherit" });
   execSync("git add -A", { cwd: workDir, stdio: "inherit" });
-  execSync('git commit -m "Deploy GitHub Pages"', { cwd: workDir, stdio: "inherit" });
+  execSync('git commit -m "Deploy Analytics Dashboard to GitHub Pages"', {
+    cwd: workDir,
+    stdio: "inherit",
+  });
   execSync("git branch -M gh-pages", { cwd: workDir, stdio: "inherit" });
   execSync("git push -f https://github.com/siwach-a11y/agent-hub.git gh-pages", {
     cwd: workDir,

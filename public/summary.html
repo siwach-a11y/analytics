@@ -153,18 +153,19 @@
   <div class="wrap">
     <header>
       <h1>🤖 AgentHub — Platform Summary</h1>
-      <p class="tagline">AI agent marketplace with Ticket Sniper Bot automation · Static HTML build</p>
+      <p class="tagline">AI agent marketplace with Ticket Sniper Bot automation · Dev server &amp; static HTML build</p>
       <div class="stats">
-        <div class="stat"><strong>7</strong><span>Agents</span></div>
+        <div class="stat"><strong>8</strong><span>Agents</span></div>
         <div class="stat"><strong>3</strong><span>Categories</span></div>
         <div class="stat"><strong>4.6</strong><span>Avg rating</span></div>
         <div class="stat"><strong>2.5%</strong><span>Snipe fee</span></div>
       </div>
       <div class="nav">
-        <a href="index.html">Open Marketplace</a>
-        <a href="agents/flight-hotel-finder/index.html">Flight &amp; Hotel</a>
-        <a href="agents/concert-ticket-finder/index.html">Concerts</a>
-        <a href="agents/personal-loan-finder/index.html">Loans</a>
+        <a href="/">Open Marketplace</a>
+        <a href="/agents/trending-video-finder">Trending Video</a>
+        <a href="/agents/flight-hotel-finder">Flight &amp; Hotel</a>
+        <a href="/agents/concert-ticket-finder">Concerts</a>
+        <a href="/agents/personal-loan-finder">Loans</a>
       </div>
     </header>
 
@@ -172,14 +173,25 @@
       <h2>What is AgentHub?</h2>
       <p style="font-size:0.95rem;color:#374151;">
         AgentHub is a marketplace of AI-powered bots that help users find tickets, travel, loans,
-        currency rates, car rentals, and deals. Each agent includes search filters, AI chat
-        assistance, and <strong>Ticket Sniper Bot</strong> integration to monitor prices and
+        currency rates, car rentals, trending videos, and deals. Each agent includes search filters,
+        AI chat assistance, and <strong>Ticket Sniper Bot</strong> integration to monitor prices and
         auto-book when targets are met.
       </p>
     </section>
 
     <section>
       <h2>Agent catalog</h2>
+
+      <div class="agent">
+        <div class="icon">📺</div>
+        <div>
+          <h3>Trending Video Finder</h3>
+          <p class="meta">ClipPulse AI · Entertainment · ★ 4.6</p>
+          <p style="font-size:0.88rem;margin-top:0.35rem;">Fando-style pipeline: discover short-form clips, queue for review, approve, caption, and publish.</p>
+          <span class="badge featured">Featured</span><span class="badge hot">Hot</span>
+        </div>
+        <a class="btn" href="/agents/trending-video-finder">Launch →</a>
+      </div>
 
       <div class="agent">
         <div class="icon">🎵</div>
@@ -189,7 +201,7 @@
           <p style="font-size:0.88rem;margin-top:0.35rem;">Search concerts by artist, genre, city, month. Snipe tickets with automated queue and seat scanning.</p>
           <span class="badge featured">Featured</span><span class="badge hot">Hot</span>
         </div>
-        <a class="btn" href="agents/concert-ticket-finder/index.html">Launch →</a>
+        <a class="btn" href="/agents/concert-ticket-finder">Launch →</a>
       </div>
 
       <div class="agent">
@@ -200,7 +212,7 @@
           <p style="font-size:0.88rem;margin-top:0.35rem;">Flights, hotels, bundles, and <strong>Snipe Mode</strong> to hunt by route and budget.</p>
           <span class="badge featured">Featured</span>
         </div>
-        <a class="btn" href="agents/flight-hotel-finder/index.html">Launch →</a>
+        <a class="btn" href="/agents/flight-hotel-finder">Launch →</a>
       </div>
 
       <div class="agent">
@@ -210,7 +222,7 @@
           <p class="meta">ForexPulse · Finance · ★ 4.5</p>
           <p style="font-size:0.88rem;margin-top:0.35rem;">20-currency converter, bank/agent rate compare, rate snipe alerts.</p>
         </div>
-        <a class="btn" href="agents/currency-exchange/index.html">Launch →</a>
+        <a class="btn" href="/agents/currency-exchange">Launch →</a>
       </div>
 
       <div class="agent">
@@ -220,7 +232,7 @@
           <p class="meta">DriveEasy · Travel · ★ 4.4</p>
           <p style="font-size:0.88rem;margin-top:0.35rem;">Filter by type, transmission, budget. Snipe daily rental rates.</p>
         </div>
-        <a class="btn" href="agents/car-rental-finder/index.html">Launch →</a>
+        <a class="btn" href="/agents/car-rental-finder">Launch →</a>
       </div>
 
       <div class="agent">
@@ -230,7 +242,7 @@
           <p class="meta">DealRadar · Entertainment · ★ 4.5</p>
           <p style="font-size:0.88rem;margin-top:0.35rem;">Browse flash sales across electronics, travel, fashion, and more.</p>
         </div>
-        <a class="btn" href="agents/event-deal-flash-sale/index.html">Launch →</a>
+        <a class="btn" href="/agents/event-deal-flash-sale">Launch →</a>
       </div>
 
       <div class="agent">
@@ -241,7 +253,7 @@
           <p style="font-size:0.88rem;margin-top:0.35rem;">Snipe price drops, restocks, and flash sale checkouts.</p>
           <span class="badge featured">Featured</span><span class="badge hot">Hot</span>
         </div>
-        <a class="btn" href="agents/event-deal-hunter/index.html">Launch →</a>
+        <a class="btn" href="/agents/event-deal-hunter">Launch →</a>
       </div>
 
       <div class="agent">
@@ -252,13 +264,14 @@
           <p style="font-size:0.88rem;margin-top:0.35rem;">Compare loan APRs, calculate payments, snipe target rates.</p>
           <span class="badge featured">Featured</span><span class="badge hot">Hot</span>
         </div>
-        <a class="btn" href="agents/personal-loan-finder/index.html">Launch →</a>
+        <a class="btn" href="/agents/personal-loan-finder">Launch →</a>
       </div>
     </section>
 
     <section>
       <h2>Platform features</h2>
       <ul>
+        <li><strong>Trending Video pipeline</strong> — discover → queue → approve → caption → publish (Fando-inspired)</li>
         <li><strong>Ticket Sniper Bot</strong> — automated hunts with live status, queue position, CAPTCHA/OTP handoff</li>
         <li><strong>Snipe Mode</strong> — proactive route/budget hunts (Flight &amp; Hotel Finder)</li>
         <li><strong>2.5% platform fee</strong> — charged on every bot snipe</li>
@@ -276,13 +289,12 @@
     </section>
 
     <section>
-      <h2>Static HTML build</h2>
+      <h2>Run locally</h2>
       <ul>
-        <li>Build command: <code>npm run build:html</code></li>
-        <li>Output folder: <code>out/</code></li>
-        <li>Homepage: <code>out/index.html</code></li>
-        <li>This summary: <code>out/summary.html</code></li>
-        <li>Serve locally: <code>npx serve out</code></li>
+        <li>Dev server: <code>npm run dev</code> → <code>http://localhost:3000</code></li>
+        <li>Marketplace: <code>/</code></li>
+        <li>This summary: <code>/summary.html</code></li>
+        <li>Static build: <code>npm run build:html</code> → <code>out/</code></li>
       </ul>
       <p style="font-size:0.85rem;color:#6b7280;margin-top:0.75rem;">
         Static build runs snipe hunts in browser demo mode. AI chat requires a server API key.
@@ -294,13 +306,13 @@
       <ul>
         <li>Project root: <code>~/Projects/agenthub</code></li>
         <li>Agent data: <code>lib/data/agents.ts</code></li>
+        <li>Video discovery: <code>lib/video-discovery/engine.ts</code></li>
         <li>Snipe UI: <code>components/sniper/</code></li>
-        <li>Dev server: <code>http://localhost:3000</code></li>
       </ul>
     </section>
 
     <footer>
-      AgentHub · Generated static summary · June 2026
+      AgentHub · Platform summary · June 2026
     </footer>
   </div>
 </body>

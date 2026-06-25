@@ -1,0 +1,8 @@
+[
+  { "date": "Jan", "totalCustomers": 3820000, "activeCustomers": 3210000, "newCustomers": 142000, "churnedCustomers": 38000 },
+  { "date": "Feb", "totalCustomers": 3940000, "activeCustomers": 3290000, "newCustomers": 156000, "churnedCustomers": 36000 },
+  { "date": "Mar", "totalCustomers": 4080000, "activeCustomers": 3380000, "newCustomers": 168000, "churnedCustomers": 28000 },
+  { "date": "Apr", "totalCustomers": 4210000, "activeCustomers": 3470000, "newCustomers": 174000, "churnedCustomers": 43000 },
+  { "date": "May", "totalCustomers": 4350000, "activeCustomers": 3560000, "newCustomers": 182000, "churnedCustomers": 40000 },
+  { "date": "Jun", "totalCustomers": 4480000, "activeCustomers": 3640000, "newCustomers": 198000, "churnedCustomers": 65000 }
+]

@@ -1,0 +1,22 @@
+[
+  { "id": "evt-001", "customerId": "cust-001", "type": "payment", "action": "Bill payment via DANA", "channel": "in_app", "timestamp": "2026-06-24T08:10:00Z" },
+  { "id": "evt-002", "customerId": "cust-008", "type": "dapp_browse", "action": "Viewed Aave SEA yield pool", "channel": "organic", "timestamp": "2026-06-24T08:55:00Z" },
+  { "id": "evt-003", "customerId": "cust-005", "type": "campaign_open", "action": "Opened ShopeePay cashback push", "channel": "push", "timestamp": "2026-06-24T07:30:00Z", "campaignId": "camp-003" },
+  { "id": "evt-004", "customerId": "cust-003", "type": "app_open", "action": "Session start", "channel": "organic", "timestamp": "2026-06-10T14:15:00Z" },
+  { "id": "evt-005", "customerId": "cust-002", "type": "campaign_convert", "action": "Referral bonus claimed", "channel": "in_app", "timestamp": "2026-06-22T14:25:00Z", "campaignId": "camp-001" },
+  { "id": "evt-006", "customerId": "cust-004", "type": "transfer", "action": "P2P transfer GCash", "channel": "in_app", "timestamp": "2026-06-24T06:50:00Z" },
+  { "id": "evt-007", "customerId": "cust-006", "type": "promo_view", "action": "Viewed LinkAja retention offer", "channel": "email", "timestamp": "2026-06-02T11:20:00Z", "campaignId": "camp-002" },
+  { "id": "evt-008", "customerId": "cust-014", "type": "payment", "action": "DeFi swap on Uniswap SEA", "channel": "in_app", "timestamp": "2026-06-24T06:35:00Z" },
+  { "id": "evt-009", "customerId": "cust-010", "type": "dapp_browse", "action": "Browsed Coins.ph crypto", "channel": "organic", "timestamp": "2026-06-23T22:40:00Z" },
+  { "id": "evt-010", "customerId": "cust-012", "type": "wallet_link", "action": "Linked telecom wallet", "channel": "in_app", "timestamp": "2026-06-24T04:05:00Z" },
+  { "id": "evt-011", "customerId": "cust-017", "type": "promo_click", "action": "Clicked OVO loyalty promo", "channel": "push", "timestamp": "2026-06-24T07:20:00Z", "campaignId": "camp-004" },
+  { "id": "evt-012", "customerId": "cust-011", "type": "campaign_convert", "action": "Enterprise bundle signup", "channel": "email", "timestamp": "2026-06-23T09:55:00Z", "campaignId": "camp-005" },
+  { "id": "evt-013", "customerId": "cust-016", "type": "promo_view", "action": "Viewed re-engagement SMS", "channel": "sms", "timestamp": "2026-06-08T09:10:00Z", "campaignId": "camp-006" },
+  { "id": "evt-014", "customerId": "cust-013", "type": "payment", "action": "Merchant payment GCash", "channel": "in_app", "timestamp": "2026-06-24T08:25:00Z" },
+  { "id": "evt-015", "customerId": "cust-007", "type": "transfer", "action": "Remittance via Maya", "channel": "in_app", "timestamp": "2026-06-24T05:10:00Z" },
+  { "id": "evt-016", "customerId": "cust-018", "type": "dapp_browse", "action": "Viewed Pluang crypto onboarding", "channel": "organic", "timestamp": "2026-05-29T13:40:00Z" },
+  { "id": "evt-017", "customerId": "cust-001", "type": "promo_click", "action": "Clicked DANA flash sale", "channel": "push", "timestamp": "2026-06-23T18:00:00Z", "campaignId": "camp-003" },
+  { "id": "evt-018", "customerId": "cust-008", "type": "campaign_open", "action": "Opened DeFi bundle email", "channel": "email", "timestamp": "2026-06-24T07:00:00Z", "campaignId": "camp-007" },
+  { "id": "evt-019", "customerId": "cust-005", "type": "payment", "action": "ShopeePay checkout", "channel": "in_app", "timestamp": "2026-06-23T19:00:00Z" },
+  { "id": "evt-020", "customerId": "cust-002", "type": "transfer", "action": "GoPay P2P", "channel": "in_app", "timestamp": "2026-06-24T07:35:00Z" }
+]

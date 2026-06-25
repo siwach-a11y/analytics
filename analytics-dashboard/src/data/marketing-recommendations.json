@@ -1,0 +1,68 @@
+[
+  {
+    "id": "rec-001",
+    "title": "Re-engage dormant LinkAja users with tiered cashback",
+    "priority": "high",
+    "targetSegment": "Dormant Risk (4.2M users)",
+    "behavioralSignal": "No payment in 14d + prior active LinkAja usage",
+    "suggestedChannel": "Push + SMS",
+    "expectedLift": "+2.8pp retention",
+    "estimatedReach": 420000,
+    "rationale": "Behavioral data shows 68% of at-risk users respond to cashback within 72h of push. LinkAja cohort has highest churn velocity."
+  },
+  {
+    "id": "rec-002",
+    "title": "DeFi cross-sell to power users browsing yield pools",
+    "priority": "high",
+    "targetSegment": "Power Users (890K users)",
+    "behavioralSignal": "dapp_browse Aave/Uniswap 2+ times + active payment wallet",
+    "suggestedChannel": "In-app + Email",
+    "expectedLift": "+340K cross-sell conversions",
+    "estimatedReach": 890000,
+    "rationale": "Power users with DeFi browse behavior convert at 18.4% on bundled offers vs 6.2% on generic promos."
+  },
+  {
+    "id": "rec-003",
+    "title": "ShopeePay viral loop for casual ecommerce browsers",
+    "priority": "medium",
+    "targetSegment": "Casual (1.8M users)",
+    "behavioralSignal": "Ecommerce app opens 3x/week without ShopeePay txn",
+    "suggestedChannel": "Push",
+    "expectedLift": "+22% referral coefficient",
+    "estimatedReach": 1800000,
+    "rationale": "Casual segment shows high promo_click rate (24%) but low conversion. Referral incentive closes the gap."
+  },
+  {
+    "id": "rec-004",
+    "title": "Win-back campaign for reactivation targets via preferred channel",
+    "priority": "high",
+    "targetSegment": "Reactivation Target (620K users)",
+    "behavioralSignal": "Churn risk > 70 + no campaign interaction 30d",
+    "suggestedChannel": "SMS (preferred) + Email fallback",
+    "expectedLift": "+11.7% reactivation rate",
+    "estimatedReach": 620000,
+    "rationale": "Profile data shows 72% of reactivation targets prefer SMS. Current email-only outreach underperforms by 3.2x."
+  },
+  {
+    "id": "rec-005",
+    "title": "Premium upsell for high-LTV casual payers",
+    "priority": "medium",
+    "targetSegment": "Casual → Premium upgrade",
+    "behavioralSignal": "Monthly spend > 1M IDR + weekly payment pattern",
+    "suggestedChannel": "In-app",
+    "expectedLift": "+18% ARPU",
+    "estimatedReach": 240000,
+    "rationale": "Behavioral scoring identifies casual users with premium spending patterns. In-app upsell converts at 8.1%."
+  },
+  {
+    "id": "rec-006",
+    "title": "Browser-to-buyer nudge for dapp-only explorers",
+    "priority": "low",
+    "targetSegment": "Browser (1.1M users)",
+    "behavioralSignal": "dapp_browse without payment in 21d",
+    "suggestedChannel": "Push",
+    "expectedLift": "+6.4% first-txn conversion",
+    "estimatedReach": 1100000,
+    "rationale": "Browsers have high app_open frequency but low payment events. First-txn incentive reduces drop-off at consideration stage."
+  }
+]

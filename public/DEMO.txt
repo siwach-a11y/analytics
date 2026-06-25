@@ -23,12 +23,13 @@ WHAT'S INCLUDED
 ---------------
 - summary.html        Platform overview (start here for review)
 - index.html          Marketplace home
-- agents/             All 7 agent demos
+- agents/             All 8 agent demos
 - _next/              Styles & JavaScript (required — do not delete)
 
 
 AGENTS TO TRY
 -------------
+- agents/trending-video-finder/index.html → Discovery → Queue → Publish
 - agents/flight-hotel-finder/index.html   → Snipe Mode tab
 - agents/concert-ticket-finder/index.html → Snipe Tickets
 - agents/personal-loan-finder/index.html  → Compare & snipe rates

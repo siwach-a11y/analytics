@@ -1,0 +1,41 @@
+[
+  {
+    "id": "telkomsel",
+    "name": "STW Rewards",
+    "country": "Myanmar",
+    "marketShare": 82.6,
+    "activeWallets": 283000,
+    "transactions": 4830000,
+    "growthPercent": 12.4,
+    "retention": 78.2,
+    "newUsers": 42000,
+    "color": "#8b6914",
+    "logo": "STW"
+  },
+  {
+    "id": "indosat",
+    "name": "Quest",
+    "country": "Myanmar",
+    "marketShare": 7.8,
+    "activeWallets": 152000,
+    "transactions": 458100,
+    "growthPercent": 8.1,
+    "retention": 71.5,
+    "newUsers": 18000,
+    "color": "#2d6a4f",
+    "logo": "Q"
+  },
+  {
+    "id": "globe",
+    "name": "Screen Time",
+    "country": "Myanmar",
+    "marketShare": 9.2,
+    "activeWallets": 101000,
+    "transactions": 537800,
+    "growthPercent": 5.6,
+    "retention": 68.4,
+    "newUsers": 12000,
+    "color": "#7c5cbf",
+    "logo": "SC"
+  }
+]

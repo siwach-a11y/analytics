@@ -1,0 +1,8 @@
+[
+  { "cohort": "Jan 2026", "size": 142000, "month0": 100, "month1": 78, "month2": 68, "month3": 62, "month4": 58, "month5": 55, "month6": 52 },
+  { "cohort": "Feb 2026", "size": 156000, "month0": 100, "month1": 80, "month2": 71, "month3": 65, "month4": 61, "month5": 57, "month6": 0 },
+  { "cohort": "Mar 2026", "size": 168000, "month0": 100, "month1": 82, "month2": 74, "month3": 68, "month4": 64, "month5": 0, "month6": 0 },
+  { "cohort": "Apr 2026", "size": 174000, "month0": 100, "month1": 81, "month2": 73, "month3": 67, "month4": 0, "month5": 0, "month6": 0 },
+  { "cohort": "May 2026", "size": 182000, "month0": 100, "month1": 83, "month2": 76, "month3": 0, "month4": 0, "month5": 0, "month6": 0 },
+  { "cohort": "Jun 2026", "size": 198000, "month0": 100, "month1": 84, "month2": 0, "month3": 0, "month4": 0, "month5": 0, "month6": 0 }
+]

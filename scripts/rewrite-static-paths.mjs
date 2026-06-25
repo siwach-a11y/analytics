@@ -43,7 +43,8 @@ function toRelative(outDir, htmlFile, urlPath) {
 }
 
 function rewriteQuotedAbsolutePaths(outDir, htmlFile, html) {
-  return html.replace(/"\/([^"]+)"/g, (match, p) => {
+  // Require a real path segment after "/" (not "/>" from self-closing tags).
+  return html.replace(/"\/(?!>)([^"]+)"/g, (match, p) => {
     if (p.startsWith("http")) return match;
     return `"${toRelative(outDir, htmlFile, `/${p}`)}"`;
   });
@@ -68,7 +69,7 @@ function rewriteHtml(outDir, htmlFile) {
   });
 
   html = rewriteQuotedAbsolutePaths(outDir, htmlFile, html);
-  html = html.replace(/\\"\/([^\\"]+)\\"/g, (match, p) => {
+  html = html.replace(/\\"\/(?!>)([^\\"]+)\\"/g, (match, p) => {
     if (p.startsWith("http")) return match;
     return `\\"${toRelative(outDir, htmlFile, `/${p}`)}\\"`;
   });
@@ -108,7 +109,7 @@ export function rewriteStaticPaths(outDir) {
   rewriteCss(outDir);
   rewriteWebpack(outDir);
 
-  const skip = new Set([path.join(outDir, "summary.html")]);
+  const skip = new Set([]);
   for (const htmlFile of walkHtml(outDir)) {
     if (skip.has(htmlFile)) continue;
     rewriteHtml(outDir, htmlFile);
