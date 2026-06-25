@@ -119,7 +119,7 @@ export function AddFilesButton({
         {variant === "nav" ? (
           <button
             type="button"
-            title="Add Files"
+            title="Export code bundles"
             className={cn(
               "group relative flex w-full items-center gap-3 rounded-md px-2 py-2.5 transition-colors xl:px-3",
               "text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -127,7 +127,7 @@ export function AddFilesButton({
             )}
           >
             <FilePlus2 className="mx-auto h-4 w-4 shrink-0 xl:mx-0" />
-            <span className="hidden text-xs font-medium xl:inline">Add Files</span>
+            <span className="hidden text-xs font-medium xl:inline">Export code</span>
           </button>
         ) : (
           <Button
@@ -137,7 +137,7 @@ export function AddFilesButton({
             className={cn("h-8 gap-1.5 text-xs", className)}
           >
             <FilePlus2 className="h-3.5 w-3.5" />
-            <span className="hidden sm:inline">Add Files</span>
+            <span className="hidden sm:inline">Export code</span>
           </Button>
         )}
       </SheetTrigger>
@@ -145,7 +145,7 @@ export function AddFilesButton({
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
             <FilePlus2 className="h-4 w-4 text-primary" />
-            Add analytics to your project
+            Export analytics code
           </SheetTitle>
           <SheetDescription>
             Copy export bundles into another Next.js app — npm commands or zip downloads.
@@ -175,10 +175,8 @@ export function AddFilesButton({
           ))}
 
           <p className="text-[10px] leading-relaxed text-muted-foreground">
-            Run commands from the agenthub repo root. Set{" "}
-            <code className="rounded bg-muted px-1">EXPORT_TARGET=your-project/src</code> for a
-            custom destination. Zips mirror <code className="rounded bg-muted px-1">exports/</code>{" "}
-            folders.
+            To analyze your own files, use <strong>Upload picture</strong> or{" "}
+            <strong>Upload PDF</strong> on the Home dashboard.
           </p>
         </div>
       </SheetContent>

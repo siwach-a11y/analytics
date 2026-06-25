@@ -23,12 +23,15 @@ import {
   Zap,
 } from "lucide-react";
 import { AppLink } from "@/components/app-link";
+import { DataUploadButtons } from "@/components/analytics/data-upload-buttons";
+import { UploadDashboard } from "@/components/analytics/upload-dashboard";
 import { ChartContainer } from "@/components/charts/chart-container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useMemo } from "react";
 import { useWorkspace } from "@/components/providers/workspace-provider";
+import { useUploadAnalytics } from "@/components/providers/upload-analytics-provider";
 import { getCustomerAnalytics } from "@/data/customer-analytics";
 import { getMarketingAnalytics } from "@/data/marketing-analytics";
 import { getWorkspaceAnalytics } from "@/data/u9-analytics";
@@ -93,7 +96,12 @@ function HeroMetric({
 
 export function Homepage() {
   const { workspace, earnChannels, workspaceId } = useWorkspace();
+  const { uploads } = useUploadAnalytics();
   const ws = workspace.workspace;
+
+  function scrollToUploadViz() {
+    document.getElementById("upload-dashboard")?.scrollIntoView({ behavior: "smooth" });
+  }
   const dashboardData = useMemo(
     () => getWorkspaceAnalytics(workspaceId),
     [workspaceId]
@@ -166,12 +174,15 @@ export function Homepage() {
               </p>
               <p className="mt-2 text-xs text-muted-foreground/80">{dashboardData.apiNote}</p>
             </div>
-            <AppLink href="/workspace/u9">
-              <Button className="gap-2 shadow-sm">
-                Open workspace
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </AppLink>
+            <div className="flex flex-col gap-3 sm:items-end">
+              <DataUploadButtons onUploaded={scrollToUploadViz} />
+              <AppLink href="/workspace/u9">
+                <Button variant="outline" className="gap-2">
+                  Open workspace
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </AppLink>
+            </div>
           </div>
 
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
@@ -216,6 +227,22 @@ export function Homepage() {
       </section>
 
       <div className="mx-auto max-w-6xl space-y-6 p-4 lg:p-8">
+        {uploads.length === 0 ? (
+          <Card className="border-dashed border-primary/30 bg-primary/5">
+            <CardContent className="flex flex-col items-center gap-4 p-6 text-center sm:flex-row sm:text-left">
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Analyze your files</h2>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Upload a picture or PDF — the dashboard will visualize extracted metrics below.
+                </p>
+              </div>
+              <DataUploadButtons onUploaded={scrollToUploadViz} />
+            </CardContent>
+          </Card>
+        ) : (
+          <UploadDashboard />
+        )}
+
         {/* Quick links */}
         <div className="grid gap-3 sm:grid-cols-3">
           {QUICK_LINKS.map(({ href, label, description, icon: Icon, accent }) => (

@@ -75,6 +75,17 @@ export const ADD_GUIDE_MARKDOWN = `# Analytics Feature — ADD Guide
 
 Copy bundles into your Next.js project from the agenthub repo.
 
+## Upload data (dashboard UI)
+
+Open **Add Files → Upload data** in the sidebar to analyze:
+
+- **Pictures** (JPEG, PNG, GIF, WebP) — preview + image metadata
+- **PDF** — text extraction, tabular detection, page stats
+- **Excel** (.xlsx, .xls) and **CSV** — column stats, preview table
+- **Google Sheets** — paste a share link (public / link-shared sheets)
+
+Parsed metrics (row counts, numeric averages/sums) appear in the upload panel.
+
 ## Quick copy (from agenthub root)
 
 \`\`\`bash
