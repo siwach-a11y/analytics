@@ -59,7 +59,7 @@ try {
   console.log("\n✓ Static site exported to out/");
 
   if (isGithubPages) {
-    console.log("  GitHub Pages: https://siwach-a11y.github.io/agent-hub/");
+    console.log("  GitHub Pages: https://siwach-a11y.github.io/analytics/");
   } else {
     const demoDir = path.join(root, "agenthub-demo");
     if (existsSync(demoDir)) {

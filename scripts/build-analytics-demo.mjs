@@ -80,7 +80,7 @@ try {
 
   if (isGithubPages) {
     writeFileSync(path.join(outDir, ".nojekyll"), "");
-    console.log("  GitHub Pages base path: /agent-hub/");
+    console.log("  GitHub Pages base path: /analytics/");
   } else {
     const demoDir = path.join(root, "analytics-dashboard-demo");
     if (existsSync(demoDir)) {

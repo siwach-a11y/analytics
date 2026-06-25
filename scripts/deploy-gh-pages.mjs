@@ -38,13 +38,13 @@ try {
     stdio: "inherit",
   });
   execSync("git branch -M gh-pages", { cwd: workDir, stdio: "inherit" });
-  execSync("git push -f https://github.com/siwach-a11y/agent-hub.git gh-pages", {
+  execSync("git push -f https://github.com/siwach-a11y/analytics.git gh-pages", {
     cwd: workDir,
     stdio: "inherit",
   });
 
   console.log("\n✓ Published to gh-pages branch");
-  console.log("  https://siwach-a11y.github.io/agent-hub/");
+  console.log("  https://siwach-a11y.github.io/analytics/");
 } finally {
   rmSync(workDir, { recursive: true, force: true });
 }

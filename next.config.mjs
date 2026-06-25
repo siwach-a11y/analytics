@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isStaticExport = process.env.BUILD_HTML === "1";
 const isGithubPages = process.env.GITHUB_PAGES === "1";
-const basePath = isGithubPages ? "/agent-hub" : "";
+const basePath = isGithubPages ? "/analytics" : "";
 
 const nextConfig = {
   ...(basePath ? { basePath } : {}),

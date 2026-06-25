@@ -4,7 +4,7 @@ AI agent marketplace with snipe-mode demos for travel, entertainment, and financ
 
 ## Live demo
 
-**GitHub Pages:** [https://siwach-a11y.github.io/agent-hub/](https://siwach-a11y.github.io/agent-hub/)
+**GitHub Pages:** [https://siwach-a11y.github.io/analytics/](https://siwach-a11y.github.io/analytics/)
 
 Start at `summary.html` for the platform overview, or `index.html` for the marketplace.
 
@@ -35,7 +35,7 @@ Outputs a shareable folder at `agenthub-demo/` and `agenthub-demo.zip`.
 
 Pushes to `main` run `.github/workflows/deploy-pages.yml`, which builds with `npm run build:pages` and publishes the `out/` directory.
 
-Manual build for Pages (uses `/agent-hub` base path):
+Manual build for Pages (uses `/analytics` base path):
 
 ```bash
 npm run build:pages
