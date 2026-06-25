@@ -23,7 +23,7 @@ export function ApiPluginButton({
   onConnected?: () => void;
 }) {
   function scrollToViz() {
-    document.getElementById("api-plugin-dashboard")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("imported-data")?.scrollIntoView({ behavior: "smooth" });
     onConnected?.();
   }
 

@@ -3,7 +3,7 @@
  */
 
 import type { AnalyticsOverview } from "@/lib/analytics";
-import type { ApiPluginFetchRequest, ApiPluginResult } from "@/lib/api-plugin";
+import type { ApiPluginFetchRequest, ParsedApiPluginResult } from "@/lib/api-plugin";
 import { runApiPlugin } from "@/lib/api-plugin";
 import { getBehaviorCampaignAnalytics } from "@/data/behavior-campaign-analytics";
 import { API_PLUGIN_DEFINITIONS } from "@/lib/api-plugin/registry";
@@ -53,7 +53,7 @@ export const apiPluginApi = {
     ),
 
   /** Run plugin — client engine on static export; API route in dev. */
-  async fetch(request: ApiPluginFetchRequest): Promise<ApiPluginResult> {
+  async fetch(request: ApiPluginFetchRequest): Promise<ParsedApiPluginResult> {
     if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
       return runApiPlugin(request);
     }
@@ -69,7 +69,7 @@ export const apiPluginApi = {
       throw new Error(body?.error ?? `Plugin API error: ${res.status}`);
     }
 
-    return res.json() as Promise<ApiPluginResult>;
+    return res.json() as Promise<ParsedApiPluginResult>;
   },
 };
 

@@ -1,4 +1,5 @@
 import type { NumericColumnStat } from "@/types/upload-analytics";
+import type { TranslatedAnalytics } from "@/types/upload-analytics";
 import type { WorkspaceId } from "@/data/workspaces";
 
 export type ApiPluginId = "workspace" | "rest-json" | "csv-url";
@@ -22,7 +23,7 @@ export type ApiPluginConnection = {
   createdAt: string;
 };
 
-export type ApiPluginResult = {
+export type ParsedApiPluginResult = {
   connectionId: string;
   name: string;
   pluginId: ApiPluginId;
@@ -33,6 +34,10 @@ export type ApiPluginResult = {
   numericStats: NumericColumnStat[];
   rowCount: number;
   rawPreview?: string;
+};
+
+export type ApiPluginResult = ParsedApiPluginResult & {
+  analytics: TranslatedAnalytics;
 };
 
 export type ApiPluginFetchRequest = {

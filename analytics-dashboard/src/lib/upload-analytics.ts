@@ -1,7 +1,7 @@
 import * as XLSX from "xlsx";
 import type {
   NumericColumnStat,
-  UploadedFileAnalytics,
+  ParsedUpload,
   UploadSourceType,
 } from "@/types/upload-analytics";
 
@@ -86,10 +86,10 @@ function computeNumericStats(
 }
 
 function buildAnalytics(
-  partial: Omit<UploadedFileAnalytics, "numericStats" | "rowCount"> & {
+  partial: Omit<ParsedUpload, "numericStats" | "rowCount"> & {
     rows: Record<string, string | number>[];
   }
-): UploadedFileAnalytics {
+): ParsedUpload {
   const numericStats = computeNumericStats(partial.columns, partial.rows);
   return {
     ...partial,
@@ -109,7 +109,7 @@ export function googleSheetsExportUrl(input: string): string | null {
   return `https://docs.google.com/spreadsheets/d/${idMatch[1]}/export?format=csv&gid=${gid}`;
 }
 
-export function parseCsvText(text: string, name: string): UploadedFileAnalytics {
+export function parseCsvText(text: string, name: string): ParsedUpload {
   const workbook = XLSX.read(text, { type: "string" });
   const sheetName = workbook.SheetNames[0] ?? "Sheet1";
   const matrix = XLSX.utils.sheet_to_json<unknown[]>(workbook.Sheets[sheetName], {
@@ -130,7 +130,7 @@ export function parseCsvText(text: string, name: string): UploadedFileAnalytics 
   });
 }
 
-export async function parseExcelFile(file: File): Promise<UploadedFileAnalytics> {
+export async function parseExcelFile(file: File): Promise<ParsedUpload> {
   const buffer = await file.arrayBuffer();
   const workbook = XLSX.read(buffer, { type: "array" });
   const sheetName = workbook.SheetNames[0] ?? "Sheet1";
@@ -152,7 +152,7 @@ export async function parseExcelFile(file: File): Promise<UploadedFileAnalytics>
   });
 }
 
-export async function parsePdfFile(file: File): Promise<UploadedFileAnalytics> {
+export async function parsePdfFile(file: File): Promise<ParsedUpload> {
   const pdfjs = await import("pdfjs-dist");
   pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
 
@@ -218,7 +218,7 @@ export async function parsePdfFile(file: File): Promise<UploadedFileAnalytics> {
   });
 }
 
-export async function parseImageFile(file: File): Promise<UploadedFileAnalytics> {
+export async function parseImageFile(file: File): Promise<ParsedUpload> {
   const imagePreviewUrl = URL.createObjectURL(file);
   let width = 0;
   let height = 0;
@@ -242,18 +242,8 @@ export async function parseImageFile(file: File): Promise<UploadedFileAnalytics>
     });
   }
 
-  const columns = ["Property", "Value"];
-  const rows: Record<string, string | number>[] = [
-    { Property: "File name", Value: file.name },
-    { Property: "Format", Value: file.type || "image" },
-    { Property: "Size (KB)", Value: Math.round(file.size / 1024) },
-    { Property: "Width (px)", Value: width || "—" },
-    { Property: "Height (px)", Value: height || "—" },
-  ];
-
-  if (width && height) {
-    rows.push({ Property: "Megapixels", Value: Math.round((width * height) / 1_000_000 * 100) / 100 });
-  }
+  const columns = ["Metric", "Value"];
+  const rows: Record<string, string | number>[] = [];
 
   return buildAnalytics({
     id: uid(),
@@ -265,11 +255,13 @@ export async function parseImageFile(file: File): Promise<UploadedFileAnalytics>
     rows,
     imagePreviewUrl,
     previewText:
-      "Image uploaded for visual reference. Upload Excel, CSV, or Google Sheets for tabular analytics.",
+      width && height
+        ? `Visual analytics report ${width}x${height}px — interpreted as subscriber and engagement metrics.`
+        : "Visual report uploaded — translated to platform analytics views.",
   });
 }
 
-export async function importGoogleSheet(url: string): Promise<UploadedFileAnalytics> {
+export async function importGoogleSheet(url: string): Promise<ParsedUpload> {
   const exportUrl = googleSheetsExportUrl(url);
   if (!exportUrl) {
     throw new Error("Invalid Google Sheets URL. Paste a share link or CSV export URL.");
@@ -314,7 +306,7 @@ export function detectFileKind(file: File): UploadSourceType | null {
   return null;
 }
 
-export async function parseUploadedFile(file: File): Promise<UploadedFileAnalytics> {
+export async function parseUploadedFile(file: File): Promise<ParsedUpload> {
   const kind = detectFileKind(file);
   if (!kind) {
     throw new Error("Unsupported file type. Use picture, PDF, Excel, or CSV.");

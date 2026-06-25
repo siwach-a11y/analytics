@@ -4,7 +4,9 @@ import { useRef, useState } from "react";
 import { FileText, ImageIcon, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useUploadAnalytics } from "@/components/providers/upload-analytics-provider";
+import { useWorkspace } from "@/components/providers/workspace-provider";
 import { parseImageFile, parsePdfFile } from "@/lib/upload-analytics";
+import { finalizeUpload } from "@/lib/upload-translate";
 import { cn } from "@/lib/utils";
 
 type DataUploadButtonsProps = {
@@ -19,6 +21,7 @@ export function DataUploadButtons({
   onUploaded,
 }: DataUploadButtonsProps) {
   const { addUpload } = useUploadAnalytics();
+  const { workspaceId } = useWorkspace();
   const imageInputRef = useRef<HTMLInputElement>(null);
   const pdfInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState<"image" | "pdf" | null>(null);
@@ -28,7 +31,7 @@ export function DataUploadButtons({
     setError(null);
     setLoading("image");
     try {
-      const result = await parseImageFile(file);
+      const result = finalizeUpload(await parseImageFile(file), workspaceId);
       addUpload(result);
       onUploaded?.();
     } catch (e) {
@@ -42,7 +45,7 @@ export function DataUploadButtons({
     setError(null);
     setLoading("pdf");
     try {
-      const result = await parsePdfFile(file);
+      const result = finalizeUpload(await parsePdfFile(file), workspaceId);
       addUpload(result);
       onUploaded?.();
     } catch (e) {

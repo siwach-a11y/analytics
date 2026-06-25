@@ -14,6 +14,7 @@ import {
 import { useApiPlugin } from "@/components/providers/api-plugin-provider";
 import { useWorkspace } from "@/components/providers/workspace-provider";
 import { apiPluginApi } from "@/lib/api";
+import { finalizeApiResult } from "@/lib/upload-translate";
 import { API_PLUGIN_DEFINITIONS } from "@/lib/api-plugin/registry";
 import type { ApiPluginId } from "@/lib/api-plugin";
 
@@ -37,13 +38,13 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
     setError(null);
     setLoading(true);
     try {
-      const result = await apiPluginApi.fetch({
+      const raw = await apiPluginApi.fetch({
         pluginId,
         name: name.trim() || undefined,
         endpoint: endpoint.trim() || undefined,
         workspaceId,
       });
-      addResult(result);
+      addResult(finalizeApiResult(raw, workspaceId));
       onConnected?.();
       if (pluginId !== "workspace") {
         setEndpoint("");
@@ -122,7 +123,7 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
           ) : (
             <Plug className="h-4 w-4" />
           )}
-          Connect & visualize
+          Connect & analyze
         </Button>
 
         {error && <p className="text-xs text-destructive">{error}</p>}

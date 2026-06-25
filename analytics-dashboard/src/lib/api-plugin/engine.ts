@@ -3,17 +3,17 @@ import { getMarketingAnalytics } from "@/data/marketing-analytics";
 import { getWorkspace, type WorkspaceId } from "@/data/workspaces";
 import { computeNumericStats } from "@/lib/data-stats";
 import { normalizeJsonToRows, parseCsvToRows } from "./normalize";
-import type { ApiPluginFetchRequest, ApiPluginResult } from "./types";
+import type { ApiPluginFetchRequest, ParsedApiPluginResult } from "./types";
 
 function uid(): string {
   return `plugin-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
 function buildResult(
-  partial: Omit<ApiPluginResult, "numericStats" | "rowCount"> & {
+  partial: Omit<ParsedApiPluginResult, "numericStats" | "rowCount"> & {
     rows: Record<string, string | number>[];
   }
-): ApiPluginResult {
+): ParsedApiPluginResult {
   const numericStats = computeNumericStats(partial.columns, partial.rows);
   return {
     ...partial,
@@ -22,7 +22,7 @@ function buildResult(
   };
 }
 
-export function fetchWorkspacePlugin(workspaceId: WorkspaceId = "u9"): ApiPluginResult {
+export function fetchWorkspacePlugin(workspaceId: WorkspaceId = "u9"): ParsedApiPluginResult {
   const w = getWorkspace(workspaceId);
   const ws = w.workspace;
   const customer = getCustomerAnalytics(workspaceId);
@@ -59,7 +59,7 @@ export async function fetchRestJsonPlugin(
   endpoint: string,
   headers?: Record<string, string>,
   name?: string
-): Promise<ApiPluginResult> {
+): Promise<ParsedApiPluginResult> {
   const res = await fetch(endpoint, {
     method: "GET",
     headers: {
@@ -94,7 +94,7 @@ export async function fetchRestJsonPlugin(
 export async function fetchCsvUrlPlugin(
   endpoint: string,
   name?: string
-): Promise<ApiPluginResult> {
+): Promise<ParsedApiPluginResult> {
   const res = await fetch(endpoint);
   if (!res.ok) {
     throw new Error(`CSV URL returned ${res.status}`);
@@ -118,7 +118,7 @@ export async function fetchCsvUrlPlugin(
   });
 }
 
-export async function runApiPlugin(request: ApiPluginFetchRequest): Promise<ApiPluginResult> {
+export async function runApiPlugin(request: ApiPluginFetchRequest): Promise<ParsedApiPluginResult> {
   switch (request.pluginId) {
     case "workspace":
       return fetchWorkspacePlugin(request.workspaceId ?? "u9");

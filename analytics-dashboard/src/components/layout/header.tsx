@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { MobileNav } from "@/components/layout/sidebar";
 import { AddFilesButton } from "@/components/export/add-files-button";
-import { DataUploadButtons } from "@/components/analytics/data-upload-buttons";
-import { ApiPluginButton } from "@/components/api-plugin/api-plugin-button";
+import { DataSourcesButton } from "@/components/analytics/data-sources-button";
 import { CountrySelect } from "@/components/layout/country-select";
 import { useWorkspace } from "@/components/providers/workspace-provider";
 import { Input } from "@/components/ui/input";
@@ -75,8 +74,7 @@ export function Header({ title, subtitle }: HeaderProps) {
 
           <CountrySelect className="md:hidden" />
 
-          <DataUploadButtons size="sm" className="hidden sm:flex" />
-          <ApiPluginButton className="hidden sm:flex" />
+          <DataSourcesButton />
 
           <AddFilesButton className="lg:hidden" />
 

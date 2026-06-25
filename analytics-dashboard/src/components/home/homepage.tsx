@@ -23,10 +23,7 @@ import {
   Zap,
 } from "lucide-react";
 import { AppLink } from "@/components/app-link";
-import { DataUploadButtons } from "@/components/analytics/data-upload-buttons";
-import { UploadDashboard } from "@/components/analytics/upload-dashboard";
-import { ApiPluginButton } from "@/components/api-plugin/api-plugin-button";
-import { ApiPluginDashboard } from "@/components/api-plugin/api-plugin-dashboard";
+import { ImportedAnalyticsDashboard } from "@/components/analytics/upload-dashboard";
 import { ChartContainer } from "@/components/charts/chart-container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -103,17 +100,12 @@ export function Homepage() {
   const { results: pluginResults } = useApiPlugin();
   const ws = workspace.workspace;
 
-  function scrollToUploadViz() {
-    document.getElementById("upload-dashboard")?.scrollIntoView({ behavior: "smooth" });
-  }
-
-  function scrollToPluginViz() {
-    document.getElementById("api-plugin-dashboard")?.scrollIntoView({ behavior: "smooth" });
-  }
   const dashboardData = useMemo(
     () => getWorkspaceAnalytics(workspaceId),
     [workspaceId]
   );
+
+  const hasImportedData = uploads.length > 0 || pluginResults.length > 0;
 
   const customerData = useMemo(
     () => getCustomerAnalytics(workspaceId),
@@ -183,10 +175,6 @@ export function Homepage() {
               <p className="mt-2 text-xs text-muted-foreground/80">{dashboardData.apiNote}</p>
             </div>
             <div className="flex flex-col gap-3 sm:items-end">
-              <div className="flex flex-wrap gap-2">
-                <DataUploadButtons onUploaded={scrollToUploadViz} />
-                <ApiPluginButton variant="inline" onConnected={scrollToPluginViz} />
-              </div>
               <AppLink href="/workspace/u9">
                 <Button variant="outline" className="gap-2">
                   Open workspace
@@ -238,27 +226,7 @@ export function Homepage() {
       </section>
 
       <div className="mx-auto max-w-6xl space-y-6 p-4 lg:p-8">
-        {uploads.length === 0 && pluginResults.length === 0 ? (
-          <Card className="border-dashed border-primary/30 bg-primary/5">
-            <CardContent className="flex flex-col items-center gap-4 p-6 text-center sm:flex-row sm:text-left">
-              <div className="flex-1">
-                <h2 className="text-lg font-semibold">Analyze your data</h2>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Upload a picture or PDF, or connect an API plugin — visualizations appear below.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <DataUploadButtons onUploaded={scrollToUploadViz} />
-                <ApiPluginButton variant="inline" onConnected={scrollToPluginViz} />
-              </div>
-            </CardContent>
-          </Card>
-        ) : (
-          <>
-            <UploadDashboard />
-            <ApiPluginDashboard />
-          </>
-        )}
+        {hasImportedData && <ImportedAnalyticsDashboard />}
 
         {/* Quick links */}
         <div className="grid gap-3 sm:grid-cols-3">
