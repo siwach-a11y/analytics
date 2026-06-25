@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { AppLink } from "@/components/app-link";
 import { Header } from "@/components/layout/header";
 import { MarketingAnalyticsKpi } from "@/components/marketing/marketing-analytics-kpi";
 import { BehavioralTrackingCharts } from "@/components/marketing/behavioral-tracking-charts";
+import { BehaviorCampaignAnalysis } from "@/components/marketing/behavior-campaign-analysis";
 import { CampaignPerformanceCharts } from "@/components/marketing/campaign-performance-charts";
 import { BehaviorEventFeed } from "@/components/marketing/behavior-event-feed";
 import { BehaviorProfilesTable } from "@/components/marketing/behavior-profiles-table";
@@ -13,11 +14,19 @@ import { MarketingPlanPanel } from "@/components/marketing/marketing-plan-panel"
 import { useWorkspace } from "@/components/providers/workspace-provider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getCustomerAnalytics } from "@/data/customer-analytics";
+import { getBehaviorCampaignAnalytics } from "@/data/behavior-campaign-analytics";
 import { getMarketingAnalytics } from "@/data/marketing-analytics";
+import type { CampaignAnalysisPeriod } from "@/types";
 
 export default function MarketingPage() {
   const { workspaceId, workspace } = useWorkspace();
+  const [campaignPeriod, setCampaignPeriod] = useState<CampaignAnalysisPeriod>("monthly");
+
   const data = useMemo(() => getMarketingAnalytics(workspaceId), [workspaceId]);
+  const behaviorCampaignData = useMemo(
+    () => getBehaviorCampaignAnalytics(workspaceId, campaignPeriod),
+    [workspaceId, campaignPeriod]
+  );
   const customers = useMemo(
     () => getCustomerAnalytics(workspaceId).customers,
     [workspaceId]
@@ -48,12 +57,21 @@ export default function MarketingPage() {
           roasChange={data.roasChange}
         />
 
-        <Tabs defaultValue="behavior">
+        <Tabs defaultValue="periods">
           <TabsList>
-            <TabsTrigger value="behavior">Behavior Tracking</TabsTrigger>
-            <TabsTrigger value="campaigns">Campaign Analysis</TabsTrigger>
-            <TabsTrigger value="plan">Marketing Plan</TabsTrigger>
+            <TabsTrigger value="periods">Campaign periods</TabsTrigger>
+            <TabsTrigger value="behavior">Behavior tracking</TabsTrigger>
+            <TabsTrigger value="campaigns">Campaign analysis</TabsTrigger>
+            <TabsTrigger value="plan">Marketing plan</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="periods" className="mt-4 space-y-6">
+            <BehaviorCampaignAnalysis
+              data={behaviorCampaignData}
+              period={campaignPeriod}
+              onPeriodChange={setCampaignPeriod}
+            />
+          </TabsContent>
 
           <TabsContent value="behavior" className="mt-4 space-y-6">
             <BehavioralTrackingCharts
@@ -85,9 +103,9 @@ export default function MarketingPage() {
           <p className="text-sm font-semibold text-primary">{ws.code} Engagement Model</p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
             Subscriber actions — STW spins, quest completions, screen-time sessions, access-pass
-            burns — are scored into behavioral segments. Campaigns target earn-channel cohorts
-            (e.g. dormant STW users, high-quest engagement). Recommendations prioritize BNRY
-            earn/burn balance and stickiness lift. Metrics align with {ws.code} workspace totals.
+            burns — are scored into behavioral segments. Use <strong>Campaign periods</strong> for
+            monthly, quarterly, and yearly behavioral campaign analysis. Metrics align with{" "}
+            {ws.code} workspace totals.
           </p>
         </div>
       </div>

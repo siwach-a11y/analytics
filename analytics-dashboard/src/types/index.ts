@@ -225,6 +225,69 @@ export interface MarketingAnalyticsSummary {
   }>;
 }
 
+export type CampaignAnalysisPeriod = "monthly" | "quarterly" | "yearly";
+
+export interface BehaviorCampaignPeriodPoint {
+  label: string;
+  periodKey: string;
+  events: number;
+  campaignConversions: number;
+  engagementScore: number;
+  activeCampaigns: number;
+  conversionRate: number;
+  roas: number;
+  spend: number;
+  newResponders: number;
+}
+
+export interface BehaviorCampaignSegmentPeriod {
+  segment: BehavioralSegment;
+  periodLabel: string;
+  count: number;
+  avgEngagement: number;
+  campaignResponseRate: number;
+}
+
+export interface BehaviorCampaignRollup {
+  campaignId: string;
+  name: string;
+  type: CampaignType;
+  status: CampaignStatus;
+  periodsActive: number;
+  totalConversions: number;
+  avgRoas: number;
+  behavioralTrigger: string;
+  segmentLift: number;
+}
+
+export interface BehaviorCampaignChannelPeriod {
+  channel: string;
+  periodLabel: string;
+  openRate: number;
+  conversionRate: number;
+  responses: number;
+}
+
+export interface BehaviorCampaignAnalyticsSummary {
+  period: CampaignAnalysisPeriod;
+  periodLabel: string;
+  timeline: BehaviorCampaignPeriodPoint[];
+  segmentByPeriod: BehaviorCampaignSegmentPeriod[];
+  campaignRollup: BehaviorCampaignRollup[];
+  channelByPeriod: BehaviorCampaignChannelPeriod[];
+  summary: {
+    totalEvents: number;
+    totalConversions: number;
+    avgEngagement: number;
+    avgRoas: number;
+    activeCampaigns: number;
+    topSegment: BehavioralSegment;
+    periodChangeEvents: number;
+    periodChangeConversions: number;
+    periodChangeEngagement: number;
+  };
+}
+
 export interface CustomerRef {
   id: string;
   externalId: string;

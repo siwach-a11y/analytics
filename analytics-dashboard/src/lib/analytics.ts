@@ -4,6 +4,7 @@
  */
 
 import { getCustomerAnalytics, customers } from "@/data/customer-analytics";
+import { getBehaviorCampaignAnalytics } from "@/data/behavior-campaign-analytics";
 import { getMarketingAnalytics } from "@/data/marketing-analytics";
 import { getWorkspaceAnalytics, getU9Analytics } from "@/data/u9-analytics";
 import { getWorkspace, getEarnChannels, WORKSPACES } from "@/data/workspaces";
@@ -11,6 +12,8 @@ import { operators, getOperatorById, getOperatorName } from "@/data";
 import type {
   CustomerAnalyticsSummary,
   MarketingAnalyticsSummary,
+  BehaviorCampaignAnalyticsSummary,
+  CampaignAnalysisPeriod,
 } from "@/types";
 import type { U9Analytics } from "@/data/u9-analytics";
 
@@ -49,6 +52,14 @@ export function getEngagementAnalytics(
   return getMarketingAnalytics(workspaceId);
 }
 
+/** Customer behavioral analysis for monthly / quarterly / yearly campaigns. */
+export function getBehaviorCampaignAnalyticsPayload(
+  workspaceId: WorkspaceId = "u9",
+  period: CampaignAnalysisPeriod = "monthly"
+): BehaviorCampaignAnalyticsSummary {
+  return getBehaviorCampaignAnalytics(workspaceId, period);
+}
+
 /** Atlas-style workspace dashboard payload. */
 export function getWorkspaceAnalyticsPayload(id?: import("@/data/workspaces").WorkspaceId) {
   return getWorkspaceAnalytics(id ?? "u9");
@@ -58,6 +69,7 @@ export const analytics = {
   overview: getAnalyticsOverview,
   subscribers: getSubscriberAnalytics,
   engagement: getEngagementAnalytics,
+  behaviorCampaigns: getBehaviorCampaignAnalyticsPayload,
   workspace: getWorkspaceAnalyticsPayload,
   customer: getCustomerAnalytics,
   marketing: getMarketingAnalytics,

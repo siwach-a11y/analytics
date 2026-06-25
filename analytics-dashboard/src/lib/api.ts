@@ -5,8 +5,15 @@
 import type { AnalyticsOverview } from "@/lib/analytics";
 import type { ApiPluginFetchRequest, ApiPluginResult } from "@/lib/api-plugin";
 import { runApiPlugin } from "@/lib/api-plugin";
+import { getBehaviorCampaignAnalytics } from "@/data/behavior-campaign-analytics";
 import { API_PLUGIN_DEFINITIONS } from "@/lib/api-plugin/registry";
-import type { CustomerAnalyticsSummary, MarketingAnalyticsSummary } from "@/types";
+import type {
+  BehaviorCampaignAnalyticsSummary,
+  CampaignAnalysisPeriod,
+  CustomerAnalyticsSummary,
+  MarketingAnalyticsSummary,
+} from "@/types";
+import type { WorkspaceId } from "@/data/workspaces";
 import type { U9Analytics } from "@/data/u9-analytics";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -26,6 +33,17 @@ export const analyticsApi = {
   subscribers: () => fetchJson<CustomerAnalyticsSummary>("/api/customer-analytics"),
   engagement: () => fetchJson<MarketingAnalyticsSummary>("/api/marketing-analytics"),
   workspace: () => fetchJson<U9Analytics>("/api/u9-analytics"),
+  behaviorCampaigns: async (
+    workspaceId: WorkspaceId = "u9",
+    period: CampaignAnalysisPeriod = "monthly"
+  ) => {
+    if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
+      return getBehaviorCampaignAnalytics(workspaceId, period);
+    }
+    return fetchJson<BehaviorCampaignAnalyticsSummary>(
+      `/api/behavior-campaign-analytics?workspace=${workspaceId}&period=${period}`
+    );
+  },
 };
 
 export const apiPluginApi = {
@@ -59,6 +77,7 @@ export const apiPluginApi = {
 export const api = {
   customerAnalytics: analyticsApi.subscribers,
   marketingAnalytics: analyticsApi.engagement,
+  behaviorCampaignAnalytics: analyticsApi.behaviorCampaigns,
   analyticsOverview: analyticsApi.overview,
   u9Analytics: analyticsApi.workspace,
   pluginCatalog: apiPluginApi.catalog,
