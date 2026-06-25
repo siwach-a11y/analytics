@@ -19,15 +19,18 @@ export const EXPORT_BUNDLES: ExportBundle[] = [
   {
     id: "analytics-feature",
     name: "Analytics Functions",
-    description: "lib/analytics.ts, lib/api.ts, and API routes",
+    description: "lib/analytics.ts, lib/api.ts, customer intelligence, and API routes",
     route: null,
     npmCommand: "npm run exports:copy:analytics",
     files: [
       "lib/analytics.ts",
       "lib/api.ts",
+      "data/customer-intelligence.ts",
+      "types/customer-intelligence.ts",
       "app/api/analytics/overview/route.ts",
       "app/api/u9-analytics/route.ts",
       "app/api/customer-analytics/route.ts",
+      "app/api/customer-intelligence/route.ts",
       "app/api/marketing-analytics/route.ts",
     ],
     zipPath: "/exports/analytics-feature.zip",
@@ -51,7 +54,7 @@ export const EXPORT_BUNDLES: ExportBundle[] = [
   {
     id: "customer-analytics",
     name: "Subscriber Analytics",
-    description: "Lifecycle, cohorts, subscriber table, /customers page",
+    description: "Customer 360, RFM, cohorts, segmentation, /customers page",
     route: "/customers",
     npmCommand: "npm run exports:copy:customer",
     files: [
@@ -140,7 +143,7 @@ const overview = await analyticsApi.overview();
 | Route | Returns |
 |-------|---------|
 | GET /api/analytics/overview | Combined customer + marketing + U9 |
-| GET /api/customer-analytics | Subscriber analytics |
+| GET /api/customer-intelligence | Customer 360, RFM, cohort analysis |
 | GET /api/marketing-analytics | Engagement / campaigns |
 | GET /api/u9-analytics | U9 workspace dashboard |
 

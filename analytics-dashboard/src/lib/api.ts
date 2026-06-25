@@ -14,6 +14,8 @@ import type {
   MarketingAnalyticsSummary,
 } from "@/types";
 import type { WorkspaceId } from "@/data/workspaces";
+import { getCustomerIntelligence } from "@/data/customer-intelligence";
+import type { CustomerIntelligenceSummary } from "@/types/customer-intelligence";
 import type { U9Analytics } from "@/data/u9-analytics";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -42,6 +44,14 @@ export const analyticsApi = {
     }
     return fetchJson<BehaviorCampaignAnalyticsSummary>(
       `/api/behavior-campaign-analytics?workspace=${workspaceId}&period=${period}`
+    );
+  },
+  customerIntelligence: async (workspaceId: WorkspaceId = "u9") => {
+    if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
+      return getCustomerIntelligence(workspaceId);
+    }
+    return fetchJson<CustomerIntelligenceSummary>(
+      `/api/customer-intelligence?workspace=${workspaceId}`
     );
   },
 };
@@ -78,6 +88,7 @@ export const api = {
   customerAnalytics: analyticsApi.subscribers,
   marketingAnalytics: analyticsApi.engagement,
   behaviorCampaignAnalytics: analyticsApi.behaviorCampaigns,
+  customerIntelligence: analyticsApi.customerIntelligence,
   analyticsOverview: analyticsApi.overview,
   u9Analytics: analyticsApi.workspace,
   pluginCatalog: apiPluginApi.catalog,

@@ -54,7 +54,7 @@ const QUICK_LINKS = [
   {
     href: "/customers",
     label: "Subscribers",
-    description: "Lifecycle, cohorts, earn channels",
+    description: "Customer 360, RFM, cohorts, segmentation",
     icon: Users,
     accent: "",
   },
