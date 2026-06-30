@@ -48,7 +48,7 @@ export function DataSourcesButton({
         <SheetHeader>
           <SheetTitle>Add data for analysis</SheetTitle>
           <SheetDescription>
-            Upload a picture or PDF, or connect an API — all sources run through the analytics pipeline on Home.
+            Upload a picture or PDF, or connect a data feed — all sources run through the analytics pipeline on Home.
           </SheetDescription>
         </SheetHeader>
         <Tabs defaultValue="upload" className="mt-4">
@@ -59,7 +59,7 @@ export function DataSourcesButton({
             </TabsTrigger>
             <TabsTrigger value="api" className="gap-1.5 text-xs">
               <Plug className="h-3.5 w-3.5" />
-              API
+              Data feeds
             </TabsTrigger>
           </TabsList>
           <TabsContent value="upload" className="mt-4">

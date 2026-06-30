@@ -2,11 +2,20 @@ import { getCustomerAnalytics } from "@/data/customer-analytics";
 import { getMarketingAnalytics } from "@/data/marketing-analytics";
 import { getWorkspace, type WorkspaceId } from "@/data/workspaces";
 import { computeNumericStats } from "@/lib/data-stats";
+import { getPluginDefinition } from "./registry";
+import {
+  customerAnalyticsFeed,
+  customerIntelligenceFeed,
+  marketingAnalyticsFeed,
+  resolveInternalFeedData,
+  workspaceFeedMeta,
+} from "./feed-builders";
+import { resolveInternalRoute } from "./data-feeds";
 import { normalizeJsonToRows, parseCsvToRows } from "./normalize";
 import type { ApiPluginFetchRequest, ParsedApiPluginResult } from "./types";
 
 function uid(): string {
-  return `plugin-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+  return `feed-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
 function buildResult(
@@ -15,10 +24,12 @@ function buildResult(
   }
 ): ParsedApiPluginResult {
   const numericStats = computeNumericStats(partial.columns, partial.rows);
+  const def = getPluginDefinition(partial.pluginId);
   return {
     ...partial,
     rowCount: partial.rows.length,
     numericStats,
+    feedCategory: def?.category,
   };
 }
 
@@ -52,6 +63,97 @@ export function fetchWorkspacePlugin(workspaceId: WorkspaceId = "u9"): ParsedApi
     columns,
     rows,
     rawPreview: w.apiNote,
+  });
+}
+
+export function fetchCustomerAnalyticsPlugin(
+  workspaceId: WorkspaceId = "u9"
+): ParsedApiPluginResult {
+  const { code, country } = workspaceFeedMeta(workspaceId);
+  const feed = customerAnalyticsFeed(workspaceId);
+  return buildResult({
+    connectionId: uid(),
+    name: `Subscriber Analytics · ${code}`,
+    pluginId: "customer-analytics",
+    fetchedAt: new Date().toISOString(),
+    columns: feed.columns,
+    rows: feed.rows,
+    rawPreview: `${feed.rawPreview} · ${country}`,
+  });
+}
+
+export function fetchMarketingAnalyticsPlugin(
+  workspaceId: WorkspaceId = "u9"
+): ParsedApiPluginResult {
+  const { code } = workspaceFeedMeta(workspaceId);
+  const feed = marketingAnalyticsFeed(workspaceId);
+  return buildResult({
+    connectionId: uid(),
+    name: `Engagement Feed · ${code}`,
+    pluginId: "marketing-analytics",
+    fetchedAt: new Date().toISOString(),
+    columns: feed.columns,
+    rows: feed.rows,
+    rawPreview: feed.rawPreview,
+  });
+}
+
+export function fetchCustomerIntelligencePlugin(
+  workspaceId: WorkspaceId = "u9"
+): ParsedApiPluginResult {
+  const { code } = workspaceFeedMeta(workspaceId);
+  const feed = customerIntelligenceFeed(workspaceId);
+  return buildResult({
+    connectionId: uid(),
+    name: `Customer 360 Feed · ${code}`,
+    pluginId: "customer-intelligence",
+    fetchedAt: new Date().toISOString(),
+    columns: feed.columns,
+    rows: feed.rows,
+    rawPreview: feed.rawPreview,
+  });
+}
+
+export async function fetchInternalApiPlugin(
+  endpoint: string,
+  workspaceId: WorkspaceId = "u9",
+  name?: string
+): Promise<ParsedApiPluginResult> {
+  const routePath = resolveInternalRoute(endpoint);
+  let data: unknown;
+
+  if (typeof window !== "undefined") {
+    const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+    const qs = routePath.includes("?") ? "&" : "?";
+    const url = `${base}${routePath}${qs}workspace=${workspaceId}`;
+    try {
+      const res = await fetch(url);
+      if (res.ok) {
+        data = await res.json();
+      } else {
+        data = await resolveInternalFeedData(routePath, workspaceId);
+      }
+    } catch {
+      data = await resolveInternalFeedData(routePath, workspaceId);
+    }
+  } else {
+    data = await resolveInternalFeedData(routePath, workspaceId);
+  }
+
+  const { columns, rows } = normalizeJsonToRows(data);
+  if (rows.length === 0) {
+    throw new Error("Internal API returned no tabular data.");
+  }
+
+  return buildResult({
+    connectionId: uid(),
+    name: name ?? `Internal · ${routePath}`,
+    pluginId: "internal-api",
+    endpoint: routePath,
+    fetchedAt: new Date().toISOString(),
+    columns,
+    rows,
+    rawPreview: JSON.stringify(data).slice(0, 400),
   });
 }
 
@@ -119,12 +221,25 @@ export async function fetchCsvUrlPlugin(
 }
 
 export async function runApiPlugin(request: ApiPluginFetchRequest): Promise<ParsedApiPluginResult> {
+  const workspaceId = request.workspaceId ?? "u9";
+
   switch (request.pluginId) {
     case "workspace":
-      return fetchWorkspacePlugin(request.workspaceId ?? "u9");
+      return fetchWorkspacePlugin(workspaceId);
+    case "customer-analytics":
+      return fetchCustomerAnalyticsPlugin(workspaceId);
+    case "marketing-analytics":
+      return fetchMarketingAnalyticsPlugin(workspaceId);
+    case "customer-intelligence":
+      return fetchCustomerIntelligencePlugin(workspaceId);
+    case "internal-api":
+      if (!request.endpoint?.trim()) {
+        throw new Error("Internal API feed requires a route path (e.g. /api/customer-analytics).");
+      }
+      return fetchInternalApiPlugin(request.endpoint.trim(), workspaceId, request.name);
     case "rest-json":
       if (!request.endpoint?.trim()) {
-        throw new Error("REST JSON plugin requires an endpoint URL.");
+        throw new Error("REST JSON feed requires an endpoint URL.");
       }
       return fetchRestJsonPlugin(
         request.endpoint.trim(),
@@ -133,10 +248,12 @@ export async function runApiPlugin(request: ApiPluginFetchRequest): Promise<Pars
       );
     case "csv-url":
       if (!request.endpoint?.trim()) {
-        throw new Error("CSV URL plugin requires an endpoint URL.");
+        throw new Error("CSV URL feed requires an endpoint URL.");
       }
       return fetchCsvUrlPlugin(request.endpoint.trim(), request.name);
-    default:
-      throw new Error(`Unknown plugin: ${request.pluginId}`);
+    default: {
+      const _exhaustive: never = request.pluginId;
+      throw new Error(`Unknown feed plugin: ${_exhaustive}`);
+    }
   }
 }

@@ -6,7 +6,7 @@ import type { AnalyticsOverview } from "@/lib/analytics";
 import type { ApiPluginFetchRequest, ParsedApiPluginResult } from "@/lib/api-plugin";
 import { runApiPlugin } from "@/lib/api-plugin";
 import { getBehaviorCampaignAnalytics } from "@/data/behavior-campaign-analytics";
-import { API_PLUGIN_DEFINITIONS } from "@/lib/api-plugin/registry";
+import { getDataFeedCatalog } from "@/lib/api-plugin/data-feeds";
 import type {
   BehaviorCampaignAnalyticsSummary,
   CampaignAnalysisPeriod,
@@ -57,10 +57,12 @@ export const analyticsApi = {
 };
 
 export const apiPluginApi = {
-  catalog: () =>
-    fetchJson<{ plugins: typeof API_PLUGIN_DEFINITIONS; version: string }>(
-      "/api/plugin/catalog"
-    ),
+  catalog: () => {
+    if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
+      return Promise.resolve(getDataFeedCatalog());
+    }
+    return fetchJson<ReturnType<typeof getDataFeedCatalog>>("/api/plugin/catalog");
+  },
 
   /** Run plugin — client engine on static export; API route in dev. */
   async fetch(request: ApiPluginFetchRequest): Promise<ParsedApiPluginResult> {

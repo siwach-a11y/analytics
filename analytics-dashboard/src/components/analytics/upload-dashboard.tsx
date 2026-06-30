@@ -4,6 +4,7 @@ import { AnalyticsViewCard } from "@/components/analytics/analytics-view-card";
 import { useUploadAnalytics } from "@/components/providers/upload-analytics-provider";
 import { useApiPlugin } from "@/components/providers/api-plugin-provider";
 import { UPLOAD_TYPE_LABELS } from "@/lib/upload-analytics";
+import { pluginBadgeLabel } from "@/lib/api-plugin/data-feeds";
 
 export function ImportedAnalyticsDashboard() {
   const { uploads, removeUpload } = useUploadAnalytics();
@@ -17,7 +18,7 @@ export function ImportedAnalyticsDashboard() {
       <div>
         <h2 className="text-lg font-bold tracking-tight">Analytics from your data</h2>
         <p className="text-sm text-muted-foreground">
-          Uploads and API feeds are translated into KPIs, trends, and breakdowns — not shown as raw
+          Uploads and data feeds are translated into KPIs, trends, and breakdowns — not shown as raw
           sources
         </p>
       </div>
@@ -40,13 +41,7 @@ export function ImportedAnalyticsDashboard() {
             id={result.connectionId}
             name={result.name}
             domainLabel={result.analytics.domainLabel}
-            sourceBadge={
-              result.pluginId === "workspace"
-                ? "API · Workspace"
-                : result.pluginId === "rest-json"
-                  ? "API · REST JSON"
-                  : "API · CSV URL"
-            }
+            sourceBadge={pluginBadgeLabel(result.pluginId)}
             analytics={result.analytics}
             apiEndpoint={result.endpoint}
             onRemove={() => removeResult(result.connectionId)}

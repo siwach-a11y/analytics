@@ -2,15 +2,26 @@ import type { NumericColumnStat } from "@/types/upload-analytics";
 import type { TranslatedAnalytics } from "@/types/upload-analytics";
 import type { WorkspaceId } from "@/data/workspaces";
 
-export type ApiPluginId = "workspace" | "rest-json" | "csv-url";
+export type ApiPluginId =
+  | "workspace"
+  | "customer-analytics"
+  | "marketing-analytics"
+  | "customer-intelligence"
+  | "internal-api"
+  | "rest-json"
+  | "csv-url";
+
+export type DataFeedCategory = "builtin" | "external";
 
 export type ApiPluginDefinition = {
   id: ApiPluginId;
   name: string;
   description: string;
+  category: DataFeedCategory;
   requiresEndpoint: boolean;
   endpointPlaceholder?: string;
   docsHint?: string;
+  refreshHint?: string;
 };
 
 export type ApiPluginConnection = {
@@ -34,6 +45,7 @@ export type ParsedApiPluginResult = {
   numericStats: NumericColumnStat[];
   rowCount: number;
   rawPreview?: string;
+  feedCategory?: DataFeedCategory;
 };
 
 export type ApiPluginResult = ParsedApiPluginResult & {

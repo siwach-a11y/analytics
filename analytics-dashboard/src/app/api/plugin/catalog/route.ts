@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
-import { API_PLUGIN_DEFINITIONS } from "@/lib/api-plugin/registry";
+import { getDataFeedCatalog } from "@/lib/api-plugin/data-feeds";
 
 export async function GET() {
-  return NextResponse.json({
-    plugins: API_PLUGIN_DEFINITIONS,
-    version: "1.0.0",
-  });
+  return NextResponse.json(getDataFeedCatalog());
 }
