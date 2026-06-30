@@ -38,10 +38,10 @@ export const API_PLUGIN_DEFINITIONS: ApiPluginDefinition[] = [
   {
     id: "customer-intelligence",
     name: "Customer 360 & RFM Feed",
-    description: "RFM segments, cohort sizes, and Customer 360 KPIs as a tabular feed.",
+    description: "RFM segments and segmentation KPIs as a tabular feed.",
     category: "builtin",
     requiresEndpoint: false,
-    refreshHint: "Customer 360 · RFM · Cohorts",
+    refreshHint: "RFM · Segmentation",
   },
   {
     id: "bnii-metrics-catalog",

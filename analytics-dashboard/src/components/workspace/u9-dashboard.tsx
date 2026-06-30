@@ -59,8 +59,8 @@ export function U9Dashboard() {
           </h1>
         </div>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[#6b6258] dark:text-muted-foreground">
-          ML segmentation workspace — K-Means and hierarchical clustering across behavioral,
-          psychographic, value, lifecycle, and occasion-based models.
+          ML segmentation workspace — RFM clustering plus behavioral, value, lifecycle, occasion,
+          channel, engagement, cohort, network, and latent class models.
         </p>
       </div>
 

@@ -30,52 +30,10 @@ const CLUSTER_COLORS = [
 
 export const SEGMENTATION_MODELS: SegmentationModelDefinition[] = [
   {
-    id: "behavioral",
-    label: "Behavioral Clusters",
-    description: "Session depth, churn risk, and earn velocity patterns",
+    id: "behavioral_clustering",
+    label: "Behavioral Clustering",
+    description: "Session depth, churn risk, earn velocity, and wallet activity patterns",
     k: 5,
-  },
-  {
-    id: "archetypes",
-    label: "Evaluators · Loyalists · Power Users",
-    description: "Archetype clusters from engagement and value signals",
-    k: 4,
-  },
-  {
-    id: "intent",
-    label: "Intent Clusters",
-    description: "Acquisition channel and conversion intent",
-    k: 4,
-  },
-  {
-    id: "engagement",
-    label: "Engagement Clusters",
-    description: "Retention, NPS, and repeat-session behavior",
-    k: 5,
-  },
-  {
-    id: "ecosystem",
-    label: "Ecosystem Clusters",
-    description: "Wallet breadth, operator mix, and dApp affinity",
-    k: 4,
-  },
-  {
-    id: "psychographic",
-    label: "Psychographic Segmentation",
-    description: "Attitude and segment affinity profiles",
-    k: 4,
-  },
-  {
-    id: "behavioral_seg",
-    label: "Behavioral Segmentation",
-    description: "Full behavioral feature space clustering",
-    k: 5,
-  },
-  {
-    id: "needs",
-    label: "Needs-Based Segmentation",
-    description: "Spend, tenure, and lifecycle-derived needs",
-    k: 4,
   },
   {
     id: "value",
@@ -93,6 +51,36 @@ export const SEGMENTATION_MODELS: SegmentationModelDefinition[] = [
     id: "occasion",
     label: "Occasion-Based Segmentation",
     description: "Campaign, payday, and event-driven usage spikes",
+    k: 5,
+  },
+  {
+    id: "channel",
+    label: "Channel Segmentation",
+    description: "Acquisition channel mix and conversion behavior",
+    k: 5,
+  },
+  {
+    id: "engagement",
+    label: "Engagement Segmentation",
+    description: "Retention, NPS, and repeat-session behavior",
+    k: 5,
+  },
+  {
+    id: "cohort",
+    label: "Cohort-Based Segmentation",
+    description: "Tenure cohorts, lifecycle stage, and retention curves",
+    k: 4,
+  },
+  {
+    id: "network",
+    label: "Network Segmentation",
+    description: "Wallet breadth, operator mix, and ecosystem connectivity",
+    k: 4,
+  },
+  {
+    id: "latent_class",
+    label: "Latent Class Analysis",
+    description: "Multi-signal latent profiles across behavioral and value dimensions",
     k: 5,
   },
 ];
@@ -207,48 +195,61 @@ function generateSubscribers(workspaceId: WorkspaceId, targetCount = 220): Subsc
 
 function featureVector(sub: SubscriberRecord, modelId: SegmentationModelId): number[] {
   switch (modelId) {
-    case "behavioral":
-      return [sub.retention, sub.churnRisk, sub.monthlySpend, sub.engagementScore];
-    case "archetypes":
-      return [sub.engagementScore, sub.monthlySpend, sub.retention, sub.walletCount];
-    case "intent":
-      return [sub.channelIdx / CHANNEL_COUNT, sub.walletCount, sub.lifecycleIdx / LIFECYCLE_COUNT];
-    case "engagement":
-      return [sub.retention, sub.nps, sub.engagementScore, 100 - sub.churnRisk];
-    case "ecosystem":
-      return [
-        sub.walletCount,
-        sub.segmentIdx / SEGMENT_COUNT,
-        sub.operatorIdx / OPERATOR_COUNT,
-        sub.engagementScore,
-      ];
-    case "psychographic":
-      return [sub.nps, sub.retention, sub.segmentIdx / SEGMENT_COUNT, sub.engagementScore];
-    case "behavioral_seg":
+    case "behavioral_clustering":
       return [
         sub.retention,
-        sub.nps,
         sub.churnRisk,
         sub.monthlySpend,
         sub.engagementScore,
         sub.walletCount,
       ];
-    case "needs":
-      return [sub.monthlySpend, sub.ltv, sub.tenureMonths, sub.lifecycleIdx / LIFECYCLE_COUNT];
     case "value":
       return [sub.ltv, sub.monthlySpend, sub.engagementScore];
     case "lifecycle":
       return [sub.tenureMonths, sub.lifecycleIdx / LIFECYCLE_COUNT, sub.retention, sub.churnRisk];
     case "occasion":
       return [sub.occasionCampaign, sub.occasionPayday, sub.occasionWeekend, sub.monthlySpend];
+    case "channel":
+      return [
+        sub.channelIdx / CHANNEL_COUNT,
+        sub.retention,
+        sub.monthlySpend,
+        sub.lifecycleIdx / LIFECYCLE_COUNT,
+        sub.engagementScore,
+      ];
+    case "engagement":
+      return [sub.retention, sub.nps, sub.engagementScore, 100 - sub.churnRisk];
+    case "cohort":
+      return [
+        sub.tenureMonths / 24,
+        sub.lifecycleIdx / LIFECYCLE_COUNT,
+        sub.retention,
+        sub.nps,
+      ];
+    case "network":
+      return [
+        sub.walletCount,
+        sub.segmentIdx / SEGMENT_COUNT,
+        sub.operatorIdx / OPERATOR_COUNT,
+        sub.engagementScore,
+      ];
+    case "latent_class":
+      return [
+        sub.retention,
+        sub.nps,
+        sub.churnRisk,
+        sub.monthlySpend,
+        sub.ltv / 1000,
+        sub.walletCount,
+        sub.channelIdx / CHANNEL_COUNT,
+        sub.engagementScore,
+      ];
     default: {
       const _exhaustive: never = modelId;
       return _exhaustive;
     }
   }
 }
-
-const ARCHETYPE_LABELS = ["Evaluators", "Loyalists", "Power Users", "Explorers"];
 
 function labelClusters(
   modelId: SegmentationModelId,
@@ -269,15 +270,14 @@ function labelClusters(
   });
 
   const prefixByModel: Partial<Record<SegmentationModelId, string[]>> = {
+    behavioral_clustering: ["High momentum", "Steady actors", "Cooling", "At-risk", "Peripheral"],
     value: ["Whales", "High value", "Mid value", "Low value"],
     engagement: ["Champions", "Engaged", "Passive", "Dormant", "Disengaged"],
-    intent: ["High intent", "Researching", "Window shoppers", "Low intent"],
-    ecosystem: ["Super-connectors", "Multi-wallet", "Single-app", "Peripheral"],
-    psychographic: ["Advocates", "Pragmatists", "Skeptics", "Indifferent"],
-    needs: ["Growth seekers", "Stability", "Rewards hunters", "Price sensitive"],
+    channel: ["Carrier-led", "Organic growth", "Referral network", "Campaign-driven", "Partner-acquired"],
+    cohort: ["Fresh cohort", "Maturing", "Established", "Legacy"],
+    network: ["Super-connectors", "Multi-wallet", "Single-app", "Peripheral"],
     occasion: ["Campaign responders", "Payday spikes", "Weekend warriors", "Steady", "Event-driven"],
-    behavioral: ["High momentum", "Steady actors", "Cooling", "At-risk", "Peripheral"],
-    behavioral_seg: ["Power segment", "Core segment", "Emerging", "Niche", "Low activity"],
+    latent_class: ["Latent class I", "Latent class II", "Latent class III", "Latent class IV", "Latent class V"],
   };
 
   function rankAndLabel(rankKey: "score" | "lc", values: { i: number; score?: number; lc?: number }[]) {
@@ -292,20 +292,6 @@ function labelClusters(
       labelMap.set(r.i, prefix[rank] ?? `Cluster ${rank + 1}`);
     });
     return Array.from({ length: k }, (_, i) => labelMap.get(i) ?? `Cluster ${i + 1}`);
-  }
-
-  if (modelId === "archetypes") {
-    const ranked = clusterStats
-      .map((s, i) => ({
-        i,
-        score: s.avgEng * 0.5 + s.avgVal * 0.3 + s.avgRet * 0.2,
-      }))
-      .sort((a, b) => b.score - a.score);
-    const labelMap = new Map<number, string>();
-    ranked.forEach((r, rank) => {
-      labelMap.set(r.i, ARCHETYPE_LABELS[rank] ?? `Archetype ${rank + 1}`);
-    });
-    return Array.from({ length: k }, (_, i) => labelMap.get(i) ?? `Archetype ${i + 1}`);
   }
 
   if (modelId === "lifecycle") {
@@ -355,8 +341,8 @@ function traitsForCluster(
   if (avgRet >= 80) traits.push("High retention");
   if (avgEng >= 0.7) traits.push("Strong engagement");
   if (avgVal >= 500) traits.push("High BNRY velocity");
-  if (modelId === "archetypes") traits.push(`${label} archetype`);
   if (modelId === "value" && label.includes("Whale")) traits.push("Top LTV tier");
+  if (modelId === "latent_class") traits.push("Latent profile");
   if (traits.length === 0) traits.push("Distinct behavioral signature");
   return traits.slice(0, 3);
 }

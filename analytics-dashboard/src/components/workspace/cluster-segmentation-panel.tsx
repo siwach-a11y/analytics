@@ -40,7 +40,7 @@ type ClusterSegmentationPanelProps = {
 
 export function ClusterSegmentationPanel({ workspaceId }: ClusterSegmentationPanelProps) {
   const [method, setMethod] = useState<ClusterMethod>("kmeans");
-  const [modelId, setModelId] = useState<SegmentationModelId>("behavioral");
+  const [modelId, setModelId] = useState<SegmentationModelId>("behavioral_clustering");
 
   const analytics = useMemo(() => getWorkspaceClusterAnalytics(workspaceId), [workspaceId]);
 
@@ -76,7 +76,8 @@ export function ClusterSegmentationPanel({ workspaceId }: ClusterSegmentationPan
             Subscriber clustering
           </h2>
           <p className="mt-1 text-sm text-[#6b6258] dark:text-muted-foreground">
-            {analytics.subscriberCount} subscriber profiles · K-Means & hierarchical segmentation
+            {analytics.subscriberCount} subscriber profiles · nine segmentation models · K-Means &
+            hierarchical
           </p>
         </div>
         <Tabs

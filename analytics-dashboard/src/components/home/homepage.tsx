@@ -54,7 +54,7 @@ const QUICK_LINKS = [
   {
     href: "/customers",
     label: "Subscribers",
-    description: "Customer 360, RFM, cohorts, segmentation",
+    description: "RFM clustering and segmentation models",
     icon: Users,
     accent: "",
   },

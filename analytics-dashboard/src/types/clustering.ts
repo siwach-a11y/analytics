@@ -1,17 +1,15 @@
 export type ClusterMethod = "kmeans" | "hierarchical";
 
 export type SegmentationModelId =
-  | "behavioral"
-  | "archetypes"
-  | "intent"
-  | "engagement"
-  | "ecosystem"
-  | "psychographic"
-  | "behavioral_seg"
-  | "needs"
+  | "behavioral_clustering"
   | "value"
   | "lifecycle"
-  | "occasion";
+  | "occasion"
+  | "channel"
+  | "engagement"
+  | "cohort"
+  | "network"
+  | "latent_class";
 
 export type SegmentationModelDefinition = {
   id: SegmentationModelId;
