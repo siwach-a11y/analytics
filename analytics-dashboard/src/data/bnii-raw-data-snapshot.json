@@ -11,7 +11,7 @@
         "totalFields": 28,
         "liveFields": 28,
         "liveFieldsTarget": 28,
-        "fetchedAt": "2026-06-30T07:50:29.456Z",
+        "fetchedAt": "2026-06-30T10:11:21.122Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -273,565 +273,23 @@
         "source": "demo"
       },
       {
-        "workspaceId": "u5",
-        "brandLabel": "Nusantara",
-        "flag": "🇮🇩",
-        "country": "Indonesia",
-        "code": "U5",
-        "platform": "bnii",
-        "totalFields": 28,
-        "liveFields": 28,
-        "liveFieldsTarget": 28,
-        "fetchedAt": "2026-06-30T07:50:29.456Z",
-        "rows": [
-          {
-            "fieldId": "unique_users",
-            "label": "Unique Users (DAU)",
-            "source": "BinaryOS Events",
-            "value30d": 68400,
-            "formattedValue": "68.4K",
-            "status": "live-derived",
-            "statusLabel": "BNII live · new + repeat"
-          },
-          {
-            "fieldId": "new_users",
-            "label": "New Users",
-            "source": "BinaryOS Events",
-            "value30d": 6498,
-            "formattedValue": "6.5K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "repeat_users",
-            "label": "Repeat Users",
-            "source": "BinaryOS Events",
-            "value30d": 61902,
-            "formattedValue": "61.9K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "total_homepage_views",
-            "label": "Total Homepage Views",
-            "source": "BinaryOS Events",
-            "value30d": 4309200,
-            "formattedValue": "4.3M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "avg_session_sec",
-            "label": "Avg Time Spent (s)",
-            "source": "BinaryOS Events",
-            "value30d": 48,
-            "formattedValue": "48",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "clicked_games_total",
-            "label": "Game Clicks (total)",
-            "source": "BinaryOS Events",
-            "value30d": 246240,
-            "formattedValue": "246.2K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "stw_winners",
-            "label": "STW Winners",
-            "source": "STW Engine",
-            "value30d": 512000,
-            "formattedValue": "512K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "access_pass_buyers",
-            "label": "Access Pass Buyers (unique)",
-            "source": "BNRY Token Ledger",
-            "value30d": 22800,
-            "formattedValue": "22.8K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_total",
-            "label": "BNRY Earned (Total)",
-            "source": "BNRY Token Ledger",
-            "value30d": 18200000,
-            "formattedValue": "18.2M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_from_video",
-            "label": "BNRY Earned - Video (Fando + Ngage)",
-            "source": "BNRY Token Ledger",
-            "value30d": 92000,
-            "formattedValue": "92K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_stw",
-            "label": "BNRY Earned - STW",
-            "source": "BNRY Token Ledger",
-            "value30d": 14800000,
-            "formattedValue": "14.8M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_screentime",
-            "label": "BNRY Earned - Screen Time",
-            "source": "BNRY Token Ledger",
-            "value30d": 1680000,
-            "formattedValue": "1.7M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_topup",
-            "label": "BNRY Earned - Topup",
-            "source": "BNRY Token Ledger",
-            "value30d": 210000,
-            "formattedValue": "210K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_quest",
-            "label": "BNRY Earned - Quest",
-            "source": "BNRY Token Ledger",
-            "value30d": 1420000,
-            "formattedValue": "1.4M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_spent_total",
-            "label": "BNRY Spent (Total)",
-            "source": "BNRY Token Ledger",
-            "value30d": 2410000,
-            "formattedValue": "2.4M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_spent_emart",
-            "label": "BNRY Spent - eMart",
-            "source": "BnryMart",
-            "value30d": 130000,
-            "formattedValue": "130K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_spent_access_pass",
-            "label": "BNRY Spent - Access Pass",
-            "source": "BNRY Token Ledger",
-            "value30d": 2280000,
-            "formattedValue": "2.3M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "txns_emart",
-            "label": "Transactions - eMart",
-            "source": "BnryMart",
-            "value30d": 367,
-            "formattedValue": "367",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "txns_quest",
-            "label": "Transactions - Quest",
-            "source": "BinaryOS Events",
-            "value30d": 14200,
-            "formattedValue": "14.2K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "users_quests",
-            "label": "Users Completing Quests",
-            "source": "BinaryOS Events",
-            "value30d": 84000,
-            "formattedValue": "84K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "stw_tx",
-            "label": "STW Transactions",
-            "source": "STW Engine",
-            "value30d": 512000,
-            "formattedValue": "512K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "total_transactions",
-            "label": "Total Transactions",
-            "source": "BNRY Token Ledger",
-            "value30d": 256184,
-            "formattedValue": "256.2K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "total_credit",
-            "label": "Total Credit (BNRY In)",
-            "source": "BNRY Token Ledger",
-            "value30d": 18200000,
-            "formattedValue": "18.2M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "total_debit",
-            "label": "Total Debit (BNRY Out)",
-            "source": "BNRY Token Ledger",
-            "value30d": 2410000,
-            "formattedValue": "2.4M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "dau_ga",
-            "label": "Daily Active Users (GA4)",
-            "source": "GA4 · BNII API",
-            "value30d": 58140,
-            "formattedValue": "58.1K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "mau_d30",
-            "label": "30-Day Rolling MAU",
-            "source": "GA4 · BNII API",
-            "value30d": 2100000,
-            "formattedValue": "2.1M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "spin_usage",
-            "label": "Spin Wheel Plays",
-            "source": "STW Engine",
-            "value30d": 512000,
-            "formattedValue": "512K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_net",
-            "label": "Net BNRY (Earned − Spent)",
-            "source": "BNRY Token Ledger",
-            "value30d": 15790000,
-            "formattedValue": "15.8M",
-            "status": "live-derived",
-            "statusLabel": "BNII live · derived"
-          }
-        ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
-        "partnerId": null,
-        "telcoName": null,
-        "source": "demo"
-      },
-      {
-        "workspaceId": "u7",
-        "brandLabel": "Lanka",
+        "workspaceId": "dialog",
+        "brandLabel": "Dialog Axiata",
         "flag": "🇱🇰",
         "country": "Sri Lanka",
-        "code": "U7",
-        "platform": "bnii",
-        "totalFields": 28,
-        "liveFields": 28,
-        "liveFieldsTarget": 28,
-        "fetchedAt": "2026-06-30T07:50:29.456Z",
-        "rows": [
-          {
-            "fieldId": "unique_users",
-            "label": "Unique Users (DAU)",
-            "source": "BinaryOS Events",
-            "value30d": 44200,
-            "formattedValue": "44.2K",
-            "status": "live-derived",
-            "statusLabel": "BNII live · new + repeat"
-          },
-          {
-            "fieldId": "new_users",
-            "label": "New Users",
-            "source": "BinaryOS Events",
-            "value30d": 4199,
-            "formattedValue": "4.2K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "repeat_users",
-            "label": "Repeat Users",
-            "source": "BinaryOS Events",
-            "value30d": 40001,
-            "formattedValue": "40K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "total_homepage_views",
-            "label": "Total Homepage Views",
-            "source": "BinaryOS Events",
-            "value30d": 2519400,
-            "formattedValue": "2.5M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "avg_session_sec",
-            "label": "Avg Time Spent (s)",
-            "source": "BinaryOS Events",
-            "value30d": 45,
-            "formattedValue": "45",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "clicked_games_total",
-            "label": "Game Clicks (total)",
-            "source": "BinaryOS Events",
-            "value30d": 106080,
-            "formattedValue": "106.1K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "stw_winners",
-            "label": "STW Winners",
-            "source": "STW Engine",
-            "value30d": 318000,
-            "formattedValue": "318K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "access_pass_buyers",
-            "label": "Access Pass Buyers (unique)",
-            "source": "BNRY Token Ledger",
-            "value30d": 15400,
-            "formattedValue": "15.4K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_total",
-            "label": "BNRY Earned (Total)",
-            "source": "BNRY Token Ledger",
-            "value30d": 11400000,
-            "formattedValue": "11.4M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_from_video",
-            "label": "BNRY Earned - Video (Fando + Ngage)",
-            "source": "BNRY Token Ledger",
-            "value30d": 58000,
-            "formattedValue": "58K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_stw",
-            "label": "BNRY Earned - STW",
-            "source": "BNRY Token Ledger",
-            "value30d": 9200000,
-            "formattedValue": "9.2M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_screentime",
-            "label": "BNRY Earned - Screen Time",
-            "source": "BNRY Token Ledger",
-            "value30d": 1120000,
-            "formattedValue": "1.1M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_topup",
-            "label": "BNRY Earned - Topup",
-            "source": "BNRY Token Ledger",
-            "value30d": 132000,
-            "formattedValue": "132K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_earned_quest",
-            "label": "BNRY Earned - Quest",
-            "source": "BNRY Token Ledger",
-            "value30d": 890000,
-            "formattedValue": "890K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_spent_total",
-            "label": "BNRY Spent (Total)",
-            "source": "BNRY Token Ledger",
-            "value30d": 1620000,
-            "formattedValue": "1.6M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_spent_emart",
-            "label": "BNRY Spent - eMart",
-            "source": "BnryMart",
-            "value30d": 80000,
-            "formattedValue": "80K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_spent_access_pass",
-            "label": "BNRY Spent - Access Pass",
-            "source": "BNRY Token Ledger",
-            "value30d": 1540000,
-            "formattedValue": "1.5M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "txns_emart",
-            "label": "Transactions - eMart",
-            "source": "BnryMart",
-            "value30d": 191,
-            "formattedValue": "191",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "txns_quest",
-            "label": "Transactions - Quest",
-            "source": "BinaryOS Events",
-            "value30d": 8900,
-            "formattedValue": "8.9K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "users_quests",
-            "label": "Users Completing Quests",
-            "source": "BinaryOS Events",
-            "value30d": 55200,
-            "formattedValue": "55.2K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "stw_tx",
-            "label": "STW Transactions",
-            "source": "STW Engine",
-            "value30d": 318000,
-            "formattedValue": "318K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "total_transactions",
-            "label": "Total Transactions",
-            "source": "BNRY Token Ledger",
-            "value30d": 159096,
-            "formattedValue": "159.1K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "total_credit",
-            "label": "Total Credit (BNRY In)",
-            "source": "BNRY Token Ledger",
-            "value30d": 11400000,
-            "formattedValue": "11.4M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "total_debit",
-            "label": "Total Debit (BNRY Out)",
-            "source": "BNRY Token Ledger",
-            "value30d": 1620000,
-            "formattedValue": "1.6M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "dau_ga",
-            "label": "Daily Active Users (GA4)",
-            "source": "GA4 · BNII API",
-            "value30d": 37570,
-            "formattedValue": "37.6K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "mau_d30",
-            "label": "30-Day Rolling MAU",
-            "source": "GA4 · BNII API",
-            "value30d": 1380000,
-            "formattedValue": "1.4M",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "spin_usage",
-            "label": "Spin Wheel Plays",
-            "source": "STW Engine",
-            "value30d": 318000,
-            "formattedValue": "318K",
-            "status": "live",
-            "statusLabel": "BNII live"
-          },
-          {
-            "fieldId": "bnry_net",
-            "label": "Net BNRY (Earned − Spent)",
-            "source": "BNRY Token Ledger",
-            "value30d": 9780000,
-            "formattedValue": "9.8M",
-            "status": "live-derived",
-            "statusLabel": "BNII live · derived"
-          }
-        ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
-        "partnerId": null,
-        "telcoName": null,
-        "source": "demo"
-      },
-      {
-        "workspaceId": "u8",
-        "brandLabel": "Okara",
-        "flag": "🇻🇳",
-        "country": "Vietnam",
-        "code": "U8",
+        "code": "DLG",
         "platform": "bnii",
         "totalFields": 28,
         "liveFields": 27,
         "liveFieldsTarget": 27,
-        "fetchedAt": "2026-06-30T07:50:29.456Z",
+        "fetchedAt": "2026-06-30T10:11:21.122Z",
         "rows": [
           {
             "fieldId": "unique_users",
             "label": "Unique Users (DAU)",
             "source": "BinaryOS Events",
-            "value30d": 31800,
-            "formattedValue": "31.8K",
+            "value30d": 33660,
+            "formattedValue": "33.7K",
             "status": "live-derived",
             "statusLabel": "BNII live · new + repeat"
           },
@@ -839,8 +297,8 @@
             "fieldId": "new_users",
             "label": "New Users",
             "source": "BinaryOS Events",
-            "value30d": 3021,
-            "formattedValue": "3K",
+            "value30d": 3198,
+            "formattedValue": "3.2K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -848,8 +306,8 @@
             "fieldId": "repeat_users",
             "label": "Repeat Users",
             "source": "BinaryOS Events",
-            "value30d": 28779,
-            "formattedValue": "28.8K",
+            "value30d": 30462,
+            "formattedValue": "30.5K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -857,7 +315,7 @@
             "fieldId": "total_homepage_views",
             "label": "Total Homepage Views",
             "source": "BinaryOS Events",
-            "value30d": 1764900,
+            "value30d": 1817640,
             "formattedValue": "1.8M",
             "status": "live",
             "statusLabel": "BNII live"
@@ -866,8 +324,8 @@
             "fieldId": "avg_session_sec",
             "label": "Avg Time Spent (s)",
             "source": "BinaryOS Events",
-            "value30d": 41,
-            "formattedValue": "41",
+            "value30d": 101,
+            "formattedValue": "101",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -875,8 +333,8 @@
             "fieldId": "clicked_games_total",
             "label": "Game Clicks (total)",
             "source": "BinaryOS Events",
-            "value30d": 57240,
-            "formattedValue": "57.2K",
+            "value30d": 0,
+            "formattedValue": "0",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -884,8 +342,8 @@
             "fieldId": "stw_winners",
             "label": "STW Winners",
             "source": "STW Engine",
-            "value30d": 224000,
-            "formattedValue": "224K",
+            "value30d": 306000,
+            "formattedValue": "306K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -893,8 +351,8 @@
             "fieldId": "access_pass_buyers",
             "label": "Access Pass Buyers (unique)",
             "source": "BNRY Token Ledger",
-            "value30d": 9680,
-            "formattedValue": "9.7K",
+            "value30d": 1892,
+            "formattedValue": "1.9K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -902,8 +360,550 @@
             "fieldId": "bnry_earned_total",
             "label": "BNRY Earned (Total)",
             "source": "BNRY Token Ledger",
-            "value30d": 7640000,
-            "formattedValue": "7.6M",
+            "value30d": 1500000,
+            "formattedValue": "1.5M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_from_video",
+            "label": "BNRY Earned - Video (Fando + Ngage)",
+            "source": "BNRY Token Ledger",
+            "value30d": 30000,
+            "formattedValue": "30K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_stw",
+            "label": "BNRY Earned - STW",
+            "source": "BNRY Token Ledger",
+            "value30d": 1230000,
+            "formattedValue": "1.2M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_screentime",
+            "label": "BNRY Earned - Screen Time",
+            "source": "BNRY Token Ledger",
+            "value30d": 120000,
+            "formattedValue": "120K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_topup",
+            "label": "BNRY Earned - Topup",
+            "source": "BNRY Token Ledger",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_quest",
+            "label": "BNRY Earned - Quest",
+            "source": "BNRY Token Ledger",
+            "value30d": 120000,
+            "formattedValue": "120K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_total",
+            "label": "BNRY Spent (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 195000,
+            "formattedValue": "195K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_emart",
+            "label": "BNRY Spent - eMart",
+            "source": "BnryMart",
+            "value30d": 5850,
+            "formattedValue": "5.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_access_pass",
+            "label": "BNRY Spent - Access Pass",
+            "source": "BNRY Token Ledger",
+            "value30d": 189150,
+            "formattedValue": "189.2K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_emart",
+            "label": "Transactions - eMart",
+            "source": "BnryMart",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_quest",
+            "label": "Transactions - Quest",
+            "source": "BinaryOS Events",
+            "value30d": 1200,
+            "formattedValue": "1.2K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "users_quests",
+            "label": "Users Completing Quests",
+            "source": "BinaryOS Events",
+            "value30d": 40800,
+            "formattedValue": "40.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_tx",
+            "label": "STW Transactions",
+            "source": "STW Engine",
+            "value30d": 306000,
+            "formattedValue": "306K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_transactions",
+            "label": "Total Transactions",
+            "source": "BNRY Token Ledger",
+            "value30d": 153000,
+            "formattedValue": "153K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_credit",
+            "label": "Total Credit (BNRY In)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1500000,
+            "formattedValue": "1.5M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_debit",
+            "label": "Total Debit (BNRY Out)",
+            "source": "BNRY Token Ledger",
+            "value30d": 195000,
+            "formattedValue": "195K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "dau_ga",
+            "label": "Daily Active Users (GA4)",
+            "source": "GA4 · BNII API",
+            "value30d": 28611,
+            "formattedValue": "28.6K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "mau_d30",
+            "label": "30-Day Rolling MAU",
+            "source": "GA4 · BNII API",
+            "value30d": 1020000,
+            "formattedValue": "1M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "spin_usage",
+            "label": "Spin Wheel Plays",
+            "source": "STW Engine",
+            "value30d": 306000,
+            "formattedValue": "306K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_net",
+            "label": "Net BNRY (Earned − Spent)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1305000,
+            "formattedValue": "1.3M",
+            "status": "live-derived",
+            "statusLabel": "BNII live · derived"
+          }
+        ],
+        "dateFrom": "2026-06-01",
+        "dateTo": "2026-06-30",
+        "partnerId": null,
+        "telcoName": null,
+        "source": "demo"
+      },
+      {
+        "workspaceId": "telkomsel",
+        "brandLabel": "Telkomsel",
+        "flag": "🇮🇩",
+        "country": "Indonesia",
+        "code": "TKM",
+        "platform": "bnii",
+        "totalFields": 28,
+        "liveFields": 26,
+        "liveFieldsTarget": 26,
+        "fetchedAt": "2026-06-30T10:11:21.123Z",
+        "rows": [
+          {
+            "fieldId": "unique_users",
+            "label": "Unique Users (DAU)",
+            "source": "BinaryOS Events",
+            "value30d": 315018,
+            "formattedValue": "315K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · new + repeat"
+          },
+          {
+            "fieldId": "new_users",
+            "label": "New Users",
+            "source": "BinaryOS Events",
+            "value30d": 29927,
+            "formattedValue": "29.9K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "repeat_users",
+            "label": "Repeat Users",
+            "source": "BinaryOS Events",
+            "value30d": 285091,
+            "formattedValue": "285.1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_homepage_views",
+            "label": "Total Homepage Views",
+            "source": "BinaryOS Events",
+            "value30d": 17010972,
+            "formattedValue": "17M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "avg_session_sec",
+            "label": "Avg Time Spent (s)",
+            "source": "BinaryOS Events",
+            "value30d": 99,
+            "formattedValue": "99",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "clicked_games_total",
+            "label": "Game Clicks (total)",
+            "source": "BinaryOS Events",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_winners",
+            "label": "STW Winners",
+            "source": "STW Engine",
+            "value30d": 2863800,
+            "formattedValue": "2.9M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "access_pass_buyers",
+            "label": "Access Pass Buyers (unique)",
+            "source": "BNRY Token Ledger",
+            "value30d": 3405,
+            "formattedValue": "3.4K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_total",
+            "label": "BNRY Earned (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 2700000,
+            "formattedValue": "2.7M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_from_video",
+            "label": "BNRY Earned - Video (Fando + Ngage)",
+            "source": "BNRY Token Ledger",
+            "value30d": 54000,
+            "formattedValue": "54K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_stw",
+            "label": "BNRY Earned - STW",
+            "source": "BNRY Token Ledger",
+            "value30d": 2214000,
+            "formattedValue": "2.2M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_screentime",
+            "label": "BNRY Earned - Screen Time",
+            "source": "BNRY Token Ledger",
+            "value30d": 216000,
+            "formattedValue": "216K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_topup",
+            "label": "BNRY Earned - Topup",
+            "source": "BNRY Token Ledger",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_quest",
+            "label": "BNRY Earned - Quest",
+            "source": "BNRY Token Ledger",
+            "value30d": 216000,
+            "formattedValue": "216K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_total",
+            "label": "BNRY Spent (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 351000,
+            "formattedValue": "351K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_emart",
+            "label": "BNRY Spent - eMart",
+            "source": "BnryMart",
+            "value30d": 10530,
+            "formattedValue": "10.5K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_access_pass",
+            "label": "BNRY Spent - Access Pass",
+            "source": "BNRY Token Ledger",
+            "value30d": 340470,
+            "formattedValue": "340.5K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_emart",
+            "label": "Transactions - eMart",
+            "source": "BnryMart",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_quest",
+            "label": "Transactions - Quest",
+            "source": "BinaryOS Events",
+            "value30d": 2160,
+            "formattedValue": "2.2K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "users_quests",
+            "label": "Users Completing Quests",
+            "source": "BinaryOS Events",
+            "value30d": 381840,
+            "formattedValue": "381.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_tx",
+            "label": "STW Transactions",
+            "source": "STW Engine",
+            "value30d": 2863800,
+            "formattedValue": "2.9M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_transactions",
+            "label": "Total Transactions",
+            "source": "BNRY Token Ledger",
+            "value30d": 1431900,
+            "formattedValue": "1.4M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_credit",
+            "label": "Total Credit (BNRY In)",
+            "source": "BNRY Token Ledger",
+            "value30d": 2700000,
+            "formattedValue": "2.7M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_debit",
+            "label": "Total Debit (BNRY Out)",
+            "source": "BNRY Token Ledger",
+            "value30d": 351000,
+            "formattedValue": "351K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "dau_ga",
+            "label": "Daily Active Users (GA4)",
+            "source": "GA4 · BNII API",
+            "value30d": 267765,
+            "formattedValue": "267.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "mau_d30",
+            "label": "30-Day Rolling MAU",
+            "source": "GA4 · BNII API",
+            "value30d": 9546000,
+            "formattedValue": "9.5M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "spin_usage",
+            "label": "Spin Wheel Plays",
+            "source": "STW Engine",
+            "value30d": 2863800,
+            "formattedValue": "2.9M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_net",
+            "label": "Net BNRY (Earned − Spent)",
+            "source": "BNRY Token Ledger",
+            "value30d": 2349000,
+            "formattedValue": "2.3M",
+            "status": "live-derived",
+            "statusLabel": "BNII live · derived"
+          }
+        ],
+        "dateFrom": "2026-06-01",
+        "dateTo": "2026-06-30",
+        "partnerId": null,
+        "telcoName": null,
+        "source": "demo"
+      },
+      {
+        "workspaceId": "banglalink",
+        "brandLabel": "Banglalink",
+        "flag": "🇧🇩",
+        "country": "Bangladesh",
+        "code": "BLK",
+        "platform": "bnii",
+        "totalFields": 28,
+        "liveFields": 26,
+        "liveFieldsTarget": 26,
+        "fetchedAt": "2026-06-30T10:11:21.123Z",
+        "rows": [
+          {
+            "fieldId": "unique_users",
+            "label": "Unique Users (DAU)",
+            "source": "BinaryOS Events",
+            "value30d": 73260,
+            "formattedValue": "73.3K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · new + repeat"
+          },
+          {
+            "fieldId": "new_users",
+            "label": "New Users",
+            "source": "BinaryOS Events",
+            "value30d": 6960,
+            "formattedValue": "7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "repeat_users",
+            "label": "Repeat Users",
+            "source": "BinaryOS Events",
+            "value30d": 66300,
+            "formattedValue": "66.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_homepage_views",
+            "label": "Total Homepage Views",
+            "source": "BinaryOS Events",
+            "value30d": 3956040,
+            "formattedValue": "4M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "avg_session_sec",
+            "label": "Avg Time Spent (s)",
+            "source": "BinaryOS Events",
+            "value30d": 130,
+            "formattedValue": "130",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "clicked_games_total",
+            "label": "Game Clicks (total)",
+            "source": "BinaryOS Events",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_winners",
+            "label": "STW Winners",
+            "source": "STW Engine",
+            "value30d": 666000,
+            "formattedValue": "666K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "access_pass_buyers",
+            "label": "Access Pass Buyers (unique)",
+            "source": "BNRY Token Ledger",
+            "value30d": 2396,
+            "formattedValue": "2.4K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_total",
+            "label": "BNRY Earned (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1900000,
+            "formattedValue": "1.9M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -920,8 +920,8 @@
             "fieldId": "bnry_earned_stw",
             "label": "BNRY Earned - STW",
             "source": "BNRY Token Ledger",
-            "value30d": 6280000,
-            "formattedValue": "6.3M",
+            "value30d": 1558000,
+            "formattedValue": "1.6M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -929,8 +929,8 @@
             "fieldId": "bnry_earned_screentime",
             "label": "BNRY Earned - Screen Time",
             "source": "BNRY Token Ledger",
-            "value30d": 648000,
-            "formattedValue": "648K",
+            "value30d": 152000,
+            "formattedValue": "152K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -938,17 +938,17 @@
             "fieldId": "bnry_earned_topup",
             "label": "BNRY Earned - Topup",
             "source": "BNRY Token Ledger",
-            "value30d": null,
-            "formattedValue": "—",
-            "status": "unavailable",
-            "statusLabel": "Not available"
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
           },
           {
             "fieldId": "bnry_earned_quest",
             "label": "BNRY Earned - Quest",
             "source": "BNRY Token Ledger",
-            "value30d": 598000,
-            "formattedValue": "598K",
+            "value30d": 152000,
+            "formattedValue": "152K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -956,8 +956,8 @@
             "fieldId": "bnry_spent_total",
             "label": "BNRY Spent (Total)",
             "source": "BNRY Token Ledger",
-            "value30d": 1020000,
-            "formattedValue": "1M",
+            "value30d": 247000,
+            "formattedValue": "247K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -965,8 +965,8 @@
             "fieldId": "bnry_spent_emart",
             "label": "BNRY Spent - eMart",
             "source": "BnryMart",
-            "value30d": 52000,
-            "formattedValue": "52K",
+            "value30d": 7410,
+            "formattedValue": "7.4K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -974,8 +974,8 @@
             "fieldId": "bnry_spent_access_pass",
             "label": "BNRY Spent - Access Pass",
             "source": "BNRY Token Ledger",
-            "value30d": 968000,
-            "formattedValue": "968K",
+            "value30d": 239590,
+            "formattedValue": "239.6K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -983,8 +983,8 @@
             "fieldId": "txns_emart",
             "label": "Transactions - eMart",
             "source": "BnryMart",
-            "value30d": 75,
-            "formattedValue": "75",
+            "value30d": 0,
+            "formattedValue": "0",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -992,8 +992,8 @@
             "fieldId": "txns_quest",
             "label": "Transactions - Quest",
             "source": "BinaryOS Events",
-            "value30d": 5980,
-            "formattedValue": "6K",
+            "value30d": 1520,
+            "formattedValue": "1.5K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1001,8 +1001,8 @@
             "fieldId": "users_quests",
             "label": "Users Completing Quests",
             "source": "BinaryOS Events",
-            "value30d": 36800,
-            "formattedValue": "36.8K",
+            "value30d": 88800,
+            "formattedValue": "88.8K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1010,8 +1010,8 @@
             "fieldId": "stw_tx",
             "label": "STW Transactions",
             "source": "STW Engine",
-            "value30d": 224000,
-            "formattedValue": "224K",
+            "value30d": 666000,
+            "formattedValue": "666K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1019,8 +1019,8 @@
             "fieldId": "total_transactions",
             "label": "Total Transactions",
             "source": "BNRY Token Ledger",
-            "value30d": 112038,
-            "formattedValue": "112K",
+            "value30d": 333000,
+            "formattedValue": "333K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1028,8 +1028,8 @@
             "fieldId": "total_credit",
             "label": "Total Credit (BNRY In)",
             "source": "BNRY Token Ledger",
-            "value30d": 7640000,
-            "formattedValue": "7.6M",
+            "value30d": 1900000,
+            "formattedValue": "1.9M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1037,8 +1037,8 @@
             "fieldId": "total_debit",
             "label": "Total Debit (BNRY Out)",
             "source": "BNRY Token Ledger",
-            "value30d": 1020000,
-            "formattedValue": "1M",
+            "value30d": 247000,
+            "formattedValue": "247K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1046,8 +1046,8 @@
             "fieldId": "dau_ga",
             "label": "Daily Active Users (GA4)",
             "source": "GA4 · BNII API",
-            "value30d": 27030,
-            "formattedValue": "27K",
+            "value30d": 62271,
+            "formattedValue": "62.3K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1055,8 +1055,8 @@
             "fieldId": "mau_d30",
             "label": "30-Day Rolling MAU",
             "source": "GA4 · BNII API",
-            "value30d": 920000,
-            "formattedValue": "920K",
+            "value30d": 2220000,
+            "formattedValue": "2.2M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1064,8 +1064,8 @@
             "fieldId": "spin_usage",
             "label": "Spin Wheel Plays",
             "source": "STW Engine",
-            "value30d": 224000,
-            "formattedValue": "224K",
+            "value30d": 666000,
+            "formattedValue": "666K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1073,8 +1073,1363 @@
             "fieldId": "bnry_net",
             "label": "Net BNRY (Earned − Spent)",
             "source": "BNRY Token Ledger",
-            "value30d": 6620000,
-            "formattedValue": "6.6M",
+            "value30d": 1653000,
+            "formattedValue": "1.7M",
+            "status": "live-derived",
+            "statusLabel": "BNII live · derived"
+          }
+        ],
+        "dateFrom": "2026-06-01",
+        "dateTo": "2026-06-30",
+        "partnerId": null,
+        "telcoName": null,
+        "source": "demo"
+      },
+      {
+        "workspaceId": "robi-myairtel",
+        "brandLabel": "Robi (My Airtel)",
+        "flag": "🇧🇩",
+        "country": "Bangladesh",
+        "code": "ROBI",
+        "platform": "bnii",
+        "totalFields": 28,
+        "liveFields": 25,
+        "liveFieldsTarget": 25,
+        "fetchedAt": "2026-06-30T10:11:21.123Z",
+        "rows": [
+          {
+            "fieldId": "unique_users",
+            "label": "Unique Users (DAU)",
+            "source": "BinaryOS Events",
+            "value30d": 112860,
+            "formattedValue": "112.9K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · new + repeat"
+          },
+          {
+            "fieldId": "new_users",
+            "label": "New Users",
+            "source": "BinaryOS Events",
+            "value30d": 10722,
+            "formattedValue": "10.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "repeat_users",
+            "label": "Repeat Users",
+            "source": "BinaryOS Events",
+            "value30d": 102138,
+            "formattedValue": "102.1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_homepage_views",
+            "label": "Total Homepage Views",
+            "source": "BinaryOS Events",
+            "value30d": 6094440,
+            "formattedValue": "6.1M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "avg_session_sec",
+            "label": "Avg Time Spent (s)",
+            "source": "BinaryOS Events",
+            "value30d": 81,
+            "formattedValue": "81",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "clicked_games_total",
+            "label": "Game Clicks (total)",
+            "source": "BinaryOS Events",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_winners",
+            "label": "STW Winners",
+            "source": "STW Engine",
+            "value30d": 1026000,
+            "formattedValue": "1M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "access_pass_buyers",
+            "label": "Access Pass Buyers (unique)",
+            "source": "BNRY Token Ledger",
+            "value30d": 321,
+            "formattedValue": "321",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_total",
+            "label": "BNRY Earned (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 254500,
+            "formattedValue": "254.5K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_from_video",
+            "label": "BNRY Earned - Video (Fando + Ngage)",
+            "source": "BNRY Token Ledger",
+            "value30d": 5090,
+            "formattedValue": "5.1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_stw",
+            "label": "BNRY Earned - STW",
+            "source": "BNRY Token Ledger",
+            "value30d": 208690,
+            "formattedValue": "208.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_screentime",
+            "label": "BNRY Earned - Screen Time",
+            "source": "BNRY Token Ledger",
+            "value30d": 20360,
+            "formattedValue": "20.4K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_topup",
+            "label": "BNRY Earned - Topup",
+            "source": "BNRY Token Ledger",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_quest",
+            "label": "BNRY Earned - Quest",
+            "source": "BNRY Token Ledger",
+            "value30d": 20360,
+            "formattedValue": "20.4K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_total",
+            "label": "BNRY Spent (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 33085,
+            "formattedValue": "33.1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_emart",
+            "label": "BNRY Spent - eMart",
+            "source": "BnryMart",
+            "value30d": 993,
+            "formattedValue": "993",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_access_pass",
+            "label": "BNRY Spent - Access Pass",
+            "source": "BNRY Token Ledger",
+            "value30d": 32092,
+            "formattedValue": "32.1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_emart",
+            "label": "Transactions - eMart",
+            "source": "BnryMart",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_quest",
+            "label": "Transactions - Quest",
+            "source": "BinaryOS Events",
+            "value30d": 204,
+            "formattedValue": "204",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "users_quests",
+            "label": "Users Completing Quests",
+            "source": "BinaryOS Events",
+            "value30d": 136800,
+            "formattedValue": "136.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_tx",
+            "label": "STW Transactions",
+            "source": "STW Engine",
+            "value30d": 1026000,
+            "formattedValue": "1M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_transactions",
+            "label": "Total Transactions",
+            "source": "BNRY Token Ledger",
+            "value30d": 513000,
+            "formattedValue": "513K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_credit",
+            "label": "Total Credit (BNRY In)",
+            "source": "BNRY Token Ledger",
+            "value30d": 254500,
+            "formattedValue": "254.5K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_debit",
+            "label": "Total Debit (BNRY Out)",
+            "source": "BNRY Token Ledger",
+            "value30d": 33085,
+            "formattedValue": "33.1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "dau_ga",
+            "label": "Daily Active Users (GA4)",
+            "source": "GA4 · BNII API",
+            "value30d": 95931,
+            "formattedValue": "95.9K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "mau_d30",
+            "label": "30-Day Rolling MAU",
+            "source": "GA4 · BNII API",
+            "value30d": 3420000,
+            "formattedValue": "3.4M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "spin_usage",
+            "label": "Spin Wheel Plays",
+            "source": "STW Engine",
+            "value30d": 1026000,
+            "formattedValue": "1M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_net",
+            "label": "Net BNRY (Earned − Spent)",
+            "source": "BNRY Token Ledger",
+            "value30d": 221415,
+            "formattedValue": "221.4K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · derived"
+          }
+        ],
+        "dateFrom": "2026-06-01",
+        "dateTo": "2026-06-30",
+        "partnerId": null,
+        "telcoName": null,
+        "source": "demo"
+      },
+      {
+        "workspaceId": "gopay",
+        "brandLabel": "GoPay",
+        "flag": "🇮🇩",
+        "country": "Indonesia",
+        "code": "GOPAY",
+        "platform": "bnii",
+        "totalFields": 28,
+        "liveFields": 24,
+        "liveFieldsTarget": 24,
+        "fetchedAt": "2026-06-30T10:11:21.123Z",
+        "rows": [
+          {
+            "fieldId": "unique_users",
+            "label": "Unique Users (DAU)",
+            "source": "BinaryOS Events",
+            "value30d": 39600,
+            "formattedValue": "39.6K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · new + repeat"
+          },
+          {
+            "fieldId": "new_users",
+            "label": "New Users",
+            "source": "BinaryOS Events",
+            "value30d": 3762,
+            "formattedValue": "3.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "repeat_users",
+            "label": "Repeat Users",
+            "source": "BinaryOS Events",
+            "value30d": 35838,
+            "formattedValue": "35.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_homepage_views",
+            "label": "Total Homepage Views",
+            "source": "BinaryOS Events",
+            "value30d": 2138400,
+            "formattedValue": "2.1M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "avg_session_sec",
+            "label": "Avg Time Spent (s)",
+            "source": "BinaryOS Events",
+            "value30d": 89,
+            "formattedValue": "89",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "clicked_games_total",
+            "label": "Game Clicks (total)",
+            "source": "BinaryOS Events",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_winners",
+            "label": "STW Winners",
+            "source": "STW Engine",
+            "value30d": 360000,
+            "formattedValue": "360K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "access_pass_buyers",
+            "label": "Access Pass Buyers (unique)",
+            "source": "BNRY Token Ledger",
+            "value30d": 153,
+            "formattedValue": "153",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_total",
+            "label": "BNRY Earned (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 121100,
+            "formattedValue": "121.1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_from_video",
+            "label": "BNRY Earned - Video (Fando + Ngage)",
+            "source": "BNRY Token Ledger",
+            "value30d": 2422,
+            "formattedValue": "2.4K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_stw",
+            "label": "BNRY Earned - STW",
+            "source": "BNRY Token Ledger",
+            "value30d": 99302,
+            "formattedValue": "99.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_screentime",
+            "label": "BNRY Earned - Screen Time",
+            "source": "BNRY Token Ledger",
+            "value30d": 9688,
+            "formattedValue": "9.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_topup",
+            "label": "BNRY Earned - Topup",
+            "source": "BNRY Token Ledger",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_quest",
+            "label": "BNRY Earned - Quest",
+            "source": "BNRY Token Ledger",
+            "value30d": 9688,
+            "formattedValue": "9.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_total",
+            "label": "BNRY Spent (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 15743,
+            "formattedValue": "15.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_emart",
+            "label": "BNRY Spent - eMart",
+            "source": "BnryMart",
+            "value30d": 472,
+            "formattedValue": "472",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_access_pass",
+            "label": "BNRY Spent - Access Pass",
+            "source": "BNRY Token Ledger",
+            "value30d": 15271,
+            "formattedValue": "15.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_emart",
+            "label": "Transactions - eMart",
+            "source": "BnryMart",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_quest",
+            "label": "Transactions - Quest",
+            "source": "BinaryOS Events",
+            "value30d": 97,
+            "formattedValue": "97",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "users_quests",
+            "label": "Users Completing Quests",
+            "source": "BinaryOS Events",
+            "value30d": 48000,
+            "formattedValue": "48K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_tx",
+            "label": "STW Transactions",
+            "source": "STW Engine",
+            "value30d": 360000,
+            "formattedValue": "360K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_transactions",
+            "label": "Total Transactions",
+            "source": "BNRY Token Ledger",
+            "value30d": 180000,
+            "formattedValue": "180K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_credit",
+            "label": "Total Credit (BNRY In)",
+            "source": "BNRY Token Ledger",
+            "value30d": 121100,
+            "formattedValue": "121.1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_debit",
+            "label": "Total Debit (BNRY Out)",
+            "source": "BNRY Token Ledger",
+            "value30d": 15743,
+            "formattedValue": "15.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "dau_ga",
+            "label": "Daily Active Users (GA4)",
+            "source": "GA4 · BNII API",
+            "value30d": 33660,
+            "formattedValue": "33.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "mau_d30",
+            "label": "30-Day Rolling MAU",
+            "source": "GA4 · BNII API",
+            "value30d": 1200000,
+            "formattedValue": "1.2M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "spin_usage",
+            "label": "Spin Wheel Plays",
+            "source": "STW Engine",
+            "value30d": 360000,
+            "formattedValue": "360K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_net",
+            "label": "Net BNRY (Earned − Spent)",
+            "source": "BNRY Token Ledger",
+            "value30d": 105357,
+            "formattedValue": "105.4K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · derived"
+          }
+        ],
+        "dateFrom": "2026-06-01",
+        "dateTo": "2026-06-30",
+        "partnerId": null,
+        "telcoName": null,
+        "source": "demo"
+      },
+      {
+        "workspaceId": "bima",
+        "brandLabel": "Bima",
+        "flag": "🇮🇩",
+        "country": "Indonesia",
+        "code": "BIMA",
+        "platform": "bnii",
+        "totalFields": 28,
+        "liveFields": 22,
+        "liveFieldsTarget": 22,
+        "fetchedAt": "2026-06-30T10:11:21.123Z",
+        "rows": [
+          {
+            "fieldId": "unique_users",
+            "label": "Unique Users (DAU)",
+            "source": "BinaryOS Events",
+            "value30d": 198000,
+            "formattedValue": "198K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · new + repeat"
+          },
+          {
+            "fieldId": "new_users",
+            "label": "New Users",
+            "source": "BinaryOS Events",
+            "value30d": 18810,
+            "formattedValue": "18.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "repeat_users",
+            "label": "Repeat Users",
+            "source": "BinaryOS Events",
+            "value30d": 179190,
+            "formattedValue": "179.2K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_homepage_views",
+            "label": "Total Homepage Views",
+            "source": "BinaryOS Events",
+            "value30d": 10692000,
+            "formattedValue": "10.7M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "avg_session_sec",
+            "label": "Avg Time Spent (s)",
+            "source": "BinaryOS Events",
+            "value30d": 154,
+            "formattedValue": "154",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "clicked_games_total",
+            "label": "Game Clicks (total)",
+            "source": "BinaryOS Events",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_winners",
+            "label": "STW Winners",
+            "source": "STW Engine",
+            "value30d": 1800000,
+            "formattedValue": "1.8M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "access_pass_buyers",
+            "label": "Access Pass Buyers (unique)",
+            "source": "BNRY Token Ledger",
+            "value30d": 10,
+            "formattedValue": "10",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_total",
+            "label": "BNRY Earned (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 7900,
+            "formattedValue": "7.9K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_from_video",
+            "label": "BNRY Earned - Video (Fando + Ngage)",
+            "source": "BNRY Token Ledger",
+            "value30d": 158,
+            "formattedValue": "158",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_stw",
+            "label": "BNRY Earned - STW",
+            "source": "BNRY Token Ledger",
+            "value30d": 6478,
+            "formattedValue": "6.5K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_screentime",
+            "label": "BNRY Earned - Screen Time",
+            "source": "BNRY Token Ledger",
+            "value30d": 632,
+            "formattedValue": "632",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_topup",
+            "label": "BNRY Earned - Topup",
+            "source": "BNRY Token Ledger",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_quest",
+            "label": "BNRY Earned - Quest",
+            "source": "BNRY Token Ledger",
+            "value30d": 632,
+            "formattedValue": "632",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_total",
+            "label": "BNRY Spent (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1027,
+            "formattedValue": "1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_emart",
+            "label": "BNRY Spent - eMart",
+            "source": "BnryMart",
+            "value30d": 31,
+            "formattedValue": "31",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_access_pass",
+            "label": "BNRY Spent - Access Pass",
+            "source": "BNRY Token Ledger",
+            "value30d": 996,
+            "formattedValue": "996",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_emart",
+            "label": "Transactions - eMart",
+            "source": "BnryMart",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_quest",
+            "label": "Transactions - Quest",
+            "source": "BinaryOS Events",
+            "value30d": 6,
+            "formattedValue": "6",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "users_quests",
+            "label": "Users Completing Quests",
+            "source": "BinaryOS Events",
+            "value30d": 240000,
+            "formattedValue": "240K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_tx",
+            "label": "STW Transactions",
+            "source": "STW Engine",
+            "value30d": 1800000,
+            "formattedValue": "1.8M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_transactions",
+            "label": "Total Transactions",
+            "source": "BNRY Token Ledger",
+            "value30d": 900000,
+            "formattedValue": "900K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_credit",
+            "label": "Total Credit (BNRY In)",
+            "source": "BNRY Token Ledger",
+            "value30d": 7900,
+            "formattedValue": "7.9K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_debit",
+            "label": "Total Debit (BNRY Out)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1027,
+            "formattedValue": "1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "dau_ga",
+            "label": "Daily Active Users (GA4)",
+            "source": "GA4 · BNII API",
+            "value30d": 168300,
+            "formattedValue": "168.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "mau_d30",
+            "label": "30-Day Rolling MAU",
+            "source": "GA4 · BNII API",
+            "value30d": 6000000,
+            "formattedValue": "6M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "spin_usage",
+            "label": "Spin Wheel Plays",
+            "source": "STW Engine",
+            "value30d": 1800000,
+            "formattedValue": "1.8M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_net",
+            "label": "Net BNRY (Earned − Spent)",
+            "source": "BNRY Token Ledger",
+            "value30d": 6873,
+            "formattedValue": "6.9K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · derived"
+          }
+        ],
+        "dateFrom": "2026-06-01",
+        "dateTo": "2026-06-30",
+        "partnerId": null,
+        "telcoName": null,
+        "source": "demo"
+      },
+      {
+        "workspaceId": "myim3",
+        "brandLabel": "MyIM3",
+        "flag": "🇮🇩",
+        "country": "Indonesia",
+        "code": "MYIM3",
+        "platform": "bnii",
+        "totalFields": 28,
+        "liveFields": 22,
+        "liveFieldsTarget": 22,
+        "fetchedAt": "2026-06-30T10:11:21.123Z",
+        "rows": [
+          {
+            "fieldId": "unique_users",
+            "label": "Unique Users (DAU)",
+            "source": "BinaryOS Events",
+            "value30d": 198000,
+            "formattedValue": "198K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · new + repeat"
+          },
+          {
+            "fieldId": "new_users",
+            "label": "New Users",
+            "source": "BinaryOS Events",
+            "value30d": 18810,
+            "formattedValue": "18.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "repeat_users",
+            "label": "Repeat Users",
+            "source": "BinaryOS Events",
+            "value30d": 179190,
+            "formattedValue": "179.2K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_homepage_views",
+            "label": "Total Homepage Views",
+            "source": "BinaryOS Events",
+            "value30d": 10692000,
+            "formattedValue": "10.7M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "avg_session_sec",
+            "label": "Avg Time Spent (s)",
+            "source": "BinaryOS Events",
+            "value30d": 97,
+            "formattedValue": "97",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "clicked_games_total",
+            "label": "Game Clicks (total)",
+            "source": "BinaryOS Events",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_winners",
+            "label": "STW Winners",
+            "source": "STW Engine",
+            "value30d": 1800000,
+            "formattedValue": "1.8M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "access_pass_buyers",
+            "label": "Access Pass Buyers (unique)",
+            "source": "BNRY Token Ledger",
+            "value30d": 13,
+            "formattedValue": "13",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_total",
+            "label": "BNRY Earned (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 10200,
+            "formattedValue": "10.2K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_from_video",
+            "label": "BNRY Earned - Video (Fando + Ngage)",
+            "source": "BNRY Token Ledger",
+            "value30d": 204,
+            "formattedValue": "204",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_stw",
+            "label": "BNRY Earned - STW",
+            "source": "BNRY Token Ledger",
+            "value30d": 8364,
+            "formattedValue": "8.4K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_screentime",
+            "label": "BNRY Earned - Screen Time",
+            "source": "BNRY Token Ledger",
+            "value30d": 816,
+            "formattedValue": "816",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_topup",
+            "label": "BNRY Earned - Topup",
+            "source": "BNRY Token Ledger",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_quest",
+            "label": "BNRY Earned - Quest",
+            "source": "BNRY Token Ledger",
+            "value30d": 816,
+            "formattedValue": "816",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_total",
+            "label": "BNRY Spent (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1326,
+            "formattedValue": "1.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_emart",
+            "label": "BNRY Spent - eMart",
+            "source": "BnryMart",
+            "value30d": 40,
+            "formattedValue": "40",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_access_pass",
+            "label": "BNRY Spent - Access Pass",
+            "source": "BNRY Token Ledger",
+            "value30d": 1286,
+            "formattedValue": "1.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_emart",
+            "label": "Transactions - eMart",
+            "source": "BnryMart",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_quest",
+            "label": "Transactions - Quest",
+            "source": "BinaryOS Events",
+            "value30d": 8,
+            "formattedValue": "8",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "users_quests",
+            "label": "Users Completing Quests",
+            "source": "BinaryOS Events",
+            "value30d": 240000,
+            "formattedValue": "240K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_tx",
+            "label": "STW Transactions",
+            "source": "STW Engine",
+            "value30d": 1800000,
+            "formattedValue": "1.8M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_transactions",
+            "label": "Total Transactions",
+            "source": "BNRY Token Ledger",
+            "value30d": 900000,
+            "formattedValue": "900K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_credit",
+            "label": "Total Credit (BNRY In)",
+            "source": "BNRY Token Ledger",
+            "value30d": 10200,
+            "formattedValue": "10.2K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_debit",
+            "label": "Total Debit (BNRY Out)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1326,
+            "formattedValue": "1.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "dau_ga",
+            "label": "Daily Active Users (GA4)",
+            "source": "GA4 · BNII API",
+            "value30d": 168300,
+            "formattedValue": "168.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "mau_d30",
+            "label": "30-Day Rolling MAU",
+            "source": "GA4 · BNII API",
+            "value30d": 6000000,
+            "formattedValue": "6M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "spin_usage",
+            "label": "Spin Wheel Plays",
+            "source": "STW Engine",
+            "value30d": 1800000,
+            "formattedValue": "1.8M",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_net",
+            "label": "Net BNRY (Earned − Spent)",
+            "source": "BNRY Token Ledger",
+            "value30d": 8874,
+            "formattedValue": "8.9K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · derived"
+          }
+        ],
+        "dateFrom": "2026-06-01",
+        "dateTo": "2026-06-30",
+        "partnerId": null,
+        "telcoName": null,
+        "source": "demo"
+      },
+      {
+        "workspaceId": "okara",
+        "brandLabel": "Okara",
+        "flag": "🇵🇰",
+        "country": "Pakistan",
+        "code": "OKARA",
+        "platform": "bnii",
+        "totalFields": 28,
+        "liveFields": 22,
+        "liveFieldsTarget": 22,
+        "fetchedAt": "2026-06-30T10:11:21.123Z",
+        "rows": [
+          {
+            "fieldId": "unique_users",
+            "label": "Unique Users (DAU)",
+            "source": "BinaryOS Events",
+            "value30d": 1980,
+            "formattedValue": "2K",
+            "status": "live-derived",
+            "statusLabel": "BNII live · new + repeat"
+          },
+          {
+            "fieldId": "new_users",
+            "label": "New Users",
+            "source": "BinaryOS Events",
+            "value30d": 188,
+            "formattedValue": "188",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "repeat_users",
+            "label": "Repeat Users",
+            "source": "BinaryOS Events",
+            "value30d": 1792,
+            "formattedValue": "1.8K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_homepage_views",
+            "label": "Total Homepage Views",
+            "source": "BinaryOS Events",
+            "value30d": 106920,
+            "formattedValue": "106.9K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "avg_session_sec",
+            "label": "Avg Time Spent (s)",
+            "source": "BinaryOS Events",
+            "value30d": 47,
+            "formattedValue": "47",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "clicked_games_total",
+            "label": "Game Clicks (total)",
+            "source": "BinaryOS Events",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_winners",
+            "label": "STW Winners",
+            "source": "STW Engine",
+            "value30d": 18000,
+            "formattedValue": "18K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "access_pass_buyers",
+            "label": "Access Pass Buyers (unique)",
+            "source": "BNRY Token Ledger",
+            "value30d": 10,
+            "formattedValue": "10",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_total",
+            "label": "BNRY Earned (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 7700,
+            "formattedValue": "7.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_from_video",
+            "label": "BNRY Earned - Video (Fando + Ngage)",
+            "source": "BNRY Token Ledger",
+            "value30d": 154,
+            "formattedValue": "154",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_stw",
+            "label": "BNRY Earned - STW",
+            "source": "BNRY Token Ledger",
+            "value30d": 6314,
+            "formattedValue": "6.3K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_screentime",
+            "label": "BNRY Earned - Screen Time",
+            "source": "BNRY Token Ledger",
+            "value30d": 616,
+            "formattedValue": "616",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_topup",
+            "label": "BNRY Earned - Topup",
+            "source": "BNRY Token Ledger",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_earned_quest",
+            "label": "BNRY Earned - Quest",
+            "source": "BNRY Token Ledger",
+            "value30d": 616,
+            "formattedValue": "616",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_total",
+            "label": "BNRY Spent (Total)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1001,
+            "formattedValue": "1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_emart",
+            "label": "BNRY Spent - eMart",
+            "source": "BnryMart",
+            "value30d": 30,
+            "formattedValue": "30",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_spent_access_pass",
+            "label": "BNRY Spent - Access Pass",
+            "source": "BNRY Token Ledger",
+            "value30d": 971,
+            "formattedValue": "971",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_emart",
+            "label": "Transactions - eMart",
+            "source": "BnryMart",
+            "value30d": 0,
+            "formattedValue": "0",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "txns_quest",
+            "label": "Transactions - Quest",
+            "source": "BinaryOS Events",
+            "value30d": 6,
+            "formattedValue": "6",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "users_quests",
+            "label": "Users Completing Quests",
+            "source": "BinaryOS Events",
+            "value30d": 2400,
+            "formattedValue": "2.4K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "stw_tx",
+            "label": "STW Transactions",
+            "source": "STW Engine",
+            "value30d": 18000,
+            "formattedValue": "18K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_transactions",
+            "label": "Total Transactions",
+            "source": "BNRY Token Ledger",
+            "value30d": 9000,
+            "formattedValue": "9K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_credit",
+            "label": "Total Credit (BNRY In)",
+            "source": "BNRY Token Ledger",
+            "value30d": 7700,
+            "formattedValue": "7.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "total_debit",
+            "label": "Total Debit (BNRY Out)",
+            "source": "BNRY Token Ledger",
+            "value30d": 1001,
+            "formattedValue": "1K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "dau_ga",
+            "label": "Daily Active Users (GA4)",
+            "source": "GA4 · BNII API",
+            "value30d": 1683,
+            "formattedValue": "1.7K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "mau_d30",
+            "label": "30-Day Rolling MAU",
+            "source": "GA4 · BNII API",
+            "value30d": 60000,
+            "formattedValue": "60K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "spin_usage",
+            "label": "Spin Wheel Plays",
+            "source": "STW Engine",
+            "value30d": 18000,
+            "formattedValue": "18K",
+            "status": "live",
+            "statusLabel": "BNII live"
+          },
+          {
+            "fieldId": "bnry_net",
+            "label": "Net BNRY (Earned − Spent)",
+            "source": "BNRY Token Ledger",
+            "value30d": 6699,
+            "formattedValue": "6.7K",
             "status": "live-derived",
             "statusLabel": "BNII live · derived"
           }
@@ -1086,11 +2441,11 @@
         "source": "demo"
       }
     ],
-    "fetchedAt": "2026-06-30T07:50:29.454Z"
+    "fetchedAt": "2026-06-30T10:11:21.121Z"
   },
   "telecom": {
     "countries": [],
-    "fetchedAt": "2026-06-30T07:50:29.454Z"
+    "fetchedAt": "2026-06-30T10:11:21.121Z"
   },
-  "fetchedAt": "2026-06-30T07:50:29.454Z"
+  "fetchedAt": "2026-06-30T10:11:21.121Z"
 }

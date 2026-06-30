@@ -7,11 +7,21 @@ export type BniiPartnerConfig = {
   brandLabel: string;
 };
 
+/**
+ * Workspace slug → env var holding that telco's BNII partner UUID. UUIDs are
+ * never committed to source; set them in .env.local (see .env.local.example).
+ * Slugs mirror Atlas's WORKSPACE_TO_PARTNER map.
+ */
 const ENV_PARTNER_KEYS: Record<BniiRawDataWorkspaceId, string> = {
   u9: "NEXT_PUBLIC_BNII_PARTNER_ID_U9",
-  u5: "NEXT_PUBLIC_BNII_PARTNER_ID_U5",
-  u7: "NEXT_PUBLIC_BNII_PARTNER_ID_U7",
-  u8: "NEXT_PUBLIC_BNII_PARTNER_ID_U8",
+  dialog: "NEXT_PUBLIC_BNII_PARTNER_ID_DIALOG",
+  telkomsel: "NEXT_PUBLIC_BNII_PARTNER_ID_TELKOMSEL",
+  banglalink: "NEXT_PUBLIC_BNII_PARTNER_ID_BANGLALINK",
+  "robi-myairtel": "NEXT_PUBLIC_BNII_PARTNER_ID_ROBI_MYAIRTEL",
+  gopay: "NEXT_PUBLIC_BNII_PARTNER_ID_GOPAY",
+  bima: "NEXT_PUBLIC_BNII_PARTNER_ID_BIMA",
+  myim3: "NEXT_PUBLIC_BNII_PARTNER_ID_MYIM3",
+  okara: "NEXT_PUBLIC_BNII_PARTNER_ID_OKARA",
 };
 
 function readPartnerId(workspaceId: BniiRawDataWorkspaceId): string {
