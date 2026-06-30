@@ -60,6 +60,10 @@ export function pluginBadgeLabel(pluginId: ApiPluginId): string {
       return "Feed · Engagement";
     case "customer-intelligence":
       return "Feed · Customer 360";
+    case "bnii-metrics-catalog":
+      return "Feed · BNII Catalog";
+    case "bnii-metrics-dictionary":
+      return "Feed · BNII Dictionary";
     case "internal-api":
       return "Feed · Internal API";
     case "rest-json":

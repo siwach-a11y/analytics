@@ -42,6 +42,8 @@ export const U9 = {
   },
   apiNote:
     "Behavioural metrics live from the BNII Analytics API · 28 of 28 raw fields sourced live. Fields BNII doesn't expose yet show as —.",
+  rawDataBrand: "Atlas",
+  rawDataLiveFields: 28,
 } as const;
 
 export const U9_EARN_CHANNELS = [

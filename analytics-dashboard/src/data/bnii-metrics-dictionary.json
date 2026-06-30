@@ -1,0 +1,54 @@
+{
+  "metrics": {
+    "avg_time_spent_seconds": "Average session duration per active user, in seconds.",
+    "dau": "Daily active users from Nexus traction API for that telco day.",
+    "dau_ga": "Daily active users from GA4 (activeUsers) for the telco pagePath that day.",
+    "mau": "Monthly active users from Nexus traction API for that telco day.",
+    "mau_ga": "Rolling 30-day active users from GA4 (activeUsers) for the telco pagePath ending on that day.",
+    "new_users": "Count of users who registered on that day.",
+    "repeated_users": "Users who returned after a prior visit (repeat engagement).",
+    "total_bnry_tokens_earned": "Total amount of BNRY tokens minted or earned by users that day.",
+    "total_bnry_tokens_spent": "Total amount of BNRY tokens spent or burned by users that day.",
+    "total_credit": "Sum of all credit (incoming) wallet movements.",
+    "total_debit": "Sum of all debit (outgoing) wallet movements.",
+    "total_spin_usage": "Number of spin wheel plays that day.",
+    "total_spin_win_tokens": "BNRY tokens awarded from spin wheel wins.",
+    "total_transactions": "Total wallet transactions (all types) that day.",
+    "total_user_games": "Distinct users who played games that day.",
+    "total_views_homepage": "GA4 screen page views on the telco homepage (pagePath) for that day.",
+    "unique_spin_users": "Distinct users who used the spin wheel."
+  },
+  "transaction_type_pattern": "tx.<transaction_type>.<field>",
+  "transaction_type_fields": ["amount", "count", "unique_users"],
+  "known_transaction_types": [
+    "FOLLOW_GIVEN",
+    "LIKE_GIVEN",
+    "QUEST_REWARD",
+    "bulk_upload_reward",
+    "ecoupon_purchase",
+    "membership_reward",
+    "online_reward",
+    "purchase",
+    "spin_reward",
+    "spin_reward_ecoupon",
+    "use_pass",
+    "used_spin_wheel",
+    "voucher_redemption",
+    "wow_points_transfer"
+  ],
+  "transaction_type_field_descriptions": {
+    "count": "Number of transactions of this type.",
+    "amount": "Total BNRY amount for this transaction type.",
+    "unique_users": "Distinct users with at least one transaction of this type."
+  },
+  "known_transaction_type_descriptions": {
+    "FOLLOW_GIVEN": "Social follow rewards (Fando/Ngage).",
+    "LIKE_GIVEN": "Social like rewards (Fando/Ngage).",
+    "QUEST_REWARD": "BNRY rewards from completed quests.",
+    "online_reward": "Screen-time / online presence rewards.",
+    "purchase": "Voucher or Stripe purchases (from 2026-05-30 onward; not access pass).",
+    "spin_reward": "BNRY won from spin-the-wheel.",
+    "use_pass": "Access pass / earn-section entry fee."
+  },
+  "note": "metrics: core allowlist columns. Build transaction keys as tx.<transaction_type>.<field> using transaction_type_pattern, transaction_type_fields, and known_transaction_types."
+}

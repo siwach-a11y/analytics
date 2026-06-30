@@ -10,6 +10,7 @@ import {
   BarChart3,
   Menu,
   Globe2,
+  TableProperties,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
     },
     { href: "/customers", label: "Subscribers", icon: Users },
     { href: "/marketing", label: "Engagement", icon: Megaphone },
+    { href: "/raw-data", label: "Raw Data", icon: TableProperties },
   ];
 
   return (

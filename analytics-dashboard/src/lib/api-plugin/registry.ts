@@ -40,6 +40,25 @@ export const API_PLUGIN_DEFINITIONS: ApiPluginDefinition[] = [
     refreshHint: "Customer 360 · RFM · Cohorts",
   },
   {
+    id: "bnii-metrics-catalog",
+    name: "BNII Metrics Catalog",
+    description:
+      "Core metrics allowlist and transaction type schema from the BNII Analytics API.",
+    category: "builtin",
+    requiresEndpoint: false,
+    refreshHint: "BNII · /v1/metrics/catalog",
+    docsHint: "https://bnii-analytics-api-epgxydm2fa-as.a.run.app/v1/metrics/catalog",
+  },
+  {
+    id: "bnii-metrics-dictionary",
+    name: "BNII Metrics Dictionary",
+    description: "Metric and transaction type definitions from the BNII Analytics API.",
+    category: "builtin",
+    requiresEndpoint: false,
+    refreshHint: "BNII · /v1/metrics/dictionary",
+    docsHint: "https://bnii-analytics-api-epgxydm2fa-as.a.run.app/v1/metrics/dictionary",
+  },
+  {
     id: "internal-api",
     name: "Internal API Route",
     description: "Pull JSON from this app's analytics API routes (e.g. /api/customer-analytics).",

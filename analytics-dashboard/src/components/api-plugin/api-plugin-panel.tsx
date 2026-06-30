@@ -25,6 +25,10 @@ import {
   defaultFeedName,
   INTERNAL_FEED_ROUTES,
 } from "@/lib/api-plugin/data-feeds";
+import {
+  BNII_METRICS_CATALOG_URL,
+  BNII_METRICS_DICTIONARY_URL,
+} from "@/lib/api-plugin/bnii-api";
 import type { ApiPluginId } from "@/lib/api-plugin";
 
 type ApiPluginPanelProps = {
@@ -112,6 +116,39 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
               </Button>
             ))}
           </div>
+          <p className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+            BNII Analytics API
+          </p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <Button
+              type="button"
+              size="sm"
+              variant="secondary"
+              className="h-7 text-[10px]"
+              disabled={loading}
+              onClick={() => connectFeed("bnii-metrics-catalog")}
+            >
+              Metrics catalog
+            </Button>
+            <Button
+              type="button"
+              size="sm"
+              variant="secondary"
+              className="h-7 text-[10px]"
+              disabled={loading}
+              onClick={() => connectFeed("bnii-metrics-dictionary")}
+            >
+              Metrics dictionary
+            </Button>
+          </div>
+          <p className="mt-1 text-[10px] text-muted-foreground">
+            Live from{" "}
+            <span className="font-mono">{BNII_METRICS_CATALOG_URL.replace(/^https:\/\//, "")}</span>
+            {" · "}
+            <span className="font-mono">
+              {BNII_METRICS_DICTIONARY_URL.replace(/^https:\/\//, "")}
+            </span>
+          </p>
         </div>
       )}
 

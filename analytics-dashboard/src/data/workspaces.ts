@@ -2,6 +2,8 @@ import { U9 } from "./u9-constants";
 
 export type WorkspaceId = "u9" | "u5" | "u7" | "u3" | "u8";
 
+export const WORKSPACE_IDS: WorkspaceId[] = ["u9", "u5", "u7", "u3", "u8"];
+
 export type WorkspaceMetrics = {
   workspace: {
     id: WorkspaceId;
@@ -43,6 +45,12 @@ export type WorkspaceMetrics = {
     dauMauStickiness: number;
   };
   apiNote: string;
+  /** Raw Data page brand (e.g. Okara for Vietnam) */
+  rawDataBrand: string;
+  /** How many of 28 BNII fields are live for this country */
+  rawDataLiveFields: number;
+  /** Field IDs not yet exposed by BNII for this telco */
+  rawDataUnavailableFields?: string[];
 };
 
 export const WORKSPACES: Record<WorkspaceId, WorkspaceMetrics> = {
@@ -89,6 +97,8 @@ export const WORKSPACES: Record<WorkspaceId, WorkspaceMetrics> = {
     },
     apiNote:
       "Indonesia production workspace · BNII Analytics API · 28 of 28 fields live.",
+    rawDataBrand: "Nusantara",
+    rawDataLiveFields: 28,
   },
   u7: {
     workspace: {
@@ -132,6 +142,8 @@ export const WORKSPACES: Record<WorkspaceId, WorkspaceMetrics> = {
     },
     apiNote:
       "Philippines production workspace · BNII Analytics API · 28 of 28 fields live.",
+    rawDataBrand: "Luzon",
+    rawDataLiveFields: 28,
   },
   u3: {
     workspace: {
@@ -175,6 +187,9 @@ export const WORKSPACES: Record<WorkspaceId, WorkspaceMetrics> = {
     },
     apiNote:
       "Thailand pilot workspace · BNII Analytics API · 26 of 28 fields live.",
+    rawDataBrand: "Siam",
+    rawDataLiveFields: 26,
+    rawDataUnavailableFields: ["dau_ga", "mau_d30"],
   },
   u8: {
     workspace: {
@@ -218,6 +233,9 @@ export const WORKSPACES: Record<WorkspaceId, WorkspaceMetrics> = {
     },
     apiNote:
       "Vietnam pilot workspace · BNII Analytics API · 27 of 28 fields live.",
+    rawDataBrand: "Okara",
+    rawDataLiveFields: 27,
+    rawDataUnavailableFields: ["bnry_earned_topup"],
   },
 };
 

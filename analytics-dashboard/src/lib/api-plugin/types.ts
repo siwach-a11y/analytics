@@ -7,6 +7,8 @@ export type ApiPluginId =
   | "customer-analytics"
   | "marketing-analytics"
   | "customer-intelligence"
+  | "bnii-metrics-catalog"
+  | "bnii-metrics-dictionary"
   | "internal-api"
   | "rest-json"
   | "csv-url";

@@ -17,6 +17,9 @@ import type { WorkspaceId } from "@/data/workspaces";
 import { getCustomerIntelligence } from "@/data/customer-intelligence";
 import type { CustomerIntelligenceSummary } from "@/types/customer-intelligence";
 import type { U9Analytics } from "@/data/u9-analytics";
+import { fetchRawDataSummary, fetchAllRawDataSummaries } from "@/lib/bnii/raw-data-service";
+import { isBniiRawDataWorkspace } from "@/lib/bnii/raw-data-countries";
+import type { RawDataMultiSummary, RawDataSummary } from "@/types/bnii-raw-data";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -85,6 +88,25 @@ export const apiPluginApi = {
   },
 };
 
+export const bniiApi = {
+  rawData: async (workspaceId: WorkspaceId = "u9"): Promise<RawDataSummary> => {
+    if (!isBniiRawDataWorkspace(workspaceId)) {
+      throw new Error("Thailand is not available on the BNII Raw Data API.");
+    }
+    if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
+      return fetchRawDataSummary(workspaceId);
+    }
+    return fetchJson<RawDataSummary>(`/api/bnii/raw-data?workspace=${workspaceId}`);
+  },
+
+  rawDataAll: async (): Promise<RawDataMultiSummary> => {
+    if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
+      return fetchAllRawDataSummaries();
+    }
+    return fetchJson<RawDataMultiSummary>("/api/bnii/raw-data?all=true");
+  },
+};
+
 /** Alias for telecom-dapp-dashboard-style `api` imports. */
 export const api = {
   customerAnalytics: analyticsApi.subscribers,
@@ -95,4 +117,6 @@ export const api = {
   u9Analytics: analyticsApi.workspace,
   pluginCatalog: apiPluginApi.catalog,
   pluginFetch: apiPluginApi.fetch,
+  bniiRawData: bniiApi.rawData,
+  bniiRawDataAll: bniiApi.rawDataAll,
 };

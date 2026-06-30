@@ -11,6 +11,14 @@ import {
   workspaceFeedMeta,
 } from "./feed-builders";
 import { resolveInternalRoute } from "./data-feeds";
+import {
+  BNII_METRICS_CATALOG_URL,
+  BNII_METRICS_DICTIONARY_URL,
+  catalogToTabularFeed,
+  dictionaryToTabularFeed,
+  loadBniiMetricsCatalog,
+  loadBniiMetricsDictionary,
+} from "./bnii-api";
 import { normalizeJsonToRows, parseCsvToRows } from "./normalize";
 import type { ApiPluginFetchRequest, ParsedApiPluginResult } from "./types";
 
@@ -107,6 +115,38 @@ export function fetchCustomerIntelligencePlugin(
     connectionId: uid(),
     name: `Customer 360 Feed · ${code}`,
     pluginId: "customer-intelligence",
+    fetchedAt: new Date().toISOString(),
+    columns: feed.columns,
+    rows: feed.rows,
+    rawPreview: feed.rawPreview,
+  });
+}
+
+export async function fetchBniiMetricsCatalogPlugin(): Promise<ParsedApiPluginResult> {
+  const catalog = await loadBniiMetricsCatalog();
+  const feed = catalogToTabularFeed(catalog);
+
+  return buildResult({
+    connectionId: uid(),
+    name: "BNII Metrics Catalog",
+    pluginId: "bnii-metrics-catalog",
+    endpoint: BNII_METRICS_CATALOG_URL,
+    fetchedAt: new Date().toISOString(),
+    columns: feed.columns,
+    rows: feed.rows,
+    rawPreview: feed.rawPreview,
+  });
+}
+
+export async function fetchBniiMetricsDictionaryPlugin(): Promise<ParsedApiPluginResult> {
+  const dictionary = await loadBniiMetricsDictionary();
+  const feed = dictionaryToTabularFeed(dictionary);
+
+  return buildResult({
+    connectionId: uid(),
+    name: "BNII Metrics Dictionary",
+    pluginId: "bnii-metrics-dictionary",
+    endpoint: BNII_METRICS_DICTIONARY_URL,
     fetchedAt: new Date().toISOString(),
     columns: feed.columns,
     rows: feed.rows,
@@ -232,6 +272,10 @@ export async function runApiPlugin(request: ApiPluginFetchRequest): Promise<Pars
       return fetchMarketingAnalyticsPlugin(workspaceId);
     case "customer-intelligence":
       return fetchCustomerIntelligencePlugin(workspaceId);
+    case "bnii-metrics-catalog":
+      return fetchBniiMetricsCatalogPlugin();
+    case "bnii-metrics-dictionary":
+      return fetchBniiMetricsDictionaryPlugin();
     case "internal-api":
       if (!request.endpoint?.trim()) {
         throw new Error("Internal API feed requires a route path (e.g. /api/customer-analytics).");

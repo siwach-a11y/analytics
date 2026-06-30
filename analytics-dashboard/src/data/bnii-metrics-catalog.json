@@ -1,0 +1,39 @@
+{
+  "core_metrics": [
+    "avg_time_spent_seconds",
+    "dau",
+    "dau_ga",
+    "mau",
+    "mau_ga",
+    "new_users",
+    "repeated_users",
+    "total_bnry_tokens_earned",
+    "total_bnry_tokens_spent",
+    "total_credit",
+    "total_debit",
+    "total_spin_usage",
+    "total_spin_win_tokens",
+    "total_transactions",
+    "total_user_games",
+    "total_views_homepage",
+    "unique_spin_users"
+  ],
+  "transaction_type_pattern": "tx.<transaction_type>.<field>",
+  "transaction_type_fields": ["amount", "count", "unique_users"],
+  "known_transaction_types": [
+    "FOLLOW_GIVEN",
+    "LIKE_GIVEN",
+    "QUEST_REWARD",
+    "bulk_upload_reward",
+    "ecoupon_purchase",
+    "membership_reward",
+    "online_reward",
+    "purchase",
+    "spin_reward",
+    "spin_reward_ecoupon",
+    "use_pass",
+    "used_spin_wheel",
+    "voucher_redemption",
+    "wow_points_transfer"
+  ]
+}
