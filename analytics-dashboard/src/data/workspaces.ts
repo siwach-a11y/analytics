@@ -105,8 +105,8 @@ export const WORKSPACES: Record<WorkspaceId, WorkspaceMetrics> = {
       id: "u7",
       code: "U7",
       name: "U7",
-      country: "Philippines",
-      flag: "🇵🇭",
+      country: "Sri Lanka",
+      flag: "🇱🇰",
       tier: "Production",
       status: "Active",
       subscribers: 8_500_000,
@@ -141,8 +141,8 @@ export const WORKSPACES: Record<WorkspaceId, WorkspaceMetrics> = {
       dauMauStickiness: 3.5,
     },
     apiNote:
-      "Philippines production workspace · BNII Analytics API · 28 of 28 fields live.",
-    rawDataBrand: "Luzon",
+      "Sri Lanka production workspace · BNII Analytics API · 28 of 28 fields live.",
+    rawDataBrand: "Lanka",
     rawDataLiveFields: 28,
   },
   u3: {

@@ -3,9 +3,7 @@ import { formatRawValue } from "@/lib/bnii/format-raw-value";
 import { getBniiPartnerIfSupported } from "@/lib/bnii/partners";
 import {
   BNII_RAW_DATA_WORKSPACE_IDS,
-  TELECOM_RAW_DATA_WORKSPACE_IDS,
   type BniiRawDataWorkspaceId,
-  type TelecomRawDataWorkspaceId,
 } from "@/lib/bnii/raw-data-countries";
 import { collectQueryMetrics, RAW_DATA_FIELDS } from "@/lib/bnii/raw-data-fields";
 import {
@@ -402,38 +400,15 @@ export async function fetchRawDataSummary(
   });
 }
 
-export async function fetchTelecomRawDataSummary(
-  workspaceId: TelecomRawDataWorkspaceId = "u3"
-): Promise<RawDataSummary> {
-  const ws = getWorkspace(workspaceId);
-  const unavailableFields = ws.rawDataUnavailableFields ?? [];
-  const { dateFrom, dateTo } = last30DayRange();
-  const rows = buildRowsFromSeries(
-    workspaceDemoSeries(workspaceId),
-    "demo",
-    unavailableFields,
-    "telecom"
-  );
-
-  return buildSummary(workspaceId, "telecom", rows, {
-    dateFrom,
-    dateTo,
-    partnerId: null,
-    telcoName: null,
-    source: "demo",
-  });
-}
-
 export async function fetchRawDataPlatformSnapshot(): Promise<RawDataPlatformSnapshot> {
   const fetchedAt = new Date().toISOString();
-  const [bniiCountries, telecomCountries] = await Promise.all([
-    Promise.all(BNII_RAW_DATA_WORKSPACE_IDS.map((id) => fetchRawDataSummary(id))),
-    Promise.all(TELECOM_RAW_DATA_WORKSPACE_IDS.map((id) => fetchTelecomRawDataSummary(id))),
-  ]);
+  const bniiCountries = await Promise.all(
+    BNII_RAW_DATA_WORKSPACE_IDS.map((id) => fetchRawDataSummary(id))
+  );
 
   return {
     bnii: { countries: bniiCountries, fetchedAt },
-    telecom: { countries: telecomCountries, fetchedAt },
+    telecom: { countries: [], fetchedAt },
     fetchedAt,
   };
 }

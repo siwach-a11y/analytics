@@ -9,10 +9,10 @@ import { useWorkspace } from "@/components/providers/workspace-provider";
 import { bniiApi } from "@/lib/api";
 import {
   BNII_RAW_DATA_WORKSPACE_IDS,
+  RAW_DATA_COUNTRY_NAMES,
+  RAW_DATA_WORKSPACE_ORDER,
   defaultBniiRawDataWorkspace,
-  defaultTelecomRawDataWorkspace,
   isBniiRawDataWorkspace,
-  isTelecomRawDataWorkspace,
 } from "@/lib/bnii/raw-data-countries";
 import type { RawDataPlatformSnapshot } from "@/types/bnii-raw-data";
 import bniiRawDataSnapshot from "@/data/bnii-raw-data-snapshot.json";
@@ -22,42 +22,25 @@ const STATIC_SNAPSHOT =
     ? (bniiRawDataSnapshot as RawDataPlatformSnapshot)
     : null;
 
-type PlatformTab = "bnii" | "telecom";
-
 export function RawDataPanel() {
   const { workspaceId, setWorkspaceId, options } = useWorkspace();
-  const [platformTab, setPlatformTab] = useState<PlatformTab>(() =>
-    isTelecomRawDataWorkspace(workspaceId) ? "telecom" : "bnii"
-  );
   const [snapshot, setSnapshot] = useState<RawDataPlatformSnapshot | null>(STATIC_SNAPSHOT);
   const [loading, setLoading] = useState(!STATIC_SNAPSHOT);
   const [error, setError] = useState<string | null>(null);
 
-  const bniiOptions = useMemo(
-    () => options.filter((opt) => isBniiRawDataWorkspace(opt.id)),
-    [options]
-  );
+  const rawDataOptions = useMemo(() => {
+    const byId = new Map(options.map((opt) => [opt.id, opt]));
+    return RAW_DATA_WORKSPACE_ORDER.map((id) => byId.get(id)).filter(
+      (opt): opt is NonNullable<typeof opt> => Boolean(opt)
+    );
+  }, [options]);
 
-  const telecomOptions = useMemo(
-    () => options.filter((opt) => isTelecomRawDataWorkspace(opt.id)),
-    [options]
-  );
-
-  const bniiTabId = isBniiRawDataWorkspace(workspaceId)
+  const activeTabId = isBniiRawDataWorkspace(workspaceId)
     ? workspaceId
     : defaultBniiRawDataWorkspace();
 
-  const telecomTabId = isTelecomRawDataWorkspace(workspaceId)
-    ? workspaceId
-    : defaultTelecomRawDataWorkspace();
-
-  const bniiById = useMemo(
+  const countriesById = useMemo(
     () => new Map(snapshot?.bnii.countries.map((entry) => [entry.workspaceId, entry])),
-    [snapshot]
-  );
-
-  const telecomById = useMemo(
-    () => new Map(snapshot?.telecom.countries.map((entry) => [entry.workspaceId, entry])),
     [snapshot]
   );
 
@@ -85,25 +68,9 @@ export function RawDataPanel() {
     void load();
   }, [load]);
 
-  useEffect(() => {
-    if (isTelecomRawDataWorkspace(workspaceId)) {
-      setPlatformTab("telecom");
-    } else if (isBniiRawDataWorkspace(workspaceId)) {
-      setPlatformTab("bnii");
-    }
-  }, [workspaceId]);
-
-  function handleBniiTabChange(value: string) {
+  function handleTabChange(value: string) {
     if (isBniiRawDataWorkspace(value)) {
       setWorkspaceId(value);
-      setPlatformTab("bnii");
-    }
-  }
-
-  function handleTelecomTabChange(value: string) {
-    if (isTelecomRawDataWorkspace(value)) {
-      setWorkspaceId(value);
-      setPlatformTab("telecom");
     }
   }
 
@@ -130,97 +97,37 @@ export function RawDataPanel() {
 
   return (
     <div className="space-y-4">
-      <Tabs
-        value={platformTab}
-        onValueChange={(value) => setPlatformTab(value as PlatformTab)}
-        className="w-full"
-      >
-        <TabsList className="grid h-auto w-full max-w-md grid-cols-2">
-          <TabsTrigger value="bnii" className="text-xs">
-            BNII Analytics API
-          </TabsTrigger>
-          <TabsTrigger value="telecom" className="text-xs">
-            Telecommunications
-          </TabsTrigger>
+      <p className="text-xs text-muted-foreground">
+        {BNII_RAW_DATA_WORKSPACE_IDS.length} countries on the BNII Analytics API —{" "}
+        {RAW_DATA_COUNTRY_NAMES.join(", ")}. Thailand is not included.
+      </p>
+      <Tabs value={activeTabId} onValueChange={handleTabChange}>
+        <TabsList className="flex h-auto w-full flex-wrap justify-start gap-1 bg-muted/40 p-1">
+          {rawDataOptions.map((opt) => {
+            const summary = countriesById.get(opt.id);
+            const live = summary?.liveFieldsTarget ?? "—";
+            return (
+              <TabsTrigger
+                key={opt.id}
+                value={opt.id}
+                className="gap-1.5 text-xs data-[state=active]:bg-background"
+              >
+                <span aria-hidden>{opt.flag}</span>
+                <span>{opt.country}</span>
+                <span className="text-[10px] text-muted-foreground">({live}/28)</span>
+              </TabsTrigger>
+            );
+          })}
         </TabsList>
-
-        <TabsContent value="bnii" className="mt-4 space-y-3">
-          <p className="text-xs text-muted-foreground">
-            {BNII_RAW_DATA_WORKSPACE_IDS.length} countries on the BNII API — Thailand is not
-            included.
-          </p>
-          <Tabs value={bniiTabId} onValueChange={handleBniiTabChange}>
-            <TabsList className="flex h-auto w-full flex-wrap justify-start gap-1 bg-muted/40 p-1">
-              {bniiOptions.map((opt) => {
-                const summary = bniiById.get(opt.id);
-                const live = summary?.liveFieldsTarget ?? "—";
-                return (
-                  <TabsTrigger
-                    key={opt.id}
-                    value={opt.id}
-                    className="gap-1.5 text-xs data-[state=active]:bg-background"
-                  >
-                    <span aria-hidden>{opt.flag}</span>
-                    <span>{opt.country}</span>
-                    <span className="text-[10px] text-muted-foreground">({live}/28)</span>
-                  </TabsTrigger>
-                );
-              })}
-            </TabsList>
-            {bniiOptions.map((opt) => {
-              const summary = bniiById.get(opt.id);
-              if (!summary) return null;
-              return (
-                <TabsContent key={opt.id} value={opt.id} className="mt-4">
-                  <RawDataTable
-                    data={summary}
-                    loading={loading}
-                    onRefresh={() => void load()}
-                  />
-                </TabsContent>
-              );
-            })}
-          </Tabs>
-        </TabsContent>
-
-        <TabsContent value="telecom" className="mt-4 space-y-3">
-          <p className="text-xs text-muted-foreground">
-            Telecommunications workspace telemetry — separate from the BNII Analytics API. Thailand
-            (U3) pilot data only.
-          </p>
-          <Tabs value={telecomTabId} onValueChange={handleTelecomTabChange}>
-            <TabsList className="flex h-auto w-full flex-wrap justify-start gap-1 bg-muted/40 p-1">
-              {telecomOptions.map((opt) => {
-                const summary = telecomById.get(opt.id);
-                const live = summary?.liveFieldsTarget ?? "—";
-                return (
-                  <TabsTrigger
-                    key={opt.id}
-                    value={opt.id}
-                    className="gap-1.5 text-xs data-[state=active]:bg-background"
-                  >
-                    <span aria-hidden>{opt.flag}</span>
-                    <span>{opt.country}</span>
-                    <span className="text-[10px] text-muted-foreground">({live}/28)</span>
-                  </TabsTrigger>
-                );
-              })}
-            </TabsList>
-            {telecomOptions.map((opt) => {
-              const summary = telecomById.get(opt.id);
-              if (!summary) return null;
-              return (
-                <TabsContent key={opt.id} value={opt.id} className="mt-4">
-                  <RawDataTable
-                    data={summary}
-                    loading={loading}
-                    onRefresh={() => void load()}
-                  />
-                </TabsContent>
-              );
-            })}
-          </Tabs>
-        </TabsContent>
+        {rawDataOptions.map((opt) => {
+          const summary = countriesById.get(opt.id);
+          if (!summary) return null;
+          return (
+            <TabsContent key={opt.id} value={opt.id} className="mt-4">
+              <RawDataTable data={summary} loading={loading} onRefresh={() => void load()} />
+            </TabsContent>
+          );
+        })}
       </Tabs>
     </div>
   );

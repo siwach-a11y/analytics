@@ -11,7 +11,7 @@
         "totalFields": 28,
         "liveFields": 28,
         "liveFieldsTarget": 28,
-        "fetchedAt": "2026-06-30T07:20:14.506Z",
+        "fetchedAt": "2026-06-30T07:26:34.757Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -282,7 +282,7 @@
         "totalFields": 28,
         "liveFields": 28,
         "liveFieldsTarget": 28,
-        "fetchedAt": "2026-06-30T07:20:14.506Z",
+        "fetchedAt": "2026-06-30T07:26:34.757Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -545,15 +545,15 @@
       },
       {
         "workspaceId": "u7",
-        "brandLabel": "Luzon",
-        "flag": "🇵🇭",
-        "country": "Philippines",
+        "brandLabel": "Lanka",
+        "flag": "🇱🇰",
+        "country": "Sri Lanka",
         "code": "U7",
         "platform": "bnii",
         "totalFields": 28,
         "liveFields": 28,
         "liveFieldsTarget": 28,
-        "fetchedAt": "2026-06-30T07:20:14.506Z",
+        "fetchedAt": "2026-06-30T07:26:34.757Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -824,7 +824,7 @@
         "totalFields": 28,
         "liveFields": 27,
         "liveFieldsTarget": 27,
-        "fetchedAt": "2026-06-30T07:20:14.507Z",
+        "fetchedAt": "2026-06-30T07:26:34.757Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -1086,283 +1086,11 @@
         "source": "demo"
       }
     ],
-    "fetchedAt": "2026-06-30T07:20:14.505Z"
+    "fetchedAt": "2026-06-30T07:26:34.755Z"
   },
   "telecom": {
-    "countries": [
-      {
-        "workspaceId": "u3",
-        "brandLabel": "Siam",
-        "flag": "🇹🇭",
-        "country": "Thailand",
-        "code": "U3",
-        "platform": "telecom",
-        "totalFields": 28,
-        "liveFields": 26,
-        "liveFieldsTarget": 26,
-        "fetchedAt": "2026-06-30T07:20:14.507Z",
-        "rows": [
-          {
-            "fieldId": "unique_users",
-            "label": "Unique Users (DAU)",
-            "source": "BinaryOS Events",
-            "value30d": 22100,
-            "formattedValue": "22.1K",
-            "status": "live-derived",
-            "statusLabel": "Telecom telemetry · new + repeat"
-          },
-          {
-            "fieldId": "new_users",
-            "label": "New Users",
-            "source": "BinaryOS Events",
-            "value30d": 2100,
-            "formattedValue": "2.1K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "repeat_users",
-            "label": "Repeat Users",
-            "source": "BinaryOS Events",
-            "value30d": 20000,
-            "formattedValue": "20K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "total_homepage_views",
-            "label": "Total Homepage Views",
-            "source": "BinaryOS Events",
-            "value30d": 1127100,
-            "formattedValue": "1.1M",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "avg_session_sec",
-            "label": "Avg Time Spent (s)",
-            "source": "BinaryOS Events",
-            "value30d": 40,
-            "formattedValue": "40",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "clicked_games_total",
-            "label": "Game Clicks (total)",
-            "source": "BinaryOS Events",
-            "value30d": 33150,
-            "formattedValue": "33.1K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "stw_winners",
-            "label": "STW Winners",
-            "source": "STW Engine",
-            "value30d": 142000,
-            "formattedValue": "142K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "access_pass_buyers",
-            "label": "Access Pass Buyers (unique)",
-            "source": "BNRY Token Ledger",
-            "value30d": 6620,
-            "formattedValue": "6.6K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_earned_total",
-            "label": "BNRY Earned (Total)",
-            "source": "BNRY Token Ledger",
-            "value30d": 4920000,
-            "formattedValue": "4.9M",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_earned_from_video",
-            "label": "BNRY Earned - Video (Fando + Ngage)",
-            "source": "BNRY Token Ledger",
-            "value30d": 24000,
-            "formattedValue": "24K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_earned_stw",
-            "label": "BNRY Earned - STW",
-            "source": "BNRY Token Ledger",
-            "value30d": 3980000,
-            "formattedValue": "4M",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_earned_screentime",
-            "label": "BNRY Earned - Screen Time",
-            "source": "BNRY Token Ledger",
-            "value30d": 468000,
-            "formattedValue": "468K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_earned_topup",
-            "label": "BNRY Earned - Topup",
-            "source": "BNRY Token Ledger",
-            "value30d": 66000,
-            "formattedValue": "66K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_earned_quest",
-            "label": "BNRY Earned - Quest",
-            "source": "BNRY Token Ledger",
-            "value30d": 382000,
-            "formattedValue": "382K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_spent_total",
-            "label": "BNRY Spent (Total)",
-            "source": "BNRY Token Ledger",
-            "value30d": 698000,
-            "formattedValue": "698K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_spent_emart",
-            "label": "BNRY Spent - eMart",
-            "source": "BnryMart",
-            "value30d": 36000,
-            "formattedValue": "36K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_spent_access_pass",
-            "label": "BNRY Spent - Access Pass",
-            "source": "BNRY Token Ledger",
-            "value30d": 662000,
-            "formattedValue": "662K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "txns_emart",
-            "label": "Transactions - eMart",
-            "source": "BnryMart",
-            "value30d": 27,
-            "formattedValue": "27",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "txns_quest",
-            "label": "Transactions - Quest",
-            "source": "BinaryOS Events",
-            "value30d": 3820,
-            "formattedValue": "3.8K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "users_quests",
-            "label": "Users Completing Quests",
-            "source": "BinaryOS Events",
-            "value30d": 27200,
-            "formattedValue": "27.2K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "stw_tx",
-            "label": "STW Transactions",
-            "source": "STW Engine",
-            "value30d": 142000,
-            "formattedValue": "142K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "total_transactions",
-            "label": "Total Transactions",
-            "source": "BNRY Token Ledger",
-            "value30d": 71014,
-            "formattedValue": "71K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "total_credit",
-            "label": "Total Credit (BNRY In)",
-            "source": "BNRY Token Ledger",
-            "value30d": 4920000,
-            "formattedValue": "4.9M",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "total_debit",
-            "label": "Total Debit (BNRY Out)",
-            "source": "BNRY Token Ledger",
-            "value30d": 698000,
-            "formattedValue": "698K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "dau_ga",
-            "label": "Daily Active Users (GA4)",
-            "source": "GA4 · BNII API",
-            "value30d": null,
-            "formattedValue": "—",
-            "status": "unavailable",
-            "statusLabel": "Not available"
-          },
-          {
-            "fieldId": "mau_d30",
-            "label": "30-Day Rolling MAU",
-            "source": "GA4 · BNII API",
-            "value30d": null,
-            "formattedValue": "—",
-            "status": "unavailable",
-            "statusLabel": "Not available"
-          },
-          {
-            "fieldId": "spin_usage",
-            "label": "Spin Wheel Plays",
-            "source": "STW Engine",
-            "value30d": 142000,
-            "formattedValue": "142K",
-            "status": "live",
-            "statusLabel": "Telecom telemetry"
-          },
-          {
-            "fieldId": "bnry_net",
-            "label": "Net BNRY (Earned − Spent)",
-            "source": "BNRY Token Ledger",
-            "value30d": 4222000,
-            "formattedValue": "4.2M",
-            "status": "live-derived",
-            "statusLabel": "Telecom telemetry · derived"
-          }
-        ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
-        "partnerId": null,
-        "telcoName": null,
-        "source": "demo"
-      }
-    ],
-    "fetchedAt": "2026-06-30T07:20:14.505Z"
+    "countries": [],
+    "fetchedAt": "2026-06-30T07:26:34.755Z"
   },
-  "fetchedAt": "2026-06-30T07:20:14.505Z"
+  "fetchedAt": "2026-06-30T07:26:34.755Z"
 }

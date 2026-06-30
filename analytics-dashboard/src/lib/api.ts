@@ -17,7 +17,7 @@ import type { WorkspaceId } from "@/data/workspaces";
 import { getCustomerIntelligence } from "@/data/customer-intelligence";
 import type { CustomerIntelligenceSummary } from "@/types/customer-intelligence";
 import type { U9Analytics } from "@/data/u9-analytics";
-import { isBniiRawDataWorkspace, isTelecomRawDataWorkspace } from "@/lib/bnii/raw-data-countries";
+import { isBniiRawDataWorkspace } from "@/lib/bnii/raw-data-countries";
 import bniiRawDataSnapshot from "@/data/bnii-raw-data-snapshot.json";
 import type { RawDataMultiSummary, RawDataPlatformSnapshot, RawDataSummary } from "@/types/bnii-raw-data";
 
@@ -90,19 +90,10 @@ export const apiPluginApi = {
 
 export const bniiApi = {
   rawData: async (workspaceId: WorkspaceId = "u9"): Promise<RawDataSummary> => {
-    if (isTelecomRawDataWorkspace(workspaceId)) {
-      if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
-        const snapshot = bniiRawDataSnapshot as RawDataPlatformSnapshot;
-        const country = snapshot.telecom.countries.find((entry) => entry.workspaceId === workspaceId);
-        if (!country) {
-          throw new Error(`No telecom raw data snapshot for workspace ${workspaceId}.`);
-        }
-        return country;
-      }
-      return fetchJson<RawDataSummary>(`/api/bnii/raw-data?workspace=${workspaceId}&platform=telecom`);
-    }
     if (!isBniiRawDataWorkspace(workspaceId)) {
-      throw new Error("Unknown workspace for raw data.");
+      throw new Error(
+        "This workspace is not in raw data. Supported countries: Myanmar, Indonesia, Sri Lanka, Vietnam."
+      );
     }
     if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
       const snapshot = bniiRawDataSnapshot as RawDataPlatformSnapshot;
