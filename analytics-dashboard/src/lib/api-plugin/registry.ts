@@ -2,6 +2,8 @@ import type { ApiPluginDefinition, ApiPluginId, DataFeedCategory } from "./types
 
 export const DATA_FEED_CATEGORIES: { id: DataFeedCategory; label: string }[] = [
   { id: "builtin", label: "Built-in analytics feeds" },
+  { id: "bnii", label: "BNII Analytics API" },
+  { id: "telecom", label: "Telecommunications" },
   { id: "external", label: "External data feeds" },
 ];
 
@@ -44,7 +46,7 @@ export const API_PLUGIN_DEFINITIONS: ApiPluginDefinition[] = [
     name: "BNII Metrics Catalog",
     description:
       "Core metrics allowlist and transaction type schema from the BNII Analytics API.",
-    category: "builtin",
+    category: "bnii",
     requiresEndpoint: false,
     refreshHint: "BNII · /v1/metrics/catalog",
     docsHint: "https://bnii-analytics-api-epgxydm2fa-as.a.run.app/v1/metrics/catalog",
@@ -53,10 +55,20 @@ export const API_PLUGIN_DEFINITIONS: ApiPluginDefinition[] = [
     id: "bnii-metrics-dictionary",
     name: "BNII Metrics Dictionary",
     description: "Metric and transaction type definitions from the BNII Analytics API.",
-    category: "builtin",
+    category: "bnii",
     requiresEndpoint: false,
     refreshHint: "BNII · /v1/metrics/dictionary",
     docsHint: "https://bnii-analytics-api-epgxydm2fa-as.a.run.app/v1/metrics/dictionary",
+  },
+  {
+    id: "telecom-workspace",
+    name: "Telecom Workspace KPIs",
+    description:
+      "Thailand (U3) telecommunications telemetry — not on the BNII Analytics API.",
+    category: "telecom",
+    requiresEndpoint: false,
+    refreshHint: "Telecom · Thailand U3",
+    docsHint: "Use Raw Data → Telecommunications for field-level checks.",
   },
   {
     id: "internal-api",

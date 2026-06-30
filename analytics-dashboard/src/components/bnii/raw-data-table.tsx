@@ -42,9 +42,11 @@ type RawDataTableProps = {
 
 export function RawDataTable({ data, loading, onRefresh }: RawDataTableProps) {
   const liveLabel =
-    data.source === "api"
-      ? `${data.liveFields} of ${data.totalFields} data fields sourced live from the BNII Analytics API`
-      : `${data.liveFieldsTarget} of ${data.totalFields} data fields sourced live from the BNII Analytics API`;
+    data.platform === "telecom"
+      ? `${data.liveFieldsTarget} of ${data.totalFields} fields from telecommunications workspace telemetry (not on BNII API)`
+      : data.source === "api"
+        ? `${data.liveFields} of ${data.totalFields} data fields sourced live from the BNII Analytics API`
+        : `${data.liveFieldsTarget} of ${data.totalFields} data fields sourced live from the BNII Analytics API`;
 
   return (
     <div className="overflow-hidden rounded-xl border border-[#e8e0d4] bg-white shadow-sm dark:border-border dark:bg-card">
@@ -65,7 +67,9 @@ export function RawDataTable({ data, loading, onRefresh }: RawDataTableProps) {
               </p>
             ) : (
               <p className="mt-1 text-[10px] text-muted-foreground">
-                {data.country} · {data.code} workspace
+                {data.platform === "telecom"
+                  ? `${data.country} · ${data.code} telecommunications workspace`
+                  : `${data.country} · ${data.code} workspace`}
               </p>
             )}
           </div>

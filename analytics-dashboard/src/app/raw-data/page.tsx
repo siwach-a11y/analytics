@@ -8,7 +8,7 @@ export default function RawDataPage() {
     <>
       <Header
         title="Raw Data"
-        subtitle="Myanmar · Indonesia · Philippines · Vietnam · BNII API (Thailand excluded)"
+        subtitle="BNII Analytics API (4 countries) · Telecommunications (Thailand U3)"
       />
       <div className="p-4 lg:p-6">
         <RawDataPanel />

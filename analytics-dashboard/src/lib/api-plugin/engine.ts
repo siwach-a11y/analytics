@@ -276,6 +276,8 @@ export async function runApiPlugin(request: ApiPluginFetchRequest): Promise<Pars
       return fetchBniiMetricsCatalogPlugin();
     case "bnii-metrics-dictionary":
       return fetchBniiMetricsDictionaryPlugin();
+    case "telecom-workspace":
+      return fetchWorkspacePlugin("u3");
     case "internal-api":
       if (!request.endpoint?.trim()) {
         throw new Error("Internal API feed requires a route path (e.g. /api/customer-analytics).");

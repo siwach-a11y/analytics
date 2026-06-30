@@ -1,4 +1,4 @@
-import type { ApiPluginDefinition, ApiPluginId, ParsedApiPluginResult } from "./types";
+import type { ApiPluginDefinition, ApiPluginId, DataFeedCategory, ParsedApiPluginResult } from "./types";
 import { DATA_FEED_CATEGORIES, API_PLUGIN_DEFINITIONS } from "./registry";
 
 export type DataFeedCatalogEntry = ApiPluginDefinition & {
@@ -25,7 +25,7 @@ export const INTERNAL_FEED_ROUTES = [
 export function getDataFeedCatalog(): DataFeedCatalog {
   const categoryLabels = Object.fromEntries(
     DATA_FEED_CATEGORIES.map((c) => [c.id, c.label])
-  ) as Record<"builtin" | "external", string>;
+  ) as Record<DataFeedCategory, string>;
 
   return {
     version: "2.0",
@@ -64,6 +64,8 @@ export function pluginBadgeLabel(pluginId: ApiPluginId): string {
       return "Feed · BNII Catalog";
     case "bnii-metrics-dictionary":
       return "Feed · BNII Dictionary";
+    case "telecom-workspace":
+      return "Feed · Telecom";
     case "internal-api":
       return "Feed · Internal API";
     case "rest-json":

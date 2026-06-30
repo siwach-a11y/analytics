@@ -1,7 +1,12 @@
 import { getWorkspace, type WorkspaceId } from "@/data/workspaces";
 import { formatRawValue } from "@/lib/bnii/format-raw-value";
 import { getBniiPartnerIfSupported } from "@/lib/bnii/partners";
-import { BNII_RAW_DATA_WORKSPACE_IDS, type BniiRawDataWorkspaceId } from "@/lib/bnii/raw-data-countries";
+import {
+  BNII_RAW_DATA_WORKSPACE_IDS,
+  TELECOM_RAW_DATA_WORKSPACE_IDS,
+  type BniiRawDataWorkspaceId,
+  type TelecomRawDataWorkspaceId,
+} from "@/lib/bnii/raw-data-countries";
 import { collectQueryMetrics, RAW_DATA_FIELDS } from "@/lib/bnii/raw-data-fields";
 import {
   BNII_METRICS_QUERY_URL,
@@ -13,6 +18,8 @@ import type {
   RawDataFieldDefinition,
   RawDataFieldStatus,
   RawDataMultiSummary,
+  RawDataPlatform,
+  RawDataPlatformSnapshot,
   RawDataRow,
   RawDataSummary,
 } from "@/types/bnii-raw-data";
@@ -155,6 +162,31 @@ function statusLabel(status: RawDataFieldStatus, hint?: string): string {
   }
 }
 
+function telecomStatusLabel(status: RawDataFieldStatus, hint?: string): string {
+  switch (status) {
+    case "live":
+      return hint ? `Telecom telemetry · ${hint}` : "Telecom telemetry";
+    case "live-derived":
+      return hint ? `Telecom telemetry · ${hint}` : "Telecom telemetry · derived";
+    case "fallback":
+      return "Telecom sync pending";
+    case "unavailable":
+      return "Not exposed by telecom stack";
+    default: {
+      const _exhaustive: never = status;
+      return _exhaustive;
+    }
+  }
+}
+
+function rowStatusLabel(
+  status: RawDataFieldStatus,
+  platform: RawDataPlatform,
+  hint?: string
+): string {
+  return platform === "telecom" ? telecomStatusLabel(status, hint) : statusLabel(status, hint);
+}
+
 function applyUnavailableFields(
   rows: RawDataRow[],
   unavailableFields: string[]
@@ -173,7 +205,7 @@ function applyUnavailableFields(
       value30d: null,
       formattedValue: "—",
       status: "unavailable",
-      statusLabel: statusLabel("unavailable"),
+      statusLabel: "Not available",
     };
   });
 }
@@ -181,7 +213,8 @@ function applyUnavailableFields(
 function buildRowsFromSeries(
   series: BniiMetricPoint[],
   source: "api" | "demo",
-  unavailableFields: string[]
+  unavailableFields: string[],
+  platform: RawDataPlatform
 ): RawDataRow[] {
   const computed: Record<string, number | null> = {};
   const nonDerived = RAW_DATA_FIELDS.filter((f) => f.aggregation !== "derived");
@@ -204,7 +237,7 @@ function buildRowsFromSeries(
         value30d: null,
         formattedValue: "—",
         status: "unavailable",
-        statusLabel: statusLabel("unavailable"),
+        statusLabel: rowStatusLabel("unavailable", platform),
       };
     }
 
@@ -226,7 +259,7 @@ function buildRowsFromSeries(
       value30d,
       formattedValue: formatRawValue(value30d),
       status,
-      statusLabel: statusLabel(status, field.statusHint),
+      statusLabel: rowStatusLabel(status, platform, field.statusHint),
     };
   });
 
@@ -283,7 +316,8 @@ function workspaceDemoSeries(workspaceId: WorkspaceId): BniiMetricPoint[] {
 }
 
 function buildSummary(
-  workspaceId: BniiRawDataWorkspaceId,
+  workspaceId: WorkspaceId,
+  platform: RawDataPlatform,
   rows: RawDataRow[],
   partial: Pick<
     RawDataSummary,
@@ -291,15 +325,16 @@ function buildSummary(
   >
 ): RawDataSummary {
   const ws = getWorkspace(workspaceId);
-  const partner = getBniiPartnerIfSupported(workspaceId)!;
+  const brandLabel = ws.rawDataBrand;
   const liveFieldsTarget = ws.rawDataLiveFields;
 
   return {
     workspaceId,
-    brandLabel: partner.brandLabel,
+    brandLabel,
     flag: ws.workspace.flag,
     country: ws.workspace.country,
     code: ws.workspace.code,
+    platform,
     totalFields: RAW_DATA_FIELDS.length,
     liveFields: Math.min(liveFieldsTarget, countLiveRows(rows)),
     liveFieldsTarget,
@@ -337,8 +372,8 @@ export async function fetchRawDataSummary(
 
       const result = query.results[0];
       if (result?.series?.length) {
-        const rows = buildRowsFromSeries(result.series, "api", unavailableFields);
-        return buildSummary(workspaceId, rows, {
+        const rows = buildRowsFromSeries(result.series, "api", unavailableFields, "bnii");
+        return buildSummary(workspaceId, "bnii", rows, {
           dateFrom,
           dateTo,
           partnerId: result.partner_id,
@@ -354,10 +389,11 @@ export async function fetchRawDataSummary(
   const rows = buildRowsFromSeries(
     workspaceDemoSeries(workspaceId),
     "demo",
-    unavailableFields
+    unavailableFields,
+    "bnii"
   );
 
-  return buildSummary(workspaceId, rows, {
+  return buildSummary(workspaceId, "bnii", rows, {
     dateFrom,
     dateTo,
     partnerId: partner.partnerId || null,
@@ -366,14 +402,46 @@ export async function fetchRawDataSummary(
   });
 }
 
-export async function fetchAllRawDataSummaries(): Promise<RawDataMultiSummary> {
-  const countries = await Promise.all(
-    BNII_RAW_DATA_WORKSPACE_IDS.map((id) => fetchRawDataSummary(id))
+export async function fetchTelecomRawDataSummary(
+  workspaceId: TelecomRawDataWorkspaceId = "u3"
+): Promise<RawDataSummary> {
+  const ws = getWorkspace(workspaceId);
+  const unavailableFields = ws.rawDataUnavailableFields ?? [];
+  const { dateFrom, dateTo } = last30DayRange();
+  const rows = buildRowsFromSeries(
+    workspaceDemoSeries(workspaceId),
+    "demo",
+    unavailableFields,
+    "telecom"
   );
+
+  return buildSummary(workspaceId, "telecom", rows, {
+    dateFrom,
+    dateTo,
+    partnerId: null,
+    telcoName: null,
+    source: "demo",
+  });
+}
+
+export async function fetchRawDataPlatformSnapshot(): Promise<RawDataPlatformSnapshot> {
+  const fetchedAt = new Date().toISOString();
+  const [bniiCountries, telecomCountries] = await Promise.all([
+    Promise.all(BNII_RAW_DATA_WORKSPACE_IDS.map((id) => fetchRawDataSummary(id))),
+    Promise.all(TELECOM_RAW_DATA_WORKSPACE_IDS.map((id) => fetchTelecomRawDataSummary(id))),
+  ]);
+
   return {
-    countries,
-    fetchedAt: new Date().toISOString(),
+    bnii: { countries: bniiCountries, fetchedAt },
+    telecom: { countries: telecomCountries, fetchedAt },
+    fetchedAt,
   };
+}
+
+/** @deprecated Use fetchRawDataPlatformSnapshot */
+export async function fetchAllRawDataSummaries(): Promise<RawDataMultiSummary> {
+  const snapshot = await fetchRawDataPlatformSnapshot();
+  return snapshot.bnii;
 }
 
 export { BNII_METRICS_QUERY_URL };

@@ -29,6 +29,7 @@ import {
   BNII_METRICS_CATALOG_URL,
   BNII_METRICS_DICTIONARY_URL,
 } from "@/lib/api-plugin/bnii-api";
+import { isBniiDataFeedWorkspace } from "@/lib/bnii/raw-data-countries";
 import type { ApiPluginId } from "@/lib/api-plugin";
 
 type ApiPluginPanelProps = {
@@ -49,6 +50,9 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
 
   const definition = API_PLUGIN_DEFINITIONS.find((p) => p.id === pluginId);
   const builtinFeeds = useMemo(() => getFeedsByCategory("builtin"), []);
+  const bniiFeeds = useMemo(() => getFeedsByCategory("bnii"), []);
+  const telecomFeeds = useMemo(() => getFeedsByCategory("telecom"), []);
+  const bniiFeedsAvailable = isBniiDataFeedWorkspace(workspaceId);
 
   async function connectFeed(id: ApiPluginId, feedEndpoint?: string) {
     setPluginId(id);
@@ -119,35 +123,60 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
           <p className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
             BNII Analytics API
           </p>
+          {!bniiFeedsAvailable ? (
+            <p className="mt-2 text-[10px] text-muted-foreground">
+              Thailand (U3) is not on the BNII API. Switch to a BNII workspace to connect catalog
+              or dictionary feeds.
+            </p>
+          ) : (
+            <>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {bniiFeeds.map((feed) => (
+                  <Button
+                    key={feed.id}
+                    type="button"
+                    size="sm"
+                    variant="secondary"
+                    className="h-7 text-[10px]"
+                    disabled={loading}
+                    onClick={() => connectFeed(feed.id)}
+                  >
+                    {feed.name}
+                  </Button>
+                ))}
+              </div>
+              <p className="mt-1 text-[10px] text-muted-foreground">
+                Live from{" "}
+                <span className="font-mono">
+                  {BNII_METRICS_CATALOG_URL.replace(/^https:\/\//, "")}
+                </span>
+                {" · "}
+                <span className="font-mono">
+                  {BNII_METRICS_DICTIONARY_URL.replace(/^https:\/\//, "")}
+                </span>
+              </p>
+            </>
+          )}
+          <p className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+            Telecommunications
+          </p>
           <div className="mt-2 flex flex-wrap gap-2">
-            <Button
-              type="button"
-              size="sm"
-              variant="secondary"
-              className="h-7 text-[10px]"
-              disabled={loading}
-              onClick={() => connectFeed("bnii-metrics-catalog")}
-            >
-              Metrics catalog
-            </Button>
-            <Button
-              type="button"
-              size="sm"
-              variant="secondary"
-              className="h-7 text-[10px]"
-              disabled={loading}
-              onClick={() => connectFeed("bnii-metrics-dictionary")}
-            >
-              Metrics dictionary
-            </Button>
+            {telecomFeeds.map((feed) => (
+              <Button
+                key={feed.id}
+                type="button"
+                size="sm"
+                variant="outline"
+                className="h-7 text-[10px]"
+                disabled={loading}
+                onClick={() => connectFeed(feed.id)}
+              >
+                {feed.name}
+              </Button>
+            ))}
           </div>
           <p className="mt-1 text-[10px] text-muted-foreground">
-            Live from{" "}
-            <span className="font-mono">{BNII_METRICS_CATALOG_URL.replace(/^https:\/\//, "")}</span>
-            {" · "}
-            <span className="font-mono">
-              {BNII_METRICS_DICTIONARY_URL.replace(/^https:\/\//, "")}
-            </span>
+            Thailand U3 telemetry — separate from BNII Analytics API feeds.
           </p>
         </div>
       )}

@@ -7,6 +7,8 @@ export type RawDataSource =
 
 export type RawDataFieldStatus = "live" | "live-derived" | "fallback" | "unavailable";
 
+export type RawDataPlatform = "bnii" | "telecom";
+
 export type RawDataFieldDefinition = {
   id: string;
   label: string;
@@ -35,6 +37,7 @@ export type RawDataSummary = {
   flag: string;
   country: string;
   code: string;
+  platform: RawDataPlatform;
   totalFields: number;
   liveFields: number;
   liveFieldsTarget: number;
@@ -49,5 +52,11 @@ export type RawDataSummary = {
 
 export type RawDataMultiSummary = {
   countries: RawDataSummary[];
+  fetchedAt: string;
+};
+
+export type RawDataPlatformSnapshot = {
+  bnii: RawDataMultiSummary;
+  telecom: RawDataMultiSummary;
   fetchedAt: string;
 };

@@ -1,14 +1,30 @@
 import type { WorkspaceId } from "@/data/workspaces";
 
-/** Countries included in BNII Raw Data (Thailand excluded — not on API) */
+/** BNII API raw data — Thailand (U3) is excluded */
 export const BNII_RAW_DATA_WORKSPACE_IDS = ["u9", "u5", "u7", "u8"] as const satisfies readonly WorkspaceId[];
 
+/** Telecommunications-only workspaces — separate from BNII API */
+export const TELECOM_RAW_DATA_WORKSPACE_IDS = ["u3"] as const satisfies readonly WorkspaceId[];
+
 export type BniiRawDataWorkspaceId = (typeof BNII_RAW_DATA_WORKSPACE_IDS)[number];
+export type TelecomRawDataWorkspaceId = (typeof TELECOM_RAW_DATA_WORKSPACE_IDS)[number];
 
 export function isBniiRawDataWorkspace(id: string): id is BniiRawDataWorkspaceId {
   return (BNII_RAW_DATA_WORKSPACE_IDS as readonly string[]).includes(id);
 }
 
+export function isTelecomRawDataWorkspace(id: string): id is TelecomRawDataWorkspaceId {
+  return (TELECOM_RAW_DATA_WORKSPACE_IDS as readonly string[]).includes(id);
+}
+
 export function defaultBniiRawDataWorkspace(): BniiRawDataWorkspaceId {
   return "u9";
+}
+
+export function defaultTelecomRawDataWorkspace(): TelecomRawDataWorkspaceId {
+  return "u3";
+}
+
+export function isBniiDataFeedWorkspace(workspaceId: WorkspaceId): boolean {
+  return isBniiRawDataWorkspace(workspaceId);
 }
