@@ -1,6 +1,7 @@
 import { getCustomerAnalytics } from "@/data/customer-analytics";
 import { getMarketingAnalytics } from "@/data/marketing-analytics";
 import { getWorkspace, type WorkspaceId } from "@/data/workspaces";
+import { isBniiDataFeedWorkspace } from "@/lib/bnii/raw-data-countries";
 import { computeNumericStats } from "@/lib/data-stats";
 import { getPluginDefinition } from "./registry";
 import {
@@ -260,6 +261,14 @@ export async function fetchCsvUrlPlugin(
   });
 }
 
+function assertBniiFeedWorkspace(workspaceId: WorkspaceId, feedName: string): void {
+  if (!isBniiDataFeedWorkspace(workspaceId)) {
+    throw new Error(
+      `${feedName} is not available for Thailand (U3). Switch to a BNII workspace (U9, U5, U7, or U8).`
+    );
+  }
+}
+
 export async function runApiPlugin(request: ApiPluginFetchRequest): Promise<ParsedApiPluginResult> {
   const workspaceId = request.workspaceId ?? "u9";
 
@@ -273,8 +282,10 @@ export async function runApiPlugin(request: ApiPluginFetchRequest): Promise<Pars
     case "customer-intelligence":
       return fetchCustomerIntelligencePlugin(workspaceId);
     case "bnii-metrics-catalog":
+      assertBniiFeedWorkspace(workspaceId, "BNII Metrics Catalog");
       return fetchBniiMetricsCatalogPlugin();
     case "bnii-metrics-dictionary":
+      assertBniiFeedWorkspace(workspaceId, "BNII Metrics Dictionary");
       return fetchBniiMetricsDictionaryPlugin();
     case "telecom-workspace":
       return fetchWorkspacePlugin("u3");

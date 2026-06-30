@@ -1,3 +1,5 @@
+import type { WorkspaceId } from "@/data/workspaces";
+import { isBniiDataFeedWorkspace } from "@/lib/bnii/raw-data-countries";
 import type { ApiPluginDefinition, ApiPluginId, DataFeedCategory } from "./types";
 
 export const DATA_FEED_CATEGORIES: { id: DataFeedCategory; label: string }[] = [
@@ -108,6 +110,30 @@ export function getPluginDefinition(id: string): ApiPluginDefinition | undefined
 
 export function getFeedsByCategory(category: DataFeedCategory): ApiPluginDefinition[] {
   return API_PLUGIN_DEFINITIONS.filter((p) => p.category === category);
+}
+
+export function isBniiFeedPlugin(id: ApiPluginId): boolean {
+  return getPluginDefinition(id)?.category === "bnii";
+}
+
+export function isTelecomFeedPlugin(id: ApiPluginId): boolean {
+  return getPluginDefinition(id)?.category === "telecom";
+}
+
+export function getVisibleFeedCategories(
+  workspaceId: WorkspaceId
+): { id: DataFeedCategory; label: string; feeds: ApiPluginDefinition[] }[] {
+  const bniiAvailable = isBniiDataFeedWorkspace(workspaceId);
+
+  return DATA_FEED_CATEGORIES.map((category) => ({
+    ...category,
+    feeds: getFeedsByCategory(category.id).filter((feed) => {
+      if (feed.category === "bnii") {
+        return bniiAvailable;
+      }
+      return true;
+    }),
+  })).filter((category) => category.feeds.length > 0);
 }
 
 export function getBuiltinFeedIds(): ApiPluginId[] {

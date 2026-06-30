@@ -47,9 +47,9 @@ export type WorkspaceMetrics = {
   apiNote: string;
   /** Raw Data page brand (e.g. Okara for Vietnam) */
   rawDataBrand: string;
-  /** How many of 28 BNII fields are live for this country */
+  /** How many of 28 raw data fields are live for this country */
   rawDataLiveFields: number;
-  /** Field IDs not yet exposed by BNII for this telco */
+  /** Field IDs not yet exposed for this workspace platform */
   rawDataUnavailableFields?: string[];
 };
 
@@ -186,7 +186,7 @@ export const WORKSPACES: Record<WorkspaceId, WorkspaceMetrics> = {
       dauMauStickiness: 3.2,
     },
     apiNote:
-      "Thailand pilot workspace · BNII Analytics API · 26 of 28 fields live.",
+      "Thailand pilot workspace · Telecommunications telemetry · 26 of 28 fields live (not on BNII API).",
     rawDataBrand: "Siam",
     rawDataLiveFields: 26,
     rawDataUnavailableFields: ["dau_ga", "mau_d30"],

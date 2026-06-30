@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Loader2, Plug, Radio, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,8 +18,9 @@ import { apiPluginApi } from "@/lib/api";
 import { finalizeApiResult } from "@/lib/upload-translate";
 import {
   API_PLUGIN_DEFINITIONS,
-  DATA_FEED_CATEGORIES,
   getFeedsByCategory,
+  getVisibleFeedCategories,
+  isBniiFeedPlugin,
 } from "@/lib/api-plugin/registry";
 import {
   defaultFeedName,
@@ -52,9 +53,27 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
   const builtinFeeds = useMemo(() => getFeedsByCategory("builtin"), []);
   const bniiFeeds = useMemo(() => getFeedsByCategory("bnii"), []);
   const telecomFeeds = useMemo(() => getFeedsByCategory("telecom"), []);
+  const visibleFeedCategories = useMemo(
+    () => getVisibleFeedCategories(workspaceId),
+    [workspaceId]
+  );
   const bniiFeedsAvailable = isBniiDataFeedWorkspace(workspaceId);
+  const bniiConnectBlocked = isBniiFeedPlugin(pluginId) && !bniiFeedsAvailable;
+
+  useEffect(() => {
+    if (isBniiFeedPlugin(pluginId) && !bniiFeedsAvailable) {
+      setPluginId("workspace");
+    }
+  }, [pluginId, bniiFeedsAvailable]);
 
   async function connectFeed(id: ApiPluginId, feedEndpoint?: string) {
+    if (isBniiFeedPlugin(id) && !isBniiDataFeedWorkspace(workspaceId)) {
+      setError(
+        "Thailand (U3) is not on the BNII API. Switch to a BNII workspace to connect catalog or dictionary feeds."
+      );
+      return;
+    }
+
     setPluginId(id);
     setError(null);
     setLoading(true);
@@ -191,12 +210,12 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              {DATA_FEED_CATEGORIES.map((cat) => (
+              {visibleFeedCategories.map((cat) => (
                 <div key={cat.id}>
                   <p className="px-2 py-1.5 text-[10px] font-semibold uppercase text-muted-foreground">
                     {cat.label}
                   </p>
-                  {getFeedsByCategory(cat.id).map((p) => (
+                  {cat.feeds.map((p) => (
                     <SelectItem key={p.id} value={p.id} className="text-xs">
                       {p.name}
                     </SelectItem>
@@ -287,7 +306,7 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
           type="button"
           className="w-full gap-2"
           size={compact ? "sm" : "default"}
-          disabled={loading}
+          disabled={loading || bniiConnectBlocked}
           onClick={handleConnect}
         >
           {loading ? (
@@ -297,6 +316,12 @@ export function ApiPluginPanel({ onConnected, compact }: ApiPluginPanelProps) {
           )}
           Connect feed
         </Button>
+
+        {bniiConnectBlocked && (
+          <p className="text-xs text-muted-foreground">
+            BNII Analytics API feeds are not available on Thailand (U3).
+          </p>
+        )}
 
         {error && <p className="text-xs text-destructive">{error}</p>}
       </div>
