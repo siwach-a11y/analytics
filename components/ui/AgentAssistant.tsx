@@ -16,6 +16,25 @@ import {
 
 const MODEL_LABEL = "claude-opus-4-8";
 
+const COUNTRY_STORAGE_KEY = "search_country";
+
+const COUNTRIES: { code: string; name: string; flag: string }[] = [
+  { code: "US", name: "United States", flag: "🇺🇸" },
+  { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
+  { code: "TH", name: "Thailand", flag: "🇹🇭" },
+  { code: "SG", name: "Singapore", flag: "🇸🇬" },
+  { code: "MY", name: "Malaysia", flag: "🇲🇾" },
+  { code: "ID", name: "Indonesia", flag: "🇮🇩" },
+  { code: "PH", name: "Philippines", flag: "🇵🇭" },
+  { code: "IN", name: "India", flag: "🇮🇳" },
+  { code: "AE", name: "UAE", flag: "🇦🇪" },
+  { code: "AU", name: "Australia", flag: "🇦🇺" },
+];
+
+function countryName(code: string): string {
+  return COUNTRIES.find((c) => c.code === code)?.name ?? code;
+}
+
 interface Message {
   role: "user" | "assistant";
   text: string;
@@ -82,14 +101,22 @@ export default function AgentAssistant({
   const [connected, setConnected] = useState(false);
   const [keyDraft, setKeyDraft] = useState("");
   const [showKeyForm, setShowKeyForm] = useState(false);
+  const [country, setCountry] = useState("US");
   const bodyEndRef = useRef<HTMLDivElement>(null);
   const sentInitial = useRef(false);
 
   useEffect(() => {
     const sync = () => setConnected(hasStoredKey());
     sync();
+    const stored = window.localStorage.getItem(COUNTRY_STORAGE_KEY);
+    if (stored) setCountry(stored);
     return onKeyChange(sync);
   }, []);
+
+  const changeCountry = (code: string) => {
+    setCountry(code);
+    window.localStorage.setItem(COUNTRY_STORAGE_KEY, code);
+  };
 
   useEffect(() => {
     bodyEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -120,8 +147,7 @@ export default function AgentAssistant({
     ]);
     setIsLoading(true);
 
-    const searchDirective =
-      "Use web search to find current, real offers and information. Answer concisely and cite the specific source websites you used with their links. If the question is vague, make reasonable assumptions and still search — do not just ask clarifying questions.";
+    const searchDirective = `Use web search to find current, real offers and information available in ${countryName(country)}. Prioritize sources and deals relevant to that country. Answer concisely and cite the specific source websites you used with their links. If the question is vague, make reasonable assumptions and still search — do not just ask clarifying questions.`;
     const prompt = systemContext
       ? `${systemContext}\n\n${searchDirective}\n\nUser question: ${text}`
       : `${searchDirective}\n\nUser question: ${text}`;
@@ -327,6 +353,20 @@ export default function AgentAssistant({
 
         {/* Input */}
         <div className="px-4 pt-3 border-t border-white/10">
+          <div className="flex items-center justify-end gap-2 px-1 pb-2">
+            <label className="text-[11px] text-neutral-500">Search region</label>
+            <select
+              value={country}
+              onChange={(e) => changeCountry(e.target.value)}
+              className="rounded-lg bg-neutral-800 border border-white/10 text-xs text-neutral-200 py-1 pl-2 pr-6 focus:outline-none focus:border-white/20"
+            >
+              {COUNTRIES.map((c) => (
+                <option key={c.code} value={c.code}>
+                  {c.flag} {c.name}
+                </option>
+              ))}
+            </select>
+          </div>
           <form
             onSubmit={(e) => {
               e.preventDefault();

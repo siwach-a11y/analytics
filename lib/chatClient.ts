@@ -79,6 +79,14 @@ async function streamBrowserDirect(
     throw err;
   }
 
+  // Country is applied via the prompt (the web_search user_location parameter
+  // only supports a limited set of countries and rejects others with a 400).
+  const webSearchTool = {
+    type: "web_search_20250305",
+    name: "web_search",
+    max_uses: 5,
+  };
+
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -92,13 +100,7 @@ async function streamBrowserDirect(
       max_tokens: 1024,
       stream: true,
       messages: [{ role: "user", content: prompt }],
-      ...(useWebSearch
-        ? {
-            tools: [
-              { type: "web_search_20250305", name: "web_search", max_uses: 5 },
-            ],
-          }
-        : {}),
+      ...(useWebSearch ? { tools: [webSearchTool] } : {}),
     }),
   });
 
