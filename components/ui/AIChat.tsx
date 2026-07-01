@@ -2,7 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 import StatusBar from "./StatusBar";
+import KeyManager from "./KeyManager";
 import { streamChatResponse } from "@/lib/chatClient";
+import { MISSING_KEY_ERROR } from "@/lib/anthropicKey";
 
 interface Message {
   role: "user" | "assistant";
@@ -56,14 +58,16 @@ export default function AIChat({
           return updated;
         });
       });
-    } catch {
+    } catch (err) {
+      const message =
+        err instanceof Error && err.name === MISSING_KEY_ERROR
+          ? "Add your Anthropic API key above (🔑 Connect AI) to start chatting."
+          : err instanceof Error
+            ? err.message
+            : "Sorry, I couldn't process your request.";
       setMessages((prev) => {
         const updated = [...prev];
-        updated[updated.length - 1] = {
-          role: "assistant",
-          content:
-            "Sorry, I couldn't process your request. Please check that the API key is configured.",
-        };
+        updated[updated.length - 1] = { role: "assistant", content: message };
         return updated;
       });
     } finally {
@@ -79,6 +83,10 @@ export default function AIChat({
           <h3 className="font-semibold text-slate-900 tracking-tight">{title}</h3>
         </div>
         <StatusBar status={isLoading ? "thinking" : "idle"} />
+      </div>
+
+      <div className="mb-4">
+        <KeyManager />
       </div>
 
       {quickAsks.length > 0 && (
@@ -159,8 +167,14 @@ export function useAIResponse() {
 
     try {
       await streamChatResponse(prompt, true, setResponse);
-    } catch {
-      setResponse("Unable to get AI response. Check your API key.");
+    } catch (err) {
+      setResponse(
+        err instanceof Error && err.name === MISSING_KEY_ERROR
+          ? "Add your Anthropic API key (🔑 Connect AI in the assistant below) to use this."
+          : err instanceof Error
+            ? err.message
+            : "Unable to get AI response."
+      );
     } finally {
       setIsLoading(false);
     }

@@ -51,4 +51,15 @@ This publishes the `out/` directory (deploy it to the `gh-pages` branch).
 - Buy 1 Get 1 Agent — buy-one-get-one offers
 - Flash Sale Agent — flash sales
 
-The AI assistant on each agent page needs the live server (`npm run dev`) with `ANTHROPIC_API_KEY` set; the static build runs the browse/filter UI without a backend.
+## AI assistant
+
+The chat / "Details" / "Alternatives" features call Anthropic (`claude-opus-4-8`) two ways, in order:
+
+1. **Server route `/api/chat`** — used automatically when a backend is present
+   (local `npm run dev`, or a Cloudflare/Vercel deploy) with `ANTHROPIC_API_KEY`
+   set server-side.
+2. **Browser bring-your-own-key** — on the static GitHub Pages demo there is no
+   backend, so a visitor pastes their own key into the **🔑 Connect AI** panel.
+   It's stored only in their browser (localStorage) and sent directly to
+   Anthropic via the `anthropic-dangerous-direct-browser-access` mechanism —
+   never uploaded to this site, committed, or stored on a server.
