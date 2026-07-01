@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import StatusBar from "./StatusBar";
+import { streamChatResponse } from "@/lib/chatClient";
 
 interface Message {
   role: "user" | "assistant";
@@ -42,45 +43,29 @@ export default function AIChat({
       ? `${systemContext}\n\nUser question: ${text.trim()}`
       : text.trim();
 
+    setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, useWebSearch: true }),
+      await streamChatResponse(prompt, true, (assistantText) => {
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1] = {
+            role: "assistant",
+            content: assistantText,
+          };
+          return updated;
+        });
       });
-
-      if (!res.ok) throw new Error("Failed to get response");
-
-      const reader = res.body?.getReader();
-      const decoder = new TextDecoder();
-      let assistantText = "";
-
-      setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
-
-      if (reader) {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          assistantText += decoder.decode(value, { stream: true });
-          setMessages((prev) => {
-            const updated = [...prev];
-            updated[updated.length - 1] = {
-              role: "assistant",
-              content: assistantText,
-            };
-            return updated;
-          });
-        }
-      }
     } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
+      setMessages((prev) => {
+        const updated = [...prev];
+        updated[updated.length - 1] = {
           role: "assistant",
           content:
-            "Sorry, I couldn't process your request. Please check that ANTHROPIC_API_KEY is set in .env.local.",
-        },
-      ]);
+            "Sorry, I couldn't process your request. Please check that the API key is configured.",
+        };
+        return updated;
+      });
     } finally {
       setIsLoading(false);
     }
@@ -173,26 +158,7 @@ export function useAIResponse() {
     setResponse("");
 
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, useWebSearch: true }),
-      });
-
-      if (!res.ok) throw new Error("Failed");
-
-      const reader = res.body?.getReader();
-      const decoder = new TextDecoder();
-      let text = "";
-
-      if (reader) {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          text += decoder.decode(value, { stream: true });
-          setResponse(text);
-        }
-      }
+      await streamChatResponse(prompt, true, setResponse);
     } catch {
       setResponse("Unable to get AI response. Check your API key.");
     } finally {

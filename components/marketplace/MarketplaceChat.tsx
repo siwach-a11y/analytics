@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { agents } from "@/lib/data/agents";
+import { streamChatResponse } from "@/lib/chatClient";
 
 export default function MarketplaceChat() {
   const [input, setInput] = useState("");
@@ -34,26 +35,7 @@ User query: ${input.trim()}
 Recommend 1-3 agents that best match their needs. Explain why each is a good fit. Be concise and helpful.`;
 
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, useWebSearch: false }),
-      });
-
-      if (!res.ok) throw new Error("Failed");
-
-      const reader = res.body?.getReader();
-      const decoder = new TextDecoder();
-      let text = "";
-
-      if (reader) {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          text += decoder.decode(value, { stream: true });
-          setResponse(text);
-        }
-      }
+      await streamChatResponse(prompt, false, setResponse);
     } catch {
       setResponse("Unable to get recommendations. Please check your API key.");
     } finally {
