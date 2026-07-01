@@ -11,7 +11,7 @@
         "totalFields": 28,
         "liveFields": 28,
         "liveFieldsTarget": 28,
-        "fetchedAt": "2026-06-30T10:20:13.760Z",
+        "fetchedAt": "2026-07-01T02:37:00.794Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -266,8 +266,8 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
@@ -282,14 +282,14 @@
         "totalFields": 28,
         "liveFields": 27,
         "liveFieldsTarget": 27,
-        "fetchedAt": "2026-06-30T10:20:13.760Z",
+        "fetchedAt": "2026-07-01T02:37:00.794Z",
         "rows": [
           {
             "fieldId": "unique_users",
             "label": "Unique Users (DAU)",
             "source": "BinaryOS Events",
-            "value30d": 33660,
-            "formattedValue": "33.7K",
+            "value30d": 7524,
+            "formattedValue": "7.5K",
             "status": "live-derived",
             "statusLabel": "BNII live · new + repeat"
           },
@@ -297,8 +297,8 @@
             "fieldId": "new_users",
             "label": "New Users",
             "source": "BinaryOS Events",
-            "value30d": 3198,
-            "formattedValue": "3.2K",
+            "value30d": 715,
+            "formattedValue": "715",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -306,8 +306,8 @@
             "fieldId": "repeat_users",
             "label": "Repeat Users",
             "source": "BinaryOS Events",
-            "value30d": 30462,
-            "formattedValue": "30.5K",
+            "value30d": 6809,
+            "formattedValue": "6.8K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -315,8 +315,8 @@
             "fieldId": "total_homepage_views",
             "label": "Total Homepage Views",
             "source": "BinaryOS Events",
-            "value30d": 1817640,
-            "formattedValue": "1.8M",
+            "value30d": 406296,
+            "formattedValue": "406.3K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -342,8 +342,8 @@
             "fieldId": "stw_winners",
             "label": "STW Winners",
             "source": "STW Engine",
-            "value30d": 306000,
-            "formattedValue": "306K",
+            "value30d": 68400,
+            "formattedValue": "68.4K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -459,8 +459,8 @@
             "fieldId": "users_quests",
             "label": "Users Completing Quests",
             "source": "BinaryOS Events",
-            "value30d": 40800,
-            "formattedValue": "40.8K",
+            "value30d": 9120,
+            "formattedValue": "9.1K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -468,8 +468,8 @@
             "fieldId": "stw_tx",
             "label": "STW Transactions",
             "source": "STW Engine",
-            "value30d": 306000,
-            "formattedValue": "306K",
+            "value30d": 68400,
+            "formattedValue": "68.4K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -477,8 +477,8 @@
             "fieldId": "total_transactions",
             "label": "Total Transactions",
             "source": "BNRY Token Ledger",
-            "value30d": 153000,
-            "formattedValue": "153K",
+            "value30d": 34200,
+            "formattedValue": "34.2K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -504,8 +504,8 @@
             "fieldId": "dau_ga",
             "label": "Daily Active Users (GA4)",
             "source": "GA4 · BNII API",
-            "value30d": 28611,
-            "formattedValue": "28.6K",
+            "value30d": 6395,
+            "formattedValue": "6.4K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -513,8 +513,8 @@
             "fieldId": "mau_d30",
             "label": "30-Day Rolling MAU",
             "source": "GA4 · BNII API",
-            "value30d": 1020000,
-            "formattedValue": "1M",
+            "value30d": 228000,
+            "formattedValue": "228K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -522,8 +522,8 @@
             "fieldId": "spin_usage",
             "label": "Spin Wheel Plays",
             "source": "STW Engine",
-            "value30d": 306000,
-            "formattedValue": "306K",
+            "value30d": 68400,
+            "formattedValue": "68.4K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -537,8 +537,8 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
@@ -548,19 +548,19 @@
         "brandLabel": "Telkomsel",
         "flag": "🇮🇩",
         "country": "Indonesia",
-        "code": "TKM",
+        "code": "TKS",
         "platform": "bnii",
         "totalFields": 28,
         "liveFields": 26,
         "liveFieldsTarget": 26,
-        "fetchedAt": "2026-06-30T10:20:13.761Z",
+        "fetchedAt": "2026-07-01T02:37:00.794Z",
         "rows": [
           {
             "fieldId": "unique_users",
             "label": "Unique Users (DAU)",
             "source": "BinaryOS Events",
-            "value30d": 315018,
-            "formattedValue": "315K",
+            "value30d": 128700,
+            "formattedValue": "128.7K",
             "status": "live-derived",
             "statusLabel": "BNII live · new + repeat"
           },
@@ -568,8 +568,8 @@
             "fieldId": "new_users",
             "label": "New Users",
             "source": "BinaryOS Events",
-            "value30d": 29927,
-            "formattedValue": "29.9K",
+            "value30d": 12227,
+            "formattedValue": "12.2K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -577,8 +577,8 @@
             "fieldId": "repeat_users",
             "label": "Repeat Users",
             "source": "BinaryOS Events",
-            "value30d": 285091,
-            "formattedValue": "285.1K",
+            "value30d": 116473,
+            "formattedValue": "116.5K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -586,8 +586,8 @@
             "fieldId": "total_homepage_views",
             "label": "Total Homepage Views",
             "source": "BinaryOS Events",
-            "value30d": 17010972,
-            "formattedValue": "17M",
+            "value30d": 6949800,
+            "formattedValue": "6.9M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -613,8 +613,8 @@
             "fieldId": "stw_winners",
             "label": "STW Winners",
             "source": "STW Engine",
-            "value30d": 2863800,
-            "formattedValue": "2.9M",
+            "value30d": 1170000,
+            "formattedValue": "1.2M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -730,8 +730,8 @@
             "fieldId": "users_quests",
             "label": "Users Completing Quests",
             "source": "BinaryOS Events",
-            "value30d": 381840,
-            "formattedValue": "381.8K",
+            "value30d": 156000,
+            "formattedValue": "156K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -739,8 +739,8 @@
             "fieldId": "stw_tx",
             "label": "STW Transactions",
             "source": "STW Engine",
-            "value30d": 2863800,
-            "formattedValue": "2.9M",
+            "value30d": 1170000,
+            "formattedValue": "1.2M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -748,8 +748,8 @@
             "fieldId": "total_transactions",
             "label": "Total Transactions",
             "source": "BNRY Token Ledger",
-            "value30d": 1431900,
-            "formattedValue": "1.4M",
+            "value30d": 585000,
+            "formattedValue": "585K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -775,8 +775,8 @@
             "fieldId": "dau_ga",
             "label": "Daily Active Users (GA4)",
             "source": "GA4 · BNII API",
-            "value30d": 267765,
-            "formattedValue": "267.8K",
+            "value30d": 109395,
+            "formattedValue": "109.4K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -784,8 +784,8 @@
             "fieldId": "mau_d30",
             "label": "30-Day Rolling MAU",
             "source": "GA4 · BNII API",
-            "value30d": 9546000,
-            "formattedValue": "9.5M",
+            "value30d": 3900000,
+            "formattedValue": "3.9M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -793,8 +793,8 @@
             "fieldId": "spin_usage",
             "label": "Spin Wheel Plays",
             "source": "STW Engine",
-            "value30d": 2863800,
-            "formattedValue": "2.9M",
+            "value30d": 1170000,
+            "formattedValue": "1.2M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -808,15 +808,15 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
       },
       {
         "workspaceId": "banglalink",
-        "brandLabel": "Banglalink",
+        "brandLabel": "Ryze-Banglalink",
         "flag": "🇧🇩",
         "country": "Bangladesh",
         "code": "BLK",
@@ -824,14 +824,14 @@
         "totalFields": 28,
         "liveFields": 26,
         "liveFieldsTarget": 26,
-        "fetchedAt": "2026-06-30T10:20:13.761Z",
+        "fetchedAt": "2026-07-01T02:37:00.794Z",
         "rows": [
           {
             "fieldId": "unique_users",
             "label": "Unique Users (DAU)",
             "source": "BinaryOS Events",
-            "value30d": 73260,
-            "formattedValue": "73.3K",
+            "value30d": 1980,
+            "formattedValue": "2K",
             "status": "live-derived",
             "statusLabel": "BNII live · new + repeat"
           },
@@ -839,8 +839,8 @@
             "fieldId": "new_users",
             "label": "New Users",
             "source": "BinaryOS Events",
-            "value30d": 6960,
-            "formattedValue": "7K",
+            "value30d": 188,
+            "formattedValue": "188",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -848,8 +848,8 @@
             "fieldId": "repeat_users",
             "label": "Repeat Users",
             "source": "BinaryOS Events",
-            "value30d": 66300,
-            "formattedValue": "66.3K",
+            "value30d": 1792,
+            "formattedValue": "1.8K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -857,8 +857,8 @@
             "fieldId": "total_homepage_views",
             "label": "Total Homepage Views",
             "source": "BinaryOS Events",
-            "value30d": 3956040,
-            "formattedValue": "4M",
+            "value30d": 106920,
+            "formattedValue": "106.9K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -884,8 +884,8 @@
             "fieldId": "stw_winners",
             "label": "STW Winners",
             "source": "STW Engine",
-            "value30d": 666000,
-            "formattedValue": "666K",
+            "value30d": 18000,
+            "formattedValue": "18K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1001,8 +1001,8 @@
             "fieldId": "users_quests",
             "label": "Users Completing Quests",
             "source": "BinaryOS Events",
-            "value30d": 88800,
-            "formattedValue": "88.8K",
+            "value30d": 2400,
+            "formattedValue": "2.4K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1010,8 +1010,8 @@
             "fieldId": "stw_tx",
             "label": "STW Transactions",
             "source": "STW Engine",
-            "value30d": 666000,
-            "formattedValue": "666K",
+            "value30d": 18000,
+            "formattedValue": "18K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1019,8 +1019,8 @@
             "fieldId": "total_transactions",
             "label": "Total Transactions",
             "source": "BNRY Token Ledger",
-            "value30d": 333000,
-            "formattedValue": "333K",
+            "value30d": 9000,
+            "formattedValue": "9K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1046,8 +1046,8 @@
             "fieldId": "dau_ga",
             "label": "Daily Active Users (GA4)",
             "source": "GA4 · BNII API",
-            "value30d": 62271,
-            "formattedValue": "62.3K",
+            "value30d": 1683,
+            "formattedValue": "1.7K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1055,8 +1055,8 @@
             "fieldId": "mau_d30",
             "label": "30-Day Rolling MAU",
             "source": "GA4 · BNII API",
-            "value30d": 2220000,
-            "formattedValue": "2.2M",
+            "value30d": 60000,
+            "formattedValue": "60K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1064,8 +1064,8 @@
             "fieldId": "spin_usage",
             "label": "Spin Wheel Plays",
             "source": "STW Engine",
-            "value30d": 666000,
-            "formattedValue": "666K",
+            "value30d": 18000,
+            "formattedValue": "18K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1079,8 +1079,8 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
@@ -1095,7 +1095,7 @@
         "totalFields": 28,
         "liveFields": 25,
         "liveFieldsTarget": 25,
-        "fetchedAt": "2026-06-30T10:20:13.761Z",
+        "fetchedAt": "2026-07-01T02:37:00.794Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -1350,8 +1350,8 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
@@ -1366,7 +1366,7 @@
         "totalFields": 28,
         "liveFields": 24,
         "liveFieldsTarget": 24,
-        "fetchedAt": "2026-06-30T10:20:13.761Z",
+        "fetchedAt": "2026-07-01T02:37:00.795Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -1621,8 +1621,8 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
@@ -1637,14 +1637,14 @@
         "totalFields": 28,
         "liveFields": 22,
         "liveFieldsTarget": 22,
-        "fetchedAt": "2026-06-30T10:20:13.761Z",
+        "fetchedAt": "2026-07-01T02:37:00.795Z",
         "rows": [
           {
             "fieldId": "unique_users",
             "label": "Unique Users (DAU)",
             "source": "BinaryOS Events",
-            "value30d": 198000,
-            "formattedValue": "198K",
+            "value30d": 79200,
+            "formattedValue": "79.2K",
             "status": "live-derived",
             "statusLabel": "BNII live · new + repeat"
           },
@@ -1652,8 +1652,8 @@
             "fieldId": "new_users",
             "label": "New Users",
             "source": "BinaryOS Events",
-            "value30d": 18810,
-            "formattedValue": "18.8K",
+            "value30d": 7524,
+            "formattedValue": "7.5K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1661,8 +1661,8 @@
             "fieldId": "repeat_users",
             "label": "Repeat Users",
             "source": "BinaryOS Events",
-            "value30d": 179190,
-            "formattedValue": "179.2K",
+            "value30d": 71676,
+            "formattedValue": "71.7K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1670,8 +1670,8 @@
             "fieldId": "total_homepage_views",
             "label": "Total Homepage Views",
             "source": "BinaryOS Events",
-            "value30d": 10692000,
-            "formattedValue": "10.7M",
+            "value30d": 4276800,
+            "formattedValue": "4.3M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1697,8 +1697,8 @@
             "fieldId": "stw_winners",
             "label": "STW Winners",
             "source": "STW Engine",
-            "value30d": 1800000,
-            "formattedValue": "1.8M",
+            "value30d": 720000,
+            "formattedValue": "720K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1814,8 +1814,8 @@
             "fieldId": "users_quests",
             "label": "Users Completing Quests",
             "source": "BinaryOS Events",
-            "value30d": 240000,
-            "formattedValue": "240K",
+            "value30d": 96000,
+            "formattedValue": "96K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1823,8 +1823,8 @@
             "fieldId": "stw_tx",
             "label": "STW Transactions",
             "source": "STW Engine",
-            "value30d": 1800000,
-            "formattedValue": "1.8M",
+            "value30d": 720000,
+            "formattedValue": "720K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1832,8 +1832,8 @@
             "fieldId": "total_transactions",
             "label": "Total Transactions",
             "source": "BNRY Token Ledger",
-            "value30d": 900000,
-            "formattedValue": "900K",
+            "value30d": 360000,
+            "formattedValue": "360K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1859,8 +1859,8 @@
             "fieldId": "dau_ga",
             "label": "Daily Active Users (GA4)",
             "source": "GA4 · BNII API",
-            "value30d": 168300,
-            "formattedValue": "168.3K",
+            "value30d": 67320,
+            "formattedValue": "67.3K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1868,8 +1868,8 @@
             "fieldId": "mau_d30",
             "label": "30-Day Rolling MAU",
             "source": "GA4 · BNII API",
-            "value30d": 6000000,
-            "formattedValue": "6M",
+            "value30d": 2400000,
+            "formattedValue": "2.4M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1877,8 +1877,8 @@
             "fieldId": "spin_usage",
             "label": "Spin Wheel Plays",
             "source": "STW Engine",
-            "value30d": 1800000,
-            "formattedValue": "1.8M",
+            "value30d": 720000,
+            "formattedValue": "720K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1892,8 +1892,8 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
@@ -1908,14 +1908,14 @@
         "totalFields": 28,
         "liveFields": 22,
         "liveFieldsTarget": 22,
-        "fetchedAt": "2026-06-30T10:20:13.761Z",
+        "fetchedAt": "2026-07-01T02:37:00.795Z",
         "rows": [
           {
             "fieldId": "unique_users",
             "label": "Unique Users (DAU)",
             "source": "BinaryOS Events",
-            "value30d": 198000,
-            "formattedValue": "198K",
+            "value30d": 79200,
+            "formattedValue": "79.2K",
             "status": "live-derived",
             "statusLabel": "BNII live · new + repeat"
           },
@@ -1923,8 +1923,8 @@
             "fieldId": "new_users",
             "label": "New Users",
             "source": "BinaryOS Events",
-            "value30d": 18810,
-            "formattedValue": "18.8K",
+            "value30d": 7524,
+            "formattedValue": "7.5K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1932,8 +1932,8 @@
             "fieldId": "repeat_users",
             "label": "Repeat Users",
             "source": "BinaryOS Events",
-            "value30d": 179190,
-            "formattedValue": "179.2K",
+            "value30d": 71676,
+            "formattedValue": "71.7K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1941,8 +1941,8 @@
             "fieldId": "total_homepage_views",
             "label": "Total Homepage Views",
             "source": "BinaryOS Events",
-            "value30d": 10692000,
-            "formattedValue": "10.7M",
+            "value30d": 4276800,
+            "formattedValue": "4.3M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -1968,8 +1968,8 @@
             "fieldId": "stw_winners",
             "label": "STW Winners",
             "source": "STW Engine",
-            "value30d": 1800000,
-            "formattedValue": "1.8M",
+            "value30d": 720000,
+            "formattedValue": "720K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -2085,8 +2085,8 @@
             "fieldId": "users_quests",
             "label": "Users Completing Quests",
             "source": "BinaryOS Events",
-            "value30d": 240000,
-            "formattedValue": "240K",
+            "value30d": 96000,
+            "formattedValue": "96K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -2094,8 +2094,8 @@
             "fieldId": "stw_tx",
             "label": "STW Transactions",
             "source": "STW Engine",
-            "value30d": 1800000,
-            "formattedValue": "1.8M",
+            "value30d": 720000,
+            "formattedValue": "720K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -2103,8 +2103,8 @@
             "fieldId": "total_transactions",
             "label": "Total Transactions",
             "source": "BNRY Token Ledger",
-            "value30d": 900000,
-            "formattedValue": "900K",
+            "value30d": 360000,
+            "formattedValue": "360K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -2130,8 +2130,8 @@
             "fieldId": "dau_ga",
             "label": "Daily Active Users (GA4)",
             "source": "GA4 · BNII API",
-            "value30d": 168300,
-            "formattedValue": "168.3K",
+            "value30d": 67320,
+            "formattedValue": "67.3K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -2139,8 +2139,8 @@
             "fieldId": "mau_d30",
             "label": "30-Day Rolling MAU",
             "source": "GA4 · BNII API",
-            "value30d": 6000000,
-            "formattedValue": "6M",
+            "value30d": 2400000,
+            "formattedValue": "2.4M",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -2148,8 +2148,8 @@
             "fieldId": "spin_usage",
             "label": "Spin Wheel Plays",
             "source": "STW Engine",
-            "value30d": 1800000,
-            "formattedValue": "1.8M",
+            "value30d": 720000,
+            "formattedValue": "720K",
             "status": "live",
             "statusLabel": "BNII live"
           },
@@ -2163,8 +2163,8 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
@@ -2172,14 +2172,14 @@
       {
         "workspaceId": "okara",
         "brandLabel": "Okara",
-        "flag": "🇵🇰",
-        "country": "Pakistan",
+        "flag": "🇻🇳",
+        "country": "Vietnam",
         "code": "OKARA",
         "platform": "bnii",
         "totalFields": 28,
         "liveFields": 22,
         "liveFieldsTarget": 22,
-        "fetchedAt": "2026-06-30T10:20:13.761Z",
+        "fetchedAt": "2026-07-01T02:37:00.795Z",
         "rows": [
           {
             "fieldId": "unique_users",
@@ -2434,18 +2434,18 @@
             "statusLabel": "BNII live · derived"
           }
         ],
-        "dateFrom": "2026-06-01",
-        "dateTo": "2026-06-30",
+        "dateFrom": "2026-06-02",
+        "dateTo": "2026-07-01",
         "partnerId": null,
         "telcoName": null,
         "source": "demo"
       }
     ],
-    "fetchedAt": "2026-06-30T10:20:13.759Z"
+    "fetchedAt": "2026-07-01T02:37:00.792Z"
   },
   "telecom": {
     "countries": [],
-    "fetchedAt": "2026-06-30T10:20:13.759Z"
+    "fetchedAt": "2026-07-01T02:37:00.792Z"
   },
-  "fetchedAt": "2026-06-30T10:20:13.759Z"
+  "fetchedAt": "2026-07-01T02:37:00.792Z"
 }

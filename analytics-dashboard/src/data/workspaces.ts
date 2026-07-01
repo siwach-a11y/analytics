@@ -180,19 +180,19 @@ const WORKSPACE_SEEDS: WorkspaceSeed[] = [
   {
     id: "dialog", code: "DLG", name: "Dialog Axiata", country: "Sri Lanka",
     region: "South Asia", flag: "🇱🇰", tier: "Standard",
-    subscribers: 17_000_000, bnryEarned30d: 1_500_000, avgSessionSeconds: 101,
+    subscribers: 3_800_000, bnryEarned30d: 1_500_000, avgSessionSeconds: 101,
     dataMode: "real", rawDataLiveFields: 27,
   },
   {
-    id: "telkomsel", code: "TKM", name: "Telkomsel", country: "Indonesia",
+    id: "telkomsel", code: "TKS", name: "Telkomsel", country: "Indonesia",
     region: "Southeast Asia", flag: "🇮🇩", tier: "Enterprise",
-    subscribers: 159_100_000, bnryEarned30d: 2_700_000, avgSessionSeconds: 99,
+    subscribers: 65_000_000, bnryEarned30d: 2_700_000, avgSessionSeconds: 99,
     dataMode: "real", rawDataLiveFields: 26,
   },
   {
-    id: "banglalink", code: "BLK", name: "Banglalink", country: "Bangladesh",
+    id: "banglalink", code: "BLK", name: "Ryze-Banglalink", country: "Bangladesh",
     region: "South Asia", flag: "🇧🇩", tier: "Standard",
-    subscribers: 37_000_000, bnryEarned30d: 1_900_000, avgSessionSeconds: 130,
+    subscribers: 1_000_000, bnryEarned30d: 1_900_000, avgSessionSeconds: 130,
     dataMode: "real", rawDataLiveFields: 26,
   },
   {
@@ -203,27 +203,27 @@ const WORKSPACE_SEEDS: WorkspaceSeed[] = [
   },
   {
     id: "gopay", code: "GOPAY", name: "GoPay", country: "Indonesia",
-    region: "Southeast Asia", flag: "🇮🇩", tier: "Standard",
+    region: "Southeast Asia", flag: "🇮🇩", tier: "Pilot",
     subscribers: 20_000_000, bnryEarned30d: 121_100, avgSessionSeconds: 89,
     dataMode: "real", rawDataLiveFields: 24,
   },
   {
     id: "bima", code: "BIMA", name: "Bima", country: "Indonesia",
     region: "Southeast Asia", flag: "🇮🇩", tier: "Pilot",
-    subscribers: 100_000_000, bnryEarned30d: 7_900, avgSessionSeconds: 154,
-    dataMode: "projected", rawDataLiveFields: 22,
+    subscribers: 40_000_000, bnryEarned30d: 7_900, avgSessionSeconds: 154,
+    dataMode: "real", rawDataLiveFields: 22,
   },
   {
     id: "myim3", code: "MYIM3", name: "MyIM3", country: "Indonesia",
     region: "Southeast Asia", flag: "🇮🇩", tier: "Pilot",
-    subscribers: 100_000_000, bnryEarned30d: 10_200, avgSessionSeconds: 97,
-    dataMode: "projected", rawDataLiveFields: 22,
+    subscribers: 40_000_000, bnryEarned30d: 10_200, avgSessionSeconds: 97,
+    dataMode: "real", rawDataLiveFields: 22,
   },
   {
-    id: "okara", code: "OKARA", name: "Okara", country: "Pakistan",
-    region: "South Asia", flag: "🇵🇰", tier: "Pilot",
+    id: "okara", code: "OKARA", name: "Okara", country: "Vietnam",
+    region: "Southeast Asia", flag: "🇻🇳", tier: "Pilot",
     subscribers: 1_000_000, bnryEarned30d: 7_700, avgSessionSeconds: 47,
-    dataMode: "projected", rawDataLiveFields: 22,
+    dataMode: "real", rawDataLiveFields: 22,
   },
 ];
 
