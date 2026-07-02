@@ -54,7 +54,7 @@ Recommend 1-3 agents that best match their needs. Explain why each is a good fit
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 pointer-events-none">
+    <div className="fixed bottom-0 left-0 right-0 lg:pl-64 z-50 p-4 pointer-events-none">
       <div className="max-w-3xl mx-auto pointer-events-auto">
         <div className="glass-dock rounded-2xl overflow-hidden">
           {expanded && response && (

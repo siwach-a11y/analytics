@@ -11,31 +11,31 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Professional emerald + slate system. Primary accent = emerald,
-        // gradient partner = teal, amber = warning, rose = alert/sold-out.
+        // Violet + fuchsia system on a deep indigo canvas. Primary = violet,
+        // gradient partner = fuchsia, amber = warning, rose = alert/sold-out.
         hub: {
-          blue: "#059669", // emerald-600 — primary accent / CTA
-          "blue-light": "#ecfdf5", // emerald-50
-          teal: "#047857", // emerald-700 — headings / links
-          "teal-light": "#d1fae5", // emerald-100
-          coral: "#e11d48", // rose-600 — alert / sold-out / hot
-          "coral-light": "#fff1f2", // rose-50
-          amber: "#b45309", // amber-700 — few-left / warning
-          "amber-light": "#fffbeb", // amber-50
-          purple: "#0d9488", // teal-600 — gradient partner / accents
-          "purple-light": "#f0fdfa", // teal-50
-          green: "#065f46", // emerald-800 — deep / available
-          "green-light": "#d1fae5", // emerald-100
+          blue: "#7c3aed", // violet-600 — primary accent / CTA
+          "blue-light": "#2e1065", // violet-950
+          teal: "#a855f7", // purple-500 — links / accents
+          "teal-light": "#3b0764", // purple-950
+          coral: "#f43f5e", // rose-500 — alert / sold-out / hot
+          "coral-light": "#4c0519", // rose-950
+          amber: "#f59e0b", // amber-500 — few-left / warning
+          "amber-light": "#451a03", // amber-950
+          purple: "#d946ef", // fuchsia-500 — gradient partner / glow
+          "purple-light": "#4a044e", // fuchsia-950
+          green: "#22c55e", // green-500 — available / success
+          "green-light": "#052e16", // green-950
         },
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 40px -10px rgba(5, 150, 105, 0.3)",
-        card: "0 1px 2px rgba(15, 23, 42, 0.04), 0 6px 20px rgba(15, 23, 42, 0.07)",
+        glow: "0 0 44px -8px rgba(139, 92, 246, 0.5)",
+        card: "0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 28px rgba(0, 0, 0, 0.35)",
         "card-hover":
-          "0 6px 16px rgba(15, 23, 42, 0.08), 0 20px 48px rgba(5, 150, 105, 0.14)",
+          "0 10px 30px rgba(0, 0, 0, 0.4), 0 24px 60px rgba(139, 92, 246, 0.3)",
       },
       animation: {
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
