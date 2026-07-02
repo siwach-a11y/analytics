@@ -21,18 +21,18 @@ const availabilityStyles: Record<
   { bg: string; text: string; label: string }
 > = {
   available: {
-    bg: "bg-hub-green-light/90",
-    text: "text-hub-green",
+    bg: "bg-emerald-500/15",
+    text: "text-emerald-300",
     label: "Available",
   },
   "few-left": {
-    bg: "bg-hub-amber-light/90",
-    text: "text-hub-amber",
+    bg: "bg-amber-500/15",
+    text: "text-amber-300",
     label: "Few left",
   },
   "sold-out": {
-    bg: "bg-hub-coral-light/90",
-    text: "text-hub-coral",
+    bg: "bg-rose-500/15",
+    text: "text-rose-300",
     label: "Sold out",
   },
 };
@@ -59,14 +59,14 @@ export default function ResultCard({
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <h3 className="font-semibold text-slate-900 truncate tracking-tight">
+              <h3 className="font-semibold text-white truncate tracking-tight">
                 {title}
               </h3>
               {subtitle && (
                 <p className="text-sm text-slate-400 mt-0.5">{subtitle}</p>
               )}
             </div>
-            <span className="font-bold text-hub-blue whitespace-nowrap text-sm">
+            <span className="font-bold text-emerald-300 whitespace-nowrap text-sm">
               {price}
             </span>
           </div>
@@ -79,7 +79,7 @@ export default function ResultCard({
             {meta.map((m, i) => (
               <span
                 key={`${m}-${i}`}
-                className="text-[11px] px-2 py-0.5 rounded-md bg-slate-100/90 text-slate-500 font-medium"
+                className="text-[11px] px-2 py-0.5 rounded-md bg-white/5 text-slate-400 font-medium"
               >
                 {m}
               </span>

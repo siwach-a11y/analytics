@@ -58,8 +58,8 @@ Recommend 1-3 agents that best match their needs. Explain why each is a good fit
       <div className="max-w-3xl mx-auto pointer-events-auto">
         <div className="glass-dock rounded-2xl overflow-hidden">
           {expanded && response && (
-            <div className="px-5 pt-4 pb-3 max-h-40 overflow-y-auto border-b border-slate-100 space-y-2">
-              <p className="text-sm text-slate-600 leading-relaxed whitespace-pre-wrap">
+            <div className="px-5 pt-4 pb-3 max-h-40 overflow-y-auto border-b border-white/10 space-y-2">
+              <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">
                 {response}
                 {isLoading && (
                   <span className="inline-block w-1.5 h-4 ml-0.5 bg-hub-blue animate-pulse-soft align-middle rounded-sm" />
@@ -77,7 +77,7 @@ Recommend 1-3 agents that best match their needs. Explain why each is a good fit
               onFocus={() => setExpanded(true)}
               placeholder="Ask AI to recommend an agent..."
               disabled={isLoading}
-              className="flex-1 bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
+              className="flex-1 bg-transparent text-sm text-white placeholder:text-slate-400 focus:outline-none"
             />
             <button
               type="submit"

@@ -23,7 +23,7 @@ export default function StatsRow({
       {stats.map((stat) => (
         <div key={stat.label} className="stat-card group">
           <div className="w-8 h-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition-opacity" />
-          <div className="text-3xl font-bold tracking-tight text-slate-900">
+          <div className="text-3xl font-bold tracking-tight text-white">
             {stat.value}
           </div>
           <div className="text-xs font-medium uppercase tracking-wider text-slate-400 mt-1.5">

@@ -85,7 +85,7 @@ export default function Home() {
             Discover agents that{" "}
             <span className="gradient-text">work for you</span>
           </h2>
-          <p className="mt-3 text-slate-500 text-base max-w-xl leading-relaxed">
+          <p className="mt-3 text-slate-400 text-base max-w-xl leading-relaxed">
             Browse curated AI agents for vouchers, daily deals, cashback, promo
             codes, loyalty rewards, and flash sales — find the best savings in
             seconds.
@@ -116,7 +116,7 @@ export default function Home() {
             <div className="flex items-end justify-between mb-5">
               <div>
                 <p className="section-title mb-1">Curated picks</p>
-                <h2 className="text-xl font-bold tracking-tight text-slate-900">
+                <h2 className="text-xl font-bold tracking-tight text-white">
                   Featured Agents
                 </h2>
               </div>
@@ -133,7 +133,7 @@ export default function Home() {
           <div className="flex items-end justify-between mb-5">
             <div>
               <p className="section-title mb-1">Full catalog</p>
-              <h2 className="text-xl font-bold tracking-tight text-slate-900">
+              <h2 className="text-xl font-bold tracking-tight text-white">
                 {search || category !== "All" ? "Search Results" : "All Agents"}
                 <span className="ml-2 text-base font-normal text-slate-400">
                   {filtered.length}
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
           {filtered.length === 0 && (
             <div className="glass-panel py-16 text-center">
-              <p className="text-slate-500">
+              <p className="text-slate-400">
                 No agents match your search. Try different keywords or categories.
               </p>
             </div>

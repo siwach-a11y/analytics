@@ -95,7 +95,7 @@ export default function RewardsAgentView({
 
   return (
     <div className="space-y-6">
-      <div className="rounded-xl p-3.5 text-sm text-hub-teal bg-white/90 border border-white shadow-sm">
+      <div className="rounded-xl p-3.5 text-sm text-emerald-200 bg-emerald-500/10 border border-emerald-400/20">
         {intro}
       </div>
 
@@ -119,12 +119,12 @@ export default function RewardsAgentView({
             onChange={(e) => setBrand(e.target.value)}
             className="input-modern"
           />
-          <label className="inline-flex items-center gap-2 text-sm text-slate-600 px-1">
+          <label className="inline-flex items-center gap-2 text-sm text-slate-300 px-1">
             <input
               type="checkbox"
               checked={featuredOnly}
               onChange={(e) => setFeaturedOnly(e.target.checked)}
-              className="h-4 w-4 rounded border-slate-300 text-hub-blue focus:ring-hub-blue"
+              className="h-4 w-4 rounded border-white/20 bg-white/5 text-emerald-500 focus:ring-emerald-500"
             />
             Featured only
           </label>

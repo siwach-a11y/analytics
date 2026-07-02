@@ -43,14 +43,14 @@ export default function PublishedOffers() {
       <div className="flex items-end justify-between mb-5">
         <div>
           <p className="section-title mb-1">Freshly discovered</p>
-          <h2 className="text-xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-xl font-bold tracking-tight text-white">
             Live Offers
             <span className="ml-2 text-base font-normal text-slate-400">
               {offers.length}
             </span>
           </h2>
         </div>
-        <span className="badge-pill bg-hub-green-light/90 text-hub-green border-transparent">
+        <span className="badge-pill bg-emerald-500/15 text-emerald-300 border-emerald-400/25">
           Pipeline
         </span>
       </div>
