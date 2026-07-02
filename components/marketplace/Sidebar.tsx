@@ -21,6 +21,7 @@ function Icon({ path }: { path: ReactNode }) {
 
 const NAV: { label: string; href: string; active?: boolean; icon: ReactNode }[] = [
   { label: "Home", href: "/", active: true, icon: <path d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5" /> },
+  { label: "Gift Card Search", href: "/search", icon: <><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></> },
   { label: "All Agents", href: "#all", icon: <><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></> },
   { label: "Categories", href: "#categories", icon: <><path d="M4 6h16M4 12h16M4 18h16" /></> },
   { label: "Featured", href: "#featured", icon: <path d="m12 3 2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L12 17.8 6 20.3l1.4-6.3L2.6 9.4l6.4-.6z" /> },
