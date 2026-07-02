@@ -2,6 +2,7 @@ import { operatorAuthorized, unauthorized } from "@/lib/pipeline/auth";
 import { runDiscovery } from "@/lib/pipeline/discovery";
 import { store } from "@/lib/pipeline/store";
 import { RewardCategory, RewardType } from "@/lib/types";
+import { DEFAULT_COUNTRY } from "@/lib/giftcard/countries";
 
 export const dynamic = "force-dynamic";
 
@@ -24,7 +25,7 @@ export async function POST(req: Request) {
     return Response.json({ error: "Invalid rewardType" }, { status: 400 });
   }
   const category = (body.category ?? "Food & Dining") as RewardCategory;
-  const country = (body.country ?? "US").trim() || "US";
+  const country = (body.country ?? DEFAULT_COUNTRY).trim() || DEFAULT_COUNTRY;
 
   try {
     const discovered = await runDiscovery({

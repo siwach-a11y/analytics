@@ -15,7 +15,7 @@ export default function FlashSaleAgent() {
         quickAsks: [
           "Which flash sale ends soonest?",
           "Is the Samsung TV flash price good?",
-          "Any flash fares to Singapore?",
+          "Any flash fares to Vietnam?",
         ],
         systemContext:
           "You are a flash-sale expert for AgentHub's Flash Sale Agent, helping users spot the best limited-time drops and decide fast whether to buy.",

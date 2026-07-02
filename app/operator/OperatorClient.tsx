@@ -12,17 +12,10 @@ import {
   setOperatorKey,
 } from "@/lib/pipeline/client";
 import OfferQueueTable from "@/components/operator/OfferQueueTable";
+import { COUNTRIES, DEFAULT_COUNTRY } from "@/lib/giftcard/countries";
 
 const REWARD_TYPES = Object.values(DISCOVERY_PROFILES);
 const CATEGORIES = rewardCategories.filter((c) => c !== "All");
-const COUNTRIES = [
-  ["US", "🇺🇸 United States"],
-  ["GB", "🇬🇧 United Kingdom"],
-  ["TH", "🇹🇭 Thailand"],
-  ["SG", "🇸🇬 Singapore"],
-  ["MY", "🇲🇾 Malaysia"],
-  ["IN", "🇮🇳 India"],
-] as const;
 
 export default function OperatorClient() {
   const [needKey, setNeedKey] = useState(false);
@@ -36,7 +29,7 @@ export default function OperatorClient() {
 
   const [rewardType, setRewardType] = useState(REWARD_TYPES[0].rewardType);
   const [category, setCategory] = useState<string>(CATEGORIES[0]);
-  const [country, setCountry] = useState("US");
+  const [country, setCountry] = useState(DEFAULT_COUNTRY);
   const [discovering, setDiscovering] = useState(false);
 
   const load = useCallback(async () => {
@@ -149,7 +142,7 @@ export default function OperatorClient() {
                 {CATEGORIES.map((c) => (<option key={c} value={c}>{c}</option>))}
               </select>
               <select value={country} onChange={(e) => setCountry(e.target.value)} className="input-modern">
-                {COUNTRIES.map(([code, label]) => (<option key={code} value={code}>{label}</option>))}
+                {COUNTRIES.map((c) => (<option key={c.code} value={c.code}>{c.flag} {c.name}</option>))}
               </select>
               <button onClick={onDiscover} disabled={discovering} className="btn-primary">
                 {discovering ? "Discovering…" : "Discover offers"}

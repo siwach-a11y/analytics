@@ -13,26 +13,15 @@ import {
   onKeyChange,
   setStoredKey,
 } from "@/lib/anthropicKey";
+// Single source of truth for supported countries (the 7 emerging markets).
+import { COUNTRIES, DEFAULT_COUNTRY, getCountry } from "@/lib/giftcard/countries";
 
 const MODEL_LABEL = "claude-opus-4-5";
 
 const COUNTRY_STORAGE_KEY = "search_country";
 
-const COUNTRIES: { code: string; name: string; flag: string }[] = [
-  { code: "US", name: "United States", flag: "🇺🇸" },
-  { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
-  { code: "TH", name: "Thailand", flag: "🇹🇭" },
-  { code: "SG", name: "Singapore", flag: "🇸🇬" },
-  { code: "MY", name: "Malaysia", flag: "🇲🇾" },
-  { code: "ID", name: "Indonesia", flag: "🇮🇩" },
-  { code: "PH", name: "Philippines", flag: "🇵🇭" },
-  { code: "IN", name: "India", flag: "🇮🇳" },
-  { code: "AE", name: "UAE", flag: "🇦🇪" },
-  { code: "AU", name: "Australia", flag: "🇦🇺" },
-];
-
 function countryName(code: string): string {
-  return COUNTRIES.find((c) => c.code === code)?.name ?? code;
+  return getCountry(code)?.name ?? code;
 }
 
 interface Message {
@@ -101,7 +90,7 @@ export default function AgentAssistant({
   const [connected, setConnected] = useState(false);
   const [keyDraft, setKeyDraft] = useState("");
   const [showKeyForm, setShowKeyForm] = useState(false);
-  const [country, setCountry] = useState("US");
+  const [country, setCountry] = useState(DEFAULT_COUNTRY);
   const bodyEndRef = useRef<HTMLDivElement>(null);
   const sentInitial = useRef(false);
 
@@ -109,7 +98,7 @@ export default function AgentAssistant({
     const sync = () => setConnected(hasStoredKey());
     sync();
     const stored = window.localStorage.getItem(COUNTRY_STORAGE_KEY);
-    if (stored) setCountry(stored);
+    if (stored && getCountry(stored)) setCountry(stored);
     return onKeyChange(sync);
   }, []);
 
