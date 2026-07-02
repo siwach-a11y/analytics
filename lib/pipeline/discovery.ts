@@ -5,7 +5,7 @@ import { getProfile } from "./profiles";
 import { scoreOffer } from "./sourceGate";
 import { canonicalizeUrl, dedupeByCanonicalUrl } from "./urlCanon";
 
-const MODEL = "claude-opus-4-8";
+const MODEL = "claude-opus-4-5";
 
 export interface DiscoveryRequest {
   rewardType: RewardType;

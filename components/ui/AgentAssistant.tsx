@@ -14,7 +14,7 @@ import {
   setStoredKey,
 } from "@/lib/anthropicKey";
 
-const MODEL_LABEL = "claude-opus-4-8";
+const MODEL_LABEL = "claude-opus-4-5";
 
 const COUNTRY_STORAGE_KEY = "search_country";
 

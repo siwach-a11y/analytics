@@ -1,7 +1,7 @@
 import { getStoredKey, MISSING_KEY_ERROR } from "./anthropicKey";
 
 // Model per the Anthropic API reference.
-const MODEL = "claude-opus-4-8";
+const MODEL = "claude-opus-4-5";
 
 export interface ChatSource {
   title: string;
