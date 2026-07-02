@@ -7,7 +7,6 @@ import { rewardCategories } from "@/lib/data/rewards";
 import {
   actOnOffer,
   fetchQueue,
-  getOperatorKey,
   runDiscovery,
   setOperatorKey,
 } from "@/lib/pipeline/client";
